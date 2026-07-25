@@ -1,0 +1,65 @@
+name: Daily AI News Digest
+
+on:
+  schedule:
+    # 05:00 UTC daily (06:00/07:00 German time depending on DST)
+    - cron: "0 5 * * *"
+  workflow_dispatch: # allows manual runs from the Actions tab for testing
+
+permissions:
+  contents: write # commit the day's digest JSON back to the repo
+  pages: write # publish to GitHub Pages
+  id-token: write # required by actions/deploy-pages to verify the deployment
+
+# Never let two runs deploy Pages at once, but let a run in progress finish
+# rather than cancelling it half-way through a deployment.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build the digest and the site
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          MODEL: ${{ vars.MODEL }}
+        run: python main.py
+
+      - name: Commit today's digest
+        # The stored JSON is both the archive and the de-duplication state, so
+        # it has to survive the runner. Nothing to commit on a quiet day.
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add digests
+          if git diff --staged --quiet; then
+            echo "No new digest to commit."
+          else
+            git commit -m "Digest for $(date -u +%Y-%m-%d)"
+            git push
+          fi
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
