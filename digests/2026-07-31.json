@@ -1,0 +1,140 @@
+{
+  "tldr": [
+    "Azure Front Door edge actions now supports programmable compute at the edge for low-latency AI workloads; architects should evaluate for AI model serving and request routing.",
+    "Reservation exchanges for compute services (VMs) end February 1, 2027; re-evaluate your reserved instance strategy now if you rely on flexibility.",
+    "OpenAI cuts GPT-5.6 pricing for Luna and Terra models three weeks after launch; recalculate API cost forecasts if you committed to prior rates."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Azure Front Door edge actions: programmable compute at the edge",
+        "url": "https://techcommunity.microsoft.com/t5/azure-networking-blog/azure-front-door-edge-actions-programmable-compute-for-a-secure/ba-p/4542177",
+        "tag": "new",
+        "summary": "Azure Front Door now supports customer-defined lightweight logic that executes at Microsoft's global edge, enabling low-latency decisions and personalized responses closer to users without round-trip latency to origin.",
+        "why": "This is a new hosting option for inference or lightweight AI decision logic; if you're hosting small models for real-time personalization or filtering, you can now run them at the edge instead of in regional compute, cutting latency significantly."
+      },
+      {
+        "title": "Reservation exchanges for compute services end February 1, 2027",
+        "url": "https://azure.microsoft.com/updates?id=568514",
+        "tag": "deprecation",
+        "summary": "Azure will stop allowing exchanges of reservations for services covered by savings plans, including compute (VMs), starting February 1, 2027. This affects Reserved Instances for Virtual Machines and other services already eligible for savings plans.",
+        "why": "If your cost model relies on exchanging reserved instances for flexibility or rightsizing, you need to migrate to savings plans before this deadline or lock in your instance mix now; this is a hard cutover that affects your CapEx and flexibility trade-offs."
+      },
+      {
+        "title": "Skill or Sub-Agent: choosing AI capabilities you will actually reuse",
+        "url": "https://techcommunity.microsoft.com/t5/azure-architecture-blog/skill-or-sub-agent-choosing-ai-capabilities-you-will-actually/ba-p/4542099",
+        "tag": "news",
+        "summary": "Azure Architecture Blog guidance distinguishes between skills (reusable, composable capabilities) and sub-agents (autonomous decision-makers); choosing the wrong shape causes failures that no model selection can fix.",
+        "why": "This addresses a common design mistake when building AI systems on Azure: picking the wrong abstraction layer leads to rework or poor reusability; read this before committing to your Agent Framework or orchestration architecture."
+      },
+      {
+        "title": "Symmetric keys on Azure Key Vault Premium now in preview",
+        "url": "https://azure.microsoft.com/updates?id=566746",
+        "tag": "preview",
+        "summary": "Azure Key Vault Premium now supports symmetric encryption keys using oct-HSM key type and AES, enabling AES encryption operations within the HSM.",
+        "why": "If you need HSM-backed symmetric encryption (e.g., for encrypting AI model weights or sensitive training data at rest), you can now use Key Vault instead of managing separate HSM infrastructure."
+      }
+    ],
+    "also": [
+      {
+        "title": "Azure Database for PostgreSQL flexible server launches in India South Central",
+        "url": "https://azure.microsoft.com/updates?id=568334",
+        "summary": "PostgreSQL managed database now available in India South Central region, enabling regional data residency for vector databases and AI application backends in that geography."
+      },
+      {
+        "title": "Azure Automation supports PowerShell 7.6 runbooks and Runtime Environment GA",
+        "url": "https://azure.microsoft.com/updates?id=568102",
+        "summary": "PowerShell 7.6 runbooks and the Runtime Environment are now generally available, allowing you to retire legacy PowerShell versions from your automation scripts."
+      }
+    ]
+  },
+  "general": {
+    "top": [
+      {
+        "title": "OpenAI cuts GPT-5.6 pricing for Luna and Terra models",
+        "url": "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6",
+        "tag": "pricing",
+        "summary": "OpenAI has reduced API pricing for GPT-5.6 Luna and Terra models only three weeks after their launch, citing improved efficiency and enterprise-scale deployment.",
+        "why": "If you locked in cost forecasts or commit-based pricing three weeks ago, your assumptions are now stale; recalculate your API spend baseline and renegotiate any volume commitments that assume older rates."
+      },
+      {
+        "title": "Google DeepMind releases Gemini Robotics 2 with whole-body motion control",
+        "url": "https://www.theverge.com/tech/973276/google-deepmind-gemini-robotics-2-whole-body",
+        "tag": "model",
+        "summary": "Gemini Robotics 2 extends control from upper-body to whole-body humanoid robot motion, including feet and fingertips, enabling more complex multi-step automation tasks.",
+        "why": "Not directly relevant to your AI hosting role unless you're building robotics inference infrastructure, but it signals the direction of embodied AI workloads; if robotics customers are on your roadmap, this shifts the compute and latency profile of their models."
+      },
+      {
+        "title": "Anthropic reports its models breached three companies during security tests",
+        "url": "https://techcrunch.com/2026/07/30/anthropic-says-its-own-ai-models-breached-three-companies-during-security-tests/",
+        "tag": "security",
+        "summary": "Anthropic conducted internal security audits and found instances where its models successfully breached test environments during authorized testing, mirroring similar incidents at other labs.",
+        "why": "This reinforces that frontier LLMs can be weaponized; if you're hosting Anthropic models or other frontier models for external customers, assume they will be attacked; review your isolation, logging, and abuse detection for each deployment."
+      },
+      {
+        "title": "MCP specification redesigned for enterprise adoption and stability",
+        "url": "https://arstechnica.com/ai/2026/07/with-a-stateless-makeover-new-mcp-spec-targets-enterprise-scale/",
+        "tag": "release",
+        "summary": "The Model Context Protocol specification has been updated to be stateless and now includes a policy protecting against sudden feature removal, addressing enterprise adoption barriers.",
+        "why": "If you are building agentic workflows or using MCP as a standard for model-to-tool communication, the stateless redesign should make it easier to scale and the stability policy reduces lock-in risk; evaluate whether to migrate existing deployments."
+      }
+    ],
+    "also": [
+      {
+        "title": "Judge says Trump administration lacks evidence for Anthropic supply-chain risk label",
+        "url": "https://techcrunch.com/2026/07/30/judge-says-trump-admin-still-lacks-evidence-for-anthropic-supply-chain-risk-label/",
+        "summary": "A federal judge rejected the Trump administration's attempted ban on Anthropic technology, citing insufficient evidence of supply-chain risk, casting doubt on the policy."
+      },
+      {
+        "title": "Google says AI tools fixed more Chrome bugs in June than over two years combined",
+        "url": "https://techcrunch.com/2026/07/30/google-says-it-fixed-more-chrome-bugs-in-june-than-over-the-past-two-years-thanks-to-ai/",
+        "summary": "Google reports exponential increase in bug detection and patching velocity thanks to LLM-powered code analysis, demonstrating real productivity gains from AI-assisted engineering."
+      },
+      {
+        "title": "Okta acquires Permiso Security for ~$200M to strengthen identity threat detection",
+        "url": "https://siliconangle.com/2026/07/30/okta-acquire-permiso-security-reported-200m-identity-security-deal/",
+        "summary": "Okta is acquiring Permiso Security, adding capabilities to detect attackers abusing identities across cloud accounts, SaaS apps, and AI agents."
+      },
+      {
+        "title": "LLMs have a fundamental security flaw that makes them impossible to fully secure",
+        "url": "https://www.technologyreview.com/2026/07/30/1140927/a-fundamental-flaw-leaves-llms-vulnerable-to-attack/",
+        "summary": "Researchers argue that large language models have an inherent vulnerability based on how they function, and that full security against hacks is theoretically impossible."
+      },
+      {
+        "title": "Open-source ShieldFont project uses poisoned font to fool AI scrapers",
+        "url": "",
+        "summary": "ShieldFont is an open-source tool that embeds adversarial patterns in fonts to prevent AI models from scraping and training on copyrighted content."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Why your company should build its own AI SRE",
+        "url": "https://thenewstack.io/ai-sre-root-cause-analysis/",
+        "tag": "news",
+        "summary": "The New Stack argues that teams using agentic coding tools ship code faster than before, but lack visibility into failures and quality; building AI-specific observability and debugging practices is now a competitive necessity.",
+        "why": "If your teams are adopting AI-assisted code generation (which they are), you need new monitoring and incident response patterns; traditional SRE practices alone won't catch the novel failure modes that AI-generated code introduces."
+      },
+      {
+        "title": "Why linting alone can't govern agentic development",
+        "url": "https://thenewstack.io/governing-agentic-software-development/",
+        "tag": "news",
+        "summary": "The New Stack examines how traditional code governance (linting, static analysis) falls short for agentic workflows, where AI agents make autonomous decisions about what to write and deploy.",
+        "why": "If you're hosting or orchestrating AI agents for code generation or autonomous tasks, you need stronger governance gates than lint rules—think runtime monitoring, output validation, and audit logging; this shifts your deployment and compliance model."
+      }
+    ],
+    "also": [
+      {
+        "title": "GitHub Copilot app adds stacked sessions and pull requests for refactoring workflows",
+        "url": "https://github.blog/ai-and-ml/github-copilot/stacked-sessions-and-pull-requests-in-the-github-copilot-app/",
+        "summary": "GitHub Copilot app now supports stacked sessions and PR management, improving the workflow for multi-step refactoring and codebase modernization tasks."
+      },
+      {
+        "title": "OpenAI and Elastic partner to address enterprise AI context problem",
+        "url": "https://thenewstack.io/openai-elastic-enterprise-context/",
+        "summary": "OpenAI and Elastic are integrating to give models secure access to enterprise data and context, addressing a fundamental challenge in deploying frontier models within organizations."
+      }
+    ]
+  }
+}

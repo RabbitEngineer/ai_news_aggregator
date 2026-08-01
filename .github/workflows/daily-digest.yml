@@ -44,10 +44,12 @@ jobs:
       - name: Commit today's digest
         # The stored JSON is both the archive and the de-duplication state, so
         # it has to survive the runner. Nothing to commit on a quiet day.
+        # `git add -A` also stages the deletions made by the KEEP_DIGESTS prune
+        # in configuration.py, so the archive stays trimmed in the repo too.
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add digests
+          git add -A digests
           if git diff --staged --quiet; then
             echo "No new digest to commit."
           else

@@ -1,9 +1,9 @@
 """Render structured digests into a static website.
 
-The LLM returns structured JSON (see SYSTEM_PROMPT in main.py); all
-presentation lives here. Because this is a real website rather than an email,
-there are none of the email constraints — this uses modern CSS, custom
-properties, dark mode, and responsive layout.
+The LLM returns structured JSON (see SYSTEM_PROMPT in main.py); all presentation
+lives here. Because this is a real website rather than an email, there are none
+of the email constraints — this uses modern CSS, custom properties, dark mode,
+and responsive layout.
 
 Output tree:
     site/index.html            the latest digest
@@ -16,12 +16,21 @@ import html
 import re
 from datetime import datetime, timezone
 
+# Browser tab, page header and RSS feed. Plain text: write "&" as "&".
+SITE_TITLE = "AI & Azure Digest"
+
+# Sections in page order. The key must match the one the model returns (see
+# SYSTEM_PROMPT in main.py) and a `.section.<key>` colour rule in the CSS below.
+# main.py reads its section keys from here. The label is free to change.
 SECTIONS = [
-    ("azure", "Azure Updates", "azure"),
-    ("general", "General AI News", "general"),
-    ("tooling", "Infrastructure &amp; Tooling", "tooling"),
+    ("azure", "Azure Updates"),
+    ("general", "General AI News"),
+    ("tooling", "Infrastructure & Tooling"),
 ]
 
+# The badge on each top item. Keys are the exact values the model may use for
+# "tag" — a new one needs adding to SYSTEM_PROMPT and a --tag-<key>-bg/-fg pair
+# in the CSS below, or it falls back to the neutral "news" style.
 TAG_LABELS = {
     "pricing": "Pricing",
     "new": "New",
@@ -207,7 +216,7 @@ def _page(title: str, body: str, *, depth: int = 0) -> str:
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light dark">
 <title>{title}</title>
-<link rel="alternate" type="application/atom+xml" title="AI &amp; Azure Digest" href="{up}feed.xml">
+<link rel="alternate" type="application/atom+xml" title="{esc(SITE_TITLE)}" href="{up}feed.xml">
 <style>{CSS}</style>
 </head>
 <body>
@@ -221,7 +230,7 @@ def _page(title: str, body: str, *, depth: int = 0) -> str:
 def _masthead(date_iso: str, digest: dict, *, depth: int) -> str:
     up = "../" * depth
     return f"""<header class="masthead">
-  <h1><a href="{up}index.html">AI &amp; Azure Digest</a></h1>
+  <h1><a href="{up}index.html">{esc(SITE_TITLE)}</a></h1>
   <nav><a href="{up}archive/index.html">Archive</a><a href="{up}feed.xml">Feed</a></nav>
   <div class="dateline">{esc(pretty_date(date_iso))}<span class="dot">&middot;</span>{read_time(digest)} min read<span class="dot">&middot;</span>{item_count(digest)} items</div>
 </header>"""
@@ -271,7 +280,7 @@ def _also(entries: list) -> str:
 
 def _sections(digest: dict) -> str:
     out = []
-    for key, label, css in SECTIONS:
+    for key, label in SECTIONS:
         section = section_of(digest, key)
         count = len(section["top"]) + len(section["also"])
         if count:
@@ -279,8 +288,9 @@ def _sections(digest: dict) -> str:
                     + _also(section["also"]))
         else:
             body = '<p class="empty">No news.</p>'
-        out.append(f"""<section class="section {css}">
-  <div class="section-head"><h2>{label}</h2><span class="count">{count}</span></div>
+        # The section key doubles as the CSS class that picks its accent colour.
+        out.append(f"""<section class="section {esc(key)}">
+  <div class="section-head"><h2>{esc(label)}</h2><span class="count">{count}</span></div>
   {body}
 </section>""")
     return "".join(out)
@@ -304,7 +314,7 @@ def _footer(model: str, *, depth: int = 0) -> str:
 def render_digest_page(date_iso: str, digest: dict, *, model: str, depth: int = 0) -> str:
     body = (_masthead(date_iso, digest, depth=depth) + _tldr(digest)
             + _sections(digest) + _footer(model, depth=depth))
-    return _page(f"AI &amp; Azure Digest — {esc(date_iso)}", body, depth=depth)
+    return _page(f"{esc(SITE_TITLE)} — {esc(date_iso)}", body, depth=depth)
 
 
 def render_archive_index(editions: list, *, model: str) -> str:
@@ -318,13 +328,13 @@ def render_archive_index(editions: list, *, model: str) -> str:
             f'<span class="peek">{esc(peek)}</span></a></li>'
         )
     body = f"""<header class="masthead">
-  <h1><a href="../index.html">AI &amp; Azure Digest</a></h1>
+  <h1><a href="../index.html">{esc(SITE_TITLE)}</a></h1>
   <nav><a href="../index.html">Latest</a><a href="../feed.xml">Feed</a></nav>
   <div class="dateline">{len(editions)} edition{'s' if len(editions) != 1 else ''}</div>
 </header>
 <ul class="archive-list">{''.join(rows)}</ul>
 {_footer(model, depth=1)}"""
-    return _page("Archive — AI &amp; Azure Digest", body, depth=1)
+    return _page(f"Archive — {esc(SITE_TITLE)}", body, depth=1)
 
 
 def render_feed(editions: list, *, site_url: str) -> str:
@@ -337,7 +347,7 @@ def render_feed(editions: list, *, site_url: str) -> str:
     for date_iso, digest in editions[:30]:
         summary = " ".join(digest.get("tldr") or []) or "Daily AI and Azure digest."
         entries.append(f"""  <entry>
-    <title>AI &amp; Azure Digest — {esc(pretty_date(date_iso))}</title>
+    <title>{esc(SITE_TITLE)} — {esc(pretty_date(date_iso))}</title>
     <link href="{esc(base)}/archive/{esc(date_iso)}.html"/>
     <id>{esc(base)}/archive/{esc(date_iso)}.html</id>
     <updated>{esc(date_iso)}T06:00:00Z</updated>
@@ -345,7 +355,7 @@ def render_feed(editions: list, *, site_url: str) -> str:
   </entry>""")
     return f"""<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>AI &amp; Azure Digest</title>
+  <title>{esc(SITE_TITLE)}</title>
   <link href="{esc(base)}/"/>
   <link rel="self" href="{esc(base)}/feed.xml"/>
   <id>{esc(base)}/</id>

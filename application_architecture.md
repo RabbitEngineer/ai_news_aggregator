@@ -28,7 +28,7 @@ Three sections:
    Only releases that add a notable capability or break something.
 
 Design goal: **near-zero cost**. Free RSS feeds, free GitHub Actions, free
-GitHub Pages, and exactly **one LLM call per day** (~$5-7/year on the default
+GitHub Pages, and exactly **one LLM call per day** (~$1-2/year on the default
 model, measured). The repository must be public: GitHub Pages on a private repo
 requires a paid plan, which would cost ten times the rest of the project.
 The LLM call goes through OpenRouter, so one API key reaches every vendor and
@@ -41,15 +41,14 @@ GitHub Actions cron (daily 06:00 UTC)
         │
         ▼
 ┌──────────────────────────────────────────────────────────────┐
-│ main.py                                                      │
+│ main.py         (model + feeds come from configuration.py)   │
 │                                                              │
-│  1. FETCH      Pull all items from 24 RSS feeds, all in      │
+│  1. FETCH      Pull all items from 29 RSS feeds, all in      │
 │                one concurrent pool                            │
 │                • All sections: last 24h (one day per run),   │
 │                  stretched if a previous run was missed       │
 │                • Azure: no keyword filter, whole platform     │
-│                • Tooling: max 4 items/feed                    │
-│                • Cap every section at 40 candidates           │
+│                • Per-feed caps, then 40 candidates/section    │
 │                                                              │
 │  2. DEDUPE     Load digests/*.json, drop any candidate        │
 │                whose link appeared in the last 7 editions     │
@@ -58,7 +57,8 @@ GitHub Actions cron (daily 06:00 UTC)
 │                structured JSON: featured items with a         │
 │                "why it matters", plus one-line mentions       │
 │                                                              │
-│  4. STORE      Write digests/<date>.json                      │
+│  4. STORE      Write digests/<date>.json, then delete any     │
+│                edition beyond the newest 14                   │
 │                                                              │
 │  5. BUILD      render.py rebuilds the WHOLE site from every   │
 │                stored edition: index, per-day archive pages,  │
@@ -131,6 +131,11 @@ Key design decisions:
 - **De-duplication must outlast the widest window.** `DEDUP_EDITIONS` (7) spans
   more days than a 24h window plus any realistic catch-up stretch. Widening a
   window past that without raising it would make old items resurface.
+- **The archive is bounded, and pruned in Python rather than in the workflow.**
+  `KEEP_DIGESTS` (14) trims the oldest editions before the site is built, so
+  what is on disk and what is on the archive page always agree, and the same
+  behaviour applies to local runs. It sits well above `DEDUP_EDITIONS`, because
+  a deleted edition can no longer suppress a repeat.
 - **Per-feed cap on the tooling section only.** Release feeds are bursty — one
   project cutting three patch releases could otherwise fill the candidate pool.
   `TOOLING_MAX_ITEMS_PER_FEED` (4) bounds each source there. The news sections
@@ -164,45 +169,102 @@ Key design decisions:
 
 | File | Purpose |
 |---|---|
-| `main.py` | Orchestration. Configuration at the top (model, feed lists, keyword filter, caps), then feed fetching, the digest prompt + `summarize` / `parse_digest`, storage (`load_editions`, `save_digest`), de-duplication, and `build_site`. |
-| `render.py` | All presentation. Turns stored digests into `index.html`, per-day archive pages, the archive list, and `feed.xml`. The `CSS` constant holds every colour token with a light and dark value. |
+| `configuration.py` | **What the digest is about, as plain values:** model, feed lists, `KEEP_DIGESTS`. No imports, no logic — nothing here can raise. |
+| `main.py` | Orchestration. A `Tuning` block (windows, caps, paths, repo-variable overrides), `SYSTEM_PROMPT`, then feed fetching, `summarize` / `parse_digest`, storage (`load_editions`, `save_digest`, `prune_editions`), de-duplication, and `build_site`. |
+| `render.py` | All presentation, and self-contained: `SITE_TITLE`, `SECTIONS`, `TAG_LABELS` and `CSS` at the top, then the templates that turn stored digests into `index.html`, per-day archive pages, the archive list, and `feed.xml`. |
 | `.github/workflows/daily-digest.yml` | Daily cron + manual trigger. Runs the build, commits `digests/`, then publishes `site/` to GitHub Pages via `upload-pages-artifact` / `deploy-pages`. |
 | `digests/<date>.json` | One stored edition. Committed by the workflow — the archive and the de-duplication state. |
 | `requirements.txt` | `openai` (the OpenAI-compatible client, pointed at OpenRouter) and `feedparser`. |
 | `README.md` | Setup guide, model choice, troubleshooting, cost. |
 | `application_architecture.md` | This document. |
 
-### Important places inside `main.py`
+**The split is by audience, not by type.** `configuration.py` answers the
+questions an owner asks — *which model, which sources, how long do I keep it* —
+and nothing else. It is deliberately inert: plain literals, no imports, no
+function calls, so a typo there is a syntax error rather than a subtle runtime
+one, and it can be changed without reading any code.
+
+Everything else lives beside the code that consumes it, because it cannot be
+understood in isolation. `DEDUP_EDITIONS` only makes sense against the lookback
+windows; `MAX_CANDIDATES_PER_SECTION` only against the prompt's caps;
+`SECTIONS` and `TAG_LABELS` only against the CSS that colours them. Hoisting
+those into a settings file separates each value from the constraint that
+explains it, and turns one edit into two files.
+
+The dependency graph stays acyclic: `main.py` imports `configuration` and
+`render`; `render` imports neither. That is why `SECTIONS` lives in `render.py`
+with `main.py` deriving `SECTION_KEYS` from it — the reverse would make the two
+modules import each other.
+
+### `configuration.py`
+
+| What | Setting |
+|---|---|
+| Model | `MODEL` |
+| General AI news sources | `AI_FEEDS` |
+| Azure news sources (all of Azure) | `AZURE_FEEDS` |
+| Infrastructure/tooling sources | `TOOLING_FEEDS` |
+| How many editions are kept on disk | `KEEP_DIGESTS` (14) |
+
+### `main.py`
 
 | What | Where |
 |---|---|
-| Model default | `DEFAULT_MODEL` (top of the config block) |
-| General AI news sources | `AI_FEEDS` |
-| Azure news sources (all of Azure) | `AZURE_FEEDS` |
-| Per-feed caps | `NEWS_MAX_ITEMS_PER_FEED` (8), `TOOLING_MAX_ITEMS_PER_FEED` (6) |
-| Cross-section de-duplication | `drop_cross_section()` |
-| Infrastructure/tooling sources | `TOOLING_FEEDS` |
-| Candidate cap per section | `MAX_CANDIDATES_PER_SECTION` (40) |
-| Candidate cap per feed (tooling only) | `TOOLING_MAX_ITEMS_PER_FEED` (4) |
-| How many past editions de-duplication spans | `DEDUP_EDITIONS` (7) |
-| Catch-up after a missed run | `effective_window()` |
 | Reader profile / what counts as interesting | `SYSTEM_PROMPT` |
 | Items per section | the `Length target:` block inside `SYSTEM_PROMPT` |
+| Lookback per section | `MAX_AGE_HOURS`, `AZURE_MAX_AGE_HOURS`, `TOOLING_MAX_AGE_HOURS` |
+| Candidate cap per section | `MAX_CANDIDATES_PER_SECTION` (40) |
+| Per-feed caps | `NEWS_MAX_ITEMS_PER_FEED` (8), `TOOLING_MAX_ITEMS_PER_FEED` (6) |
+| How many past editions de-duplication spans | `DEDUP_EDITIONS` (7) |
+| Output ceiling | `MAX_OUTPUT_TOKENS` (4000) |
 | Where digests and the site are written | `DIGEST_DIR`, `SITE_DIR` |
+| Fetch concurrency and timeout | `FEED_WORKERS`, `FEED_TIMEOUT_SECONDS`, `USER_AGENT` |
+| Repo-variable overrides and `int()` conversion | `env_or()`, `env_int()` |
+| Cross-section de-duplication | `drop_cross_section()` |
+| Catch-up after a missed run | `effective_window()` |
+| Trimming the archive to `KEEP_DIGESTS` | `prune_editions()` |
+| Deriving the Pages URL from the repo | `default_site_url()` |
+
+### `render.py`
+
+| What | Where |
+|---|---|
+| Site name | `SITE_TITLE` |
+| Section order and display names | `SECTIONS` |
+| Tag badge labels | `TAG_LABELS` |
+| Colours, type, layout, dark mode | `CSS` |
+
+Six settings accept a repo variable of the same name, resolved once in the
+Tuning block of `main.py`: `MODEL`, `SITE_URL`, the three `*_MAX_AGE_HOURS`, and
+`KEEP_DIGESTS`. A non-numeric value warns and falls back to the file default
+rather than failing the run.
+
+### Couplings to respect
+
+Three settings span more than one file, so changing one means changing its
+partner:
+
+- **`SECTIONS` keys** (`render.py`) must match the section keys in
+  `SYSTEM_PROMPT` (`main.py`), and each needs a `.section.<key>` accent rule in
+  the CSS.
+- **`TAG_LABELS` keys** (`render.py`) must match the allowed `tag` values listed
+  in `SYSTEM_PROMPT`, and each needs a `--tag-<key>-bg` / `-fg` pair in the CSS.
+  An unknown tag falls back to the neutral `news` style rather than breaking.
+- **`KEEP_DIGESTS`** (`configuration.py`) **must exceed `DEDUP_EDITIONS`**
+  (`main.py`), because a deleted edition can no longer suppress a repeat.
 
 ## How to change the model
 
-One environment variable — no code change, no second API key:
-
-| Variable | Default |
-|---|---|
-| `MODEL` | `anthropic/claude-haiku-4.5` |
-
-Set it as a repo **variable** (Settings → Secrets and variables → Actions →
-Variables tab); the next run picks it up with no commit. Locally,
+Edit `MODEL` in `configuration.py`, or set a repo **variable** named `MODEL`
+(Settings → Secrets and variables → Actions → Variables tab) — the variable
+wins, and the next run picks it up with no commit. Locally,
 `$env:MODEL = "openai/gpt-5-mini"`. Because everything routes through
 OpenRouter, switching vendor is the same operation as switching model. Use
-OpenRouter's exact slug — `anthropic/claude-haiku-4.5` is a dot, not a dash.
+OpenRouter's exact slug — `openai/gpt-5.6-luna` is a dot, not a dash.
+
+The same pattern applies to `MAX_AGE_HOURS`, `AZURE_MAX_AGE_HOURS`,
+`TOOLING_MAX_AGE_HOURS`, `KEEP_DIGESTS` and `SITE_URL`: file default, repo
+variable overrides it.
 
 ## How to tune digest length
 
@@ -220,13 +282,13 @@ read. Lower the featured counts for a faster read.
 
 ## How to change news sources
 
-Edit the feed lists at the top of `main.py`. Each entry is a
+Edit the feed lists in `configuration.py`. Each entry is a
 `("Display Name", "https://feed-url")` tuple:
 
 - **General AI news** → `AI_FEEDS`. Not keyword-filtered; everything recent is a
   candidate.
 - **Azure news** → `AZURE_FEEDS`. No keyword filter: the whole platform is in
-  scope and the LLM judges relevance. Eight sources.
+  scope and the LLM judges relevance. Fourteen sources.
 - **Infrastructure/tooling** → `TOOLING_FEEDS`. Every GitHub project publishes a
   release feed at `https://github.com/<owner>/<repo>/releases.atom`. Release
   feeds are noisy by nature; `TOOLING_MAX_ITEMS_PER_FEED` and the "skip routine
@@ -260,7 +322,7 @@ This is low-maintenance — no server, no database. Occasionally:
   new since the last edition" means there was genuinely no news.
 - **First deploy fails?** Almost always Pages source not set to GitHub Actions.
 - **Feed warnings** (`WARNING: could not parse ...`): the URL moved or the site
-  is down. Update or remove the entry in `main.py`.
+  is down. Update or remove the entry in `configuration.py`.
 - **GitHub disables crons after ~60 days without repo activity.** The workflow
   commits a digest most days, which counts as activity, so this is unlikely —
   but if digests stop and there is a banner in the Actions tab, click "Enable
@@ -268,4 +330,4 @@ This is low-maintenance — no server, no database. Occasionally:
 - **API costs:** visible at [openrouter.ai/activity](https://openrouter.ai/activity).
   Expect cents per year on the default model.
 - **Digest quality drifting?** Tune the reader profile in `SYSTEM_PROMPT`, or
-  move `MODEL` up a tier.
+  move `MODEL` up a tier. Both are in `configuration.py`.

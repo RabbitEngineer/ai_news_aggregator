@@ -1,0 +1,69 @@
+{
+  "tldr": [
+    "No Azure AI or core platform updates today — check back tomorrow.",
+    "Data center grid resilience is becoming a critical constraint for AI infrastructure at scale.",
+    "A cluster of new agent safety and grounding tools emerged, signalling that keeping agentic systems from breaking production is now a pressing tooling gap."
+  ],
+  "azure": {
+    "top": [],
+    "also": []
+  },
+  "general": {
+    "top": [
+      {
+        "title": "One fallen power line exposed a critical AI data center problem",
+        "url": "https://techcrunch.com/2026/07/25/one-fallen-power-line-exposed-a-growing-ai-data-center-problem-heres-how-to-fix-it/",
+        "tag": "news",
+        "summary": "A grid disruption in Northern Virginia revealed poor disaster response in AI data centers, exposing systemic vulnerabilities in how facilities handle power failures during peak AI workloads.",
+        "why": "If you are hosting or planning to host intensive AI workloads on Azure or considering on-premises GPU clusters, this signals you need to audit and stress-test failover and grid resilience assumptions — especially in regions with older or congested power infrastructure."
+      }
+    ],
+    "also": [
+      {
+        "title": "HPC and enterprise AI infrastructure are converging into one platform",
+        "url": "https://siliconangle.com/2026/07/25/hpc-ai-infrastructure-convergence-hpe-amdadvancingai/",
+        "summary": "Supercomputing hardware and software stacks once reserved for national labs are now the foundation for enterprise AI factories, merging HPC and cloud infrastructure requirements."
+      },
+      {
+        "title": "AMD launches integrated physical AI platform for robotics and autonomous systems",
+        "url": "https://siliconangle.com/2026/07/25/physical-ai-computing-amdadvancingai/",
+        "summary": "AMD is targeting edge and embedded AI with standardized architectures designed for robotics and autonomous real-world applications, shifting focus from data-center-only inference."
+      },
+      {
+        "title": "AWS EC2 compute evolving to meet agentic and physical AI demand",
+        "url": "https://siliconangle.com/2026/07/25/aws-ec2-compute-evolves-agentic-physical-ai-amdadvancingai/",
+        "summary": "AWS is reshaping general-purpose EC2 infrastructure to handle workloads from agentic AI and physical AI use cases that go beyond the original cloud compute model."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Pyshackle: pre-execution gate for AI agent tool calls (open source)",
+        "url": "https://pypi.org/project/pyshackle/",
+        "tag": "release",
+        "summary": "Pyshackle is an open-source library that intercepts and validates AI agent tool calls before execution, preventing unintended actions or side effects.",
+        "why": "As you move from isolated inference to agentic systems that take real actions (API calls, file writes, resource provisioning), this type of safety gate becomes essential — it lets you define hard guardrails before agents touch production systems."
+      },
+      {
+        "title": "Hydra: local-first trust control plane that routes AI by confidence",
+        "url": "https://hydra.uvansa.com/",
+        "tag": "new",
+        "summary": "Hydra is a new control plane that routes requests to AI models based on confidence scores, enabling fallback and routing logic without cloud dependency.",
+        "why": "This pattern matters for reliability: instead of failing when a primary model is uncertain or unavailable, you can route to a secondary model or human reviewer — useful when hosting multiple models and building resilient agent systems."
+      }
+    ],
+    "also": [
+      {
+        "title": "ActionRail: runtime value and action grounding framework for AI agents",
+        "url": "https://github.com/ToolJet/ActionRail/",
+        "summary": "ActionRail is a framework for grounding AI agent actions to real values and constraints at runtime, preventing agents from taking invalid or out-of-range actions."
+      },
+      {
+        "title": "Rules framework prevents AI coding agents from breaking working code",
+        "url": "https://github.com/avenna01-ceo/claude-code-survival-kr",
+        "summary": "A set of rules and constraints for code-generation agents designed to avoid regression and preserve existing functionality during automated refactoring or fixes."
+      }
+    ]
+  }
+}

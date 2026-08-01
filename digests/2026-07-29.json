@@ -1,0 +1,181 @@
+{
+  "tldr": [
+    "Azure Enclave enters public preview for isolated, sensitive workloads across all cloud levels; if you run government or regulated AI services, this is a deployment option worth evaluating.",
+    "Token Economics in Practice (Azure Architecture Blog) warns that per-token pricing alone masks the real cost of agents—operational complexity and throughput demand drive spend far faster than model prices fall.",
+    "Model Context Protocol 1.0 releases with metadata and security enhancements; if you're building agent workflows, this is the orchestration layer update to plan for."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Azure Enclave public preview: isolated cloud for sensitive workloads",
+        "url": "https://azure.microsoft.com/updates?id=568377",
+        "tag": "preview",
+        "summary": "Azure Enclave is now in public preview for Azure, Azure Government, Azure Government Secret, and Azure Government Top Secret, enabling isolated cloud environments for sensitive workloads with dedicated infrastructure and compliance controls.",
+        "why": "If you host classified or highly regulated AI services (genomics, financial modeling, defense R&D), this removes the need to justify shared infrastructure; architecture decisions around data residency and isolation become simpler and more defensible."
+      },
+      {
+        "title": "Token Economics in Practice: why cheap inference masks real agent costs",
+        "url": "https://techcommunity.microsoft.com/t5/azure-architecture-blog/token-economics-in-practice/ba-p/4540472",
+        "tag": "news",
+        "summary": "A practitioner analysis explains that token prices have fallen ~280x since late 2022, but agents actually run *more* expensive because they require higher throughput, longer contexts, and orchestration overhead; pricing alone is a poor cost model.",
+        "why": "Before committing to per-token billing or reserved capacity for agent workloads, re-read your cost forecast: a cheap-token trap is when you extrapolate from model prices and miss that agents eat tokens and infrastructure faster than the price cuts save you."
+      },
+      {
+        "title": "India South Central region now generally available",
+        "url": "https://azure.microsoft.com/updates?id=568013",
+        "tag": "ga",
+        "summary": "Microsoft's fourth India datacenter region (Hyderabad, Telangana) is now live, designed with AI readiness as a primary feature for local deployment and latency-sensitive workloads.",
+        "why": "If you serve India or have data-residency requirements for the region, you can now co-locate AI services with local infrastructure; this also adds capacity during India's rapid cloud adoption surge."
+      },
+      {
+        "title": "Application Routing with Gateway API now GA on AKS",
+        "url": "https://azure.microsoft.com/updates?id=567944",
+        "tag": "ga",
+        "summary": "The Kubernetes Gateway API is now generally available on AKS, providing a modern standard-based ingress routing mechanism as an alternative to traditional Ingress.",
+        "why": "If you're running multi-model inference on AKS and managing canary deployments or traffic splitting, Gateway API is now the supported path forward; it decouples routing policy from implementation."
+      },
+      {
+        "title": "Prepared Image Specification for AKS speeds node startup",
+        "url": "https://azure.microsoft.com/updates?id=567949",
+        "tag": "preview",
+        "summary": "Public preview of Prepared Image Specification reduces AKS node initialization time by pre-baking container images and initialization tasks, critical for large-scale GPU, AI, and Windows workloads that normally suffer long startup delays.",
+        "why": "For GPU-heavy model serving (especially with frequent scaling), node startup time is a hidden cost driver; this can cut your scaling latency significantly and improve serving SLA adherence during traffic spikes."
+      }
+    ],
+    "also": [
+      {
+        "title": "Resource placement in Azure Kubernetes Fleet Manager is GA",
+        "url": "https://azure.microsoft.com/updates?id=567931",
+        "summary": "Enables declarative placement of Kubernetes resources across multiple clusters in Fleet Manager, reducing manual effort to maintain consistency across a distributed inference topology."
+      },
+      {
+        "title": "Maximum allowed failures for Fleet Manager update runs in preview",
+        "url": "https://azure.microsoft.com/updates?id=567939",
+        "summary": "Introduces tolerance policy for cluster update failures so a single cluster fault no longer halts fleet-wide rollouts; useful for rolling model updates across many regions without cascading blocks."
+      },
+      {
+        "title": "NAT64 on StandardV2 NAT Gateway now GA",
+        "url": "https://azure.microsoft.com/updates?id=568409",
+        "summary": "IPv6 workloads can now translate outbound traffic to IPv4-only internet destinations via NAT64; needed for modernizing legacy backend connectivity in containerized AI services."
+      },
+      {
+        "title": "Commit Search comes to Azure DevOps",
+        "url": "https://devblogs.microsoft.com/devops/find-any-commit-in-seconds-commit-search-comes-to-azure-devops/",
+        "summary": "Natural language search over commit history is now available in Azure DevOps, making it easier to locate specific code changes and refactors across large repositories."
+      }
+    ]
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Model Context Protocol 1.0: major update with metadata and security",
+        "url": "https://siliconangle.com/2026/07/28/biggest-ever-mcp-update-brings-metadata-cybersecurity-enhancements/",
+        "tag": "release",
+        "summary": "The Model Context Protocol, an open-source standard for agent-to-tool communication, has released its biggest update since launch (November 2024) with metadata support and security enhancements.",
+        "why": "If you're building agentic workflows or integrating with Claude/other MCP-aware models, 1.0 is the signal that the protocol is stabilizing; this is when to standardize your agent plumbing around it rather than rolling custom orchestration."
+      },
+      {
+        "title": "Scientific computing in the age of agentic AI",
+        "url": "https://openai.com/index/scientific-computing-agentic-ai",
+        "tag": "news",
+        "summary": "OpenAI's field report documents how scientists use AI coding agents to modernize scientific computing, accelerating development in genomics and other domains.",
+        "why": "Evidence of real adoption: if your org runs compute-heavy research or parameter sweeps, agents are already showing ROI in similar domains; this is a use case to evaluate for your own codebase modernization."
+      },
+      {
+        "title": "Google's data: workers aren't automating themselves away despite AI hype",
+        "url": "https://arstechnica.com/ai/2026/07/despite-ai-hype-googles-data-shows-workers-arent-automating-themselves-away/",
+        "tag": "performance",
+        "summary": "Analysis of 15 million real AI interactions at Google shows most tasks at most jobs remain unaffected by AI automation, contradicting widespread displacement narratives.",
+        "why": "Useful grounding: if you're forecasting headcount impact or organizational friction from AI services you're deploying, expect most roles and workflows to persist; automation is narrower and slower than hype suggests."
+      },
+      {
+        "title": "AI infrastructure costs spiral: Google raises capex forecast to $205B",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/972119/ai-stock-fall-google-capex",
+        "tag": "news",
+        "summary": "Google raised its full-year capex guidance by $15B (to $205B maximum) driven by AI infrastructure buildout; investors reacted negatively as the cost of frontier AI development becomes undeniably expensive.",
+        "why": "Cost pressures on hyperscalers eventually push down to your bill: expect Azure and cloud vendors to face similar margin pressure, which may accelerate reserved capacity discounts or change pricing models in your favor over time."
+      },
+      {
+        "title": "Perplexity Personal Computer expands to Windows",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/971750/perplexity-personal-computer-windows-ai-agents",
+        "tag": "news",
+        "summary": "Perplexity's agentic desktop automation tool, launched for macOS in April, now runs on Windows; operates as a general-purpose digital worker accessing local files and apps.",
+        "why": "Window into the emerging category of locally-run desktop agents; if you're evaluating where agent orchestration lives (cloud vs. edge), this shows consumer expectation shifting toward local-first execution for privacy and latency."
+      }
+    ],
+    "also": [
+      {
+        "title": "Anthropic and Nvidia oppose blanket bans on open-weight models",
+        "url": "https://siliconangle.com/2026/07/28/anthropic-nvidia-come-blanket-bans-open-weight-ai-models/",
+        "summary": "Both companies urge US regulators to regulate specific risks and misuse rather than broadly prohibiting open-weight model releases, as regulation intensifies."
+      },
+      {
+        "title": "Cyera acquires Oasis Security for ~$1B to secure AI agents",
+        "url": "https://techcrunch.com/2026/07/28/cyera-agrees-to-acquire-oasis-security-for-1b-to-safeguard-proliferating-ai-agents/",
+        "summary": "Data security firm Cyera acquires nonhuman identity management startup to address the growing security surface of autonomous agents and API keys."
+      },
+      {
+        "title": "OpenAI 0-day in JFrog Artifactory took 10 days to patch",
+        "url": "https://arstechnica.com/security/2026/07/jfrog-tries-to-spin-openai-0-day-exploit-of-its-app-into-a-success-story/",
+        "summary": "A critical vulnerability in JFrog Artifactory was exploited by OpenAI models before a patch was released; reveals supply-chain risk in AI-driven package management."
+      },
+      {
+        "title": "AI leaders and lab employees call for slower automated AI development",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/972161/ai-leaders-us-government-openai-anthropic-google-meta",
+        "summary": "1,134 signatories from OpenAI, Anthropic, Google, Meta, and others publish a statement asking the US government to slow automated AI model development or accelerate global governance."
+      },
+      {
+        "title": "Hugging Face hosting models used for nonconsensual deepfakes",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/971723/hugging-face-nudify-deepfake-undress-women-children",
+        "summary": "AI Forensics report finds 7 of 9 top image editing models on Hugging Face readily create nonconsensual deepfakes; platform taking minimal preventive action."
+      },
+      {
+        "title": "Fish Audio raises $52M seed; 8M users, $21M ARR with voice models",
+        "url": "https://techcrunch.com/2026/07/28/fish-audio-raises-50m-seed-to-build-ai-voice-models-for-creators-and-enterprises/",
+        "summary": "Voice synthesis startup reaches significant scale and revenue (open-source and hosted), signaling market maturity for synthetic speech in production."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Ilter: self-hosted AI gateway with MCP, budget, PII, routing, fallback",
+        "url": "https://github.com/ilter-ai/ilter",
+        "tag": "new",
+        "summary": "New open-source AI gateway offering model context protocol support, per-token budget controls, PII handling, intelligent routing, and fallback logic; early-stage but addresses common multi-model orchestration needs.",
+        "why": "If you're building a cost-controlled or multi-tenant agent layer that routes between Azure OpenAI, third-party models, and open-weight instances, this is a weekend-to-sprint integration to evaluate; saves you building budget and fallback logic yourself."
+      },
+      {
+        "title": "Diagrid Catalyst 2.0: agent recovery and resumption",
+        "url": "https://thenewstack.io/diagrid-catalyst-agent-recovery/",
+        "tag": "release",
+        "summary": "Diagrid's workflow orchestration platform now supports resuming failed or interrupted agents, addressing a common production problem where agents halt mid-execution.",
+        "why": "For long-running AI agent deployments (data processing, compliance workflows), resumption on failure is critical to reliability; this moves agents from demo-quality to SLA-eligible."
+      },
+      {
+        "title": "Grafana Assistant expands to 30+ data sources",
+        "url": "https://www.infoq.com/news/2026/07/grafana-assistant-data-source/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "release",
+        "summary": "Grafana's AI-powered observability assistant can now query and correlate data across 30+ data sources via natural language; enables non-expert users to conduct cross-system diagnostics.",
+        "why": "If you're monitoring distributed AI services (model serving, inference endpoints, vector stores), this expands what on-call engineers can diagnose without writing PromQL or SQL; reduces MTTR for multi-layer incidents."
+      }
+    ],
+    "also": [
+      {
+        "title": "GitHub disrupts supply chain attacks on npm and GitHub Actions",
+        "url": "https://github.blog/security/supply-chain-security/disrupting-supply-chain-attacks-on-npm-and-github-actions/",
+        "summary": "GitHub ships updates to npm and Actions to limit supply-chain attack surface; relevant if your AI deployment CI/CD depends on package registries or reusable workflows."
+      },
+      {
+        "title": "Mate Security Series A: context-first AI for security operations",
+        "url": "https://thenewstack.io/mate-security-context-graph/",
+        "summary": "Security startup lands $35M to build context-aware AI copilot for SOCs, challenging the assumption that bolting AI onto existing tools solves security automation."
+      },
+      {
+        "title": "Tines launches 3B: AI-driven workflow automation after 8 years of no-code",
+        "url": "https://thenewstack.io/tines-ai-workflow-governance/",
+        "summary": "Automation platform moves beyond traditional no-code paradigm to AI-first workflow orchestration with governance; signals maturation of the category."
+      }
+    ]
+  }
+}

@@ -8,7 +8,7 @@ new models actually perform) and **AI infrastructure tooling** (n8n, Kong,
 LiteLLM, vLLM and friends).
 
 Runs free on GitHub Actions. The only cost is one LLM call per day — about
-**$5–7 a year** with the default model.
+**$1–2 a year** with the default model.
 
 ## How it works
 
@@ -145,9 +145,9 @@ else uses the `GITHUB_TOKEN` that Actions provides automatically.
 It takes about a minute. Click into the run to watch. A healthy log looks like:
 
 ```
-Using model: anthropic/claude-haiku-4.5
+Using model: openai/gpt-5.6-luna
 Collected 15 AI items, 28 Azure items, and 27 tooling items
-LLM call: model=anthropic/claude-haiku-4.5 in=8200 out=1200 tokens
+LLM call: model=openai/gpt-5.6-luna in=8200 out=1200 tokens
 Saved digests/2026-07-25.json
 Built site/ with 1 edition(s)
 Site will publish at https://<you>.github.io/<your-repo>/
@@ -184,11 +184,15 @@ prints a plain-language explanation rather than a stack trace.
 
 ## Choosing the model
 
-Default is `anthropic/claude-haiku-4.5`, measured at **$4.70/yr on a typical day
-and $6.65/yr if every digest is completely full** — inside a €7 budget, though
-not by much once OpenRouter's top-up fee is added. To change it, set a repo
-**variable** named `MODEL` (Settings → Secrets and variables → Actions →
-*Variables* tab), or edit `DEFAULT_MODEL` at the top of `main.py`. The variable
+Default is `openai/gpt-5.6-luna`, measured at **~$1.10/yr on a typical day
+and ~$1.55/yr if every digest is completely full** — well inside the €7 budget,
+even after OpenRouter's top-up fee. It replaced Claude Haiku 4.5 as the default
+in August 2026: OpenAI cut Luna's price ~80% (to $0.20/$1.20 per million input
+/ output tokens, and OpenRouter is currently running a further promotional
+discount on top of that), and on Artificial Analysis's Intelligence Index it
+scores higher than Haiku 4.5 while also being faster and cheaper. To change the
+model, set a repo **variable** named `MODEL` (Settings → Secrets and variables →
+Actions → *Variables* tab), or edit `MODEL` in `configuration.py`. The variable
 wins.
 
 **Why not spend the whole budget?** This job is curation and short editorial
@@ -203,8 +207,9 @@ priced from OpenRouter's live model list:
 
 | Slug | $/year | |
 |---|---|---|
-| `anthropic/claude-haiku-4.5` | **4.70 – 6.65** | the default — strong instruction adherence, good editorial prose, reliable JSON |
-| `openai/gpt-5.4-mini` | 4.00 – 5.73 | equally defensible, different vendor |
+| `openai/gpt-5.6-luna` | **1.10 – 1.55** | the default — cheaper and higher-scoring than Haiku 4.5, native OpenAI JSON mode, 1M context |
+| `anthropic/claude-haiku-4.5` | 4.70 – 6.65 | previous default — still strong instruction adherence and prose, first-party uptime |
+| `openai/gpt-5.4-mini` | 4.00 – 5.73 | equally defensible, same vendor as the new default |
 | `google/gemini-3-flash-preview` | 2.70 – 3.82 | cheapest of the genuinely good tier |
 | `google/gemini-3.6-flash` | ~8.50 | newest Gemini Flash — now over a €7 budget |
 | `openai/gpt-5` | ~11.50 | frontier pricing for a summarisation task |
@@ -213,7 +218,7 @@ The range is typical day to completely-full digest. Earlier versions of this
 table were based on a smaller output estimate; the "also noted" summaries
 roughly doubled output tokens, which is where the increase comes from.
 
-Use OpenRouter's exact slug including punctuation — `anthropic/claude-haiku-4.5`
+Use OpenRouter's exact slug including punctuation — `openai/gpt-5.6-luna`
 is a **dot**, not a dash. Check [openrouter.ai/models](https://openrouter.ai/models);
 a wrong slug returns a 404 and the run says so.
 
@@ -324,26 +329,29 @@ The run explains itself rather than dumping a traceback:
 
 ## Cost
 
-**Roughly $5–7 a year, all in.** That is the LLM; everything else is free.
+**Roughly $1–2 a year, all in.** That is the LLM; everything else is free.
 
 | | Cost |
 |---|---|
 | GitHub Actions | **Free.** Unlimited minutes on public repos. (A private repo draws on 2,000 free Linux minutes/month; this app uses ~60.) |
 | GitHub Pages | **Free** — on a **public** repo. Private repos need GitHub Pro, ~$48/year. |
 | News sources | **Free.** Plain RSS, no keys, no quotas. |
-| LLM | **~$5–7/year.** One call per day. |
+| LLM | **~$1–2/year.** One call per day. |
 
 **Measured** token usage per run: ~4,800 input (2,200 of it the prompt, the rest
 candidates) and up to ~2,700 output for a completely full digest.
 
 | Model | Full digest every day | Typical day |
 |---|---|---|
-| `anthropic/claude-haiku-4.5` (default) | $6.65/yr | ~$4.70/yr |
+| `openai/gpt-5.6-luna` (default) | $1.55/yr | ~$1.10/yr |
+| `anthropic/claude-haiku-4.5` | $6.65/yr | ~$4.70/yr |
 | `openai/gpt-5.4-mini` | $5.73/yr | ~$4.00/yr |
 | `google/gemini-3-flash-preview` | $3.82/yr | ~$2.70/yr |
 
-Add ~5.5% for OpenRouter's credit top-up fee, so the default lands near **$7/yr
-worst case**. Output is capped at 4,000 tokens, which bounds it.
+Add ~5.5% for OpenRouter's credit top-up fee, so the default lands near **$1.65/yr
+worst case**. Output is capped at 4,000 tokens, which bounds it. (Luna's
+`$1.55` uses OpenAI's standard post-discount rate, $0.20/$1.20 per million
+input/output tokens; OpenRouter's current promotional rate is lower still.)
 
 These are estimates from character counts (~4 chars/token); check the real
 figure at [openrouter.ai/activity](https://openrouter.ai/activity) after a week
@@ -351,18 +359,47 @@ and switch model if it matters. A €5–10 top-up covers a year comfortably.
 
 ## Customizing
 
-- **Feeds**: edit `AI_FEEDS` / `AZURE_FEEDS` / `TOOLING_FEEDS` at the top of
-  `main.py`. Any GitHub project exposes a release feed at
-  `https://github.com/<owner>/<repo>/releases.atom`. There is no keyword filter
-  any more — the LLM decides what is relevant, so adding a source is safe.
-- **Lookback windows**: `MAX_AGE_HOURS`, `AZURE_MAX_AGE_HOURS` and
-  `TOOLING_MAX_AGE_HOURS`, all **24h** by default to match the daily run. See
-  *Empty sections* below before widening — and if you set one past 7 days, raise
-  `DEDUP_EDITIONS` to match or old items will resurface.
-- **How many items per section**: the caps live in the `Length target:` block of
-  `SYSTEM_PROMPT`. "Also noted" is the cheap dial — one line each.
-- **What counts as interesting**: edit the reader profile in `SYSTEM_PROMPT` —
-  that drives selection, not any code-level filter.
-- **Look and feel**: `render.py`. The `CSS` constant holds every colour token,
-  with a light and a dark value for each. A full rebuild runs every day, so a
-  design change reflows every past edition too.
+**`configuration.py` holds what the digest is about** — the model, the sources,
+how long the archive is kept. Plain values, no code, so nothing there can break.
+
+| Want to change | Setting in `configuration.py` |
+|---|---|
+| The model | `MODEL` |
+| Which feeds are read | `AI_FEEDS`, `AZURE_FEEDS`, `TOOLING_FEEDS` |
+| How many editions are kept | `KEEP_DIGESTS` (14) |
+
+Everything else sits next to the code that uses it:
+
+| Want to change | Where |
+|---|---|
+| What counts as interesting / the reader profile | `SYSTEM_PROMPT` in `main.py` |
+| How many items per section | the `Length target:` block inside `SYSTEM_PROMPT` |
+| How far back each section looks | the **Tuning** block at the top of `main.py` — `MAX_AGE_HOURS`, `AZURE_MAX_AGE_HOURS`, `TOOLING_MAX_AGE_HOURS` |
+| How many candidates reach the model | same block — `MAX_CANDIDATES_PER_SECTION`, `NEWS_MAX_ITEMS_PER_FEED`, `TOOLING_MAX_ITEMS_PER_FEED` |
+| How far back de-duplication reaches | same block — `DEDUP_EDITIONS` (7) |
+| The site name, section names, tag labels | top of `render.py` — `SITE_TITLE`, `SECTIONS`, `TAG_LABELS` |
+| Colours, fonts, layout | the `CSS` constant in `render.py` |
+
+Two things worth knowing:
+
+- **Adding a feed is safe.** There is no keyword filter — the LLM decides what
+  is relevant, so the worst case for a new source is that its items never get
+  picked. Any GitHub project exposes a release feed at
+  `https://github.com/<owner>/<repo>/releases.atom`.
+- **Widening a window past 7 days means raising `DEDUP_EDITIONS` to match**
+  (both are in `main.py`), or old items resurface. See *Empty sections* above
+  before widening.
+
+A full rebuild runs every day, so a design or prompt change reflows every past
+edition too — not just today's.
+
+## How long the archive is kept
+
+The newest **14** editions are kept; older ones are deleted from `digests/` and
+disappear from the archive page on the next run. Change `KEEP_DIGESTS` in
+`configuration.py` (or set a `KEEP_DIGESTS` repo variable), and set it to `0` to
+keep every edition forever.
+
+Keep it comfortably above `DEDUP_EDITIONS` (7, in `main.py`). De-duplication
+reads the stored editions, so an edition that has been deleted can no longer
+stop a story being reported a second time.
