@@ -1,0 +1,48 @@
+{
+  "tldr": [
+    "OpenAI says its internal Astra model produced machine-checkable results for 10 long-open mathematics and theoretical-computer-science problems, a notable capability signal even though the model is not yet described as generally available.",
+    "CrowdStrike reports that attackers are increasingly targeting AI systems directly, making AI-service isolation, monitoring and rapid patching part of the infrastructure threat model.",
+    "Embabel has reached 1.0 with a typed Java/Kotlin agent framework that combines model-based planning with explicit state machines."
+  ],
+  "azure": {
+    "top": [],
+    "also": []
+  },
+  "general": {
+    "top": [
+      {
+        "title": "OpenAI says Astra solved 10 long-open math problems",
+        "url": "https://siliconangle.com/2026/08/02/openais-astra-solves-10-long-open-math-problems-publishes-proofs/",
+        "tag": "model",
+        "summary": "OpenAI says an internal version of its forthcoming Astra model family produced new results for 10 mathematics and theoretical-computer-science problems that had been open for at least a decade. The company published a 249-page manuscript with machine-checkable proofs.",
+        "why": "Track this as a capability signal and wait for reproducible evaluations or an Azure release before changing model-hosting plans."
+      },
+      {
+        "title": "CrowdStrike reports attackers are targeting AI systems directly",
+        "url": "https://siliconangle.com/2026/08/03/crowdstrike-finds-ai-systems-direct-attack-exploit-windows-shrink/",
+        "tag": "security",
+        "summary": "CrowdStrike's 2026 Threat Hunting Report says AI systems have become direct targets for attackers and that exploit windows are shrinking. The report is based on a year of observations from its OverWatch team and analysts tracking more than 290 named adversaries.",
+        "why": "Include model endpoints, agent tools and supporting data in the same isolation, monitoring and rapid-patching plans as other production services."
+      }
+    ],
+    "also": [
+      {
+        "title": "Report claims Chinese firms distill U.S. frontier models for defense AI",
+        "url": "https://siliconangle.com/2026/08/02/report-claims-china-distilling-u-s-frontier-models-power-military-ai-applications/",
+        "summary": "A Reuters report, reviewed through more than 80 academic papers, claims Chinese AI firms are using outputs from OpenAI and Anthropic models to train systems intended for defense applications."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Embabel agent framework reaches 1.0 for Java and Kotlin",
+        "url": "https://www.infoq.com/news/2026/08/embabel-1/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "release",
+        "summary": "Embabel 1.0 provides a Java and Kotlin framework for defining agents as typed domain objects. Built on Spring AI, it supports multiple model providers and combines model-driven planning with predefined state machines for agent workflows.",
+        "why": "If your platform teams are Java-heavy, evaluate it as a more controlled alternative to ad hoc agent scripts, while checking its production maturity and operational ecosystem."
+      }
+    ],
+    "also": []
+  }
+}
