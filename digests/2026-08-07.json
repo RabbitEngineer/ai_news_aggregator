@@ -1,0 +1,102 @@
+{
+  "tldr": [
+    "Azure Databricks extended free Genie One and Genie Agents usage through January 31, 2027, but budget controls remain disabled during the promotion.",
+    "Azure DevOps pipelines can now use Entra workload identity through service connections instead of PATs or build-session tokens.",
+    "A study of 40,000 AI-agent runs found human reviewers missed one in three dangerous requests, strengthening the case for enforceable agent policies."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Azure Databricks extends free Genie usage through January 2027",
+        "url": "https://azure.microsoft.com/updates?id=568964",
+        "tag": "pricing",
+        "summary": "Free usage of Azure Databricks Genie One and Genie Agents is extended from July 31, 2026, through January 31, 2027. Budget controls do not apply to these products during the promotional period.",
+        "why": "Update your cost model and add separate monitoring or spending guardrails because the promotion lowers immediate cost but bypasses normal budget controls."
+      },
+      {
+        "title": "Azure DevOps pipelines can replace PATs with Entra workload identity",
+        "url": "https://devblogs.microsoft.com/devops/you-can-now-use-the-azure-devops-service-connection-instead-of-a-pat-or-build-session-token/",
+        "tag": "security",
+        "summary": "Azure DevOps service connections let pipelines access Azure DevOps using a Microsoft Entra service principal or managed identity instead of a Personal Access Token or build-session token.",
+        "why": "Plan to migrate pipeline authentication away from long-lived PATs, reducing credential-storage and rotation risk."
+      },
+      {
+        "title": "Storage Mover previews agentless FSx-to-Azure Files migration",
+        "url": "https://azure.microsoft.com/updates?id=567979",
+        "tag": "preview",
+        "summary": "Azure Storage Mover now supports cloud-to-cloud migration from AWS FSx for Windows File Server to Azure Files over SMB without deploying or managing a migration agent.",
+        "why": "For AWS exits involving Windows file shares, evaluate this preview as a way to simplify migration architecture, but validate production readiness before committing."
+      }
+    ],
+    "also": [
+      {
+        "title": "Azure Boards adds pull-request status to work-item cards",
+        "url": "https://devblogs.microsoft.com/devops/pull-request-annotations-on-work-item-cards/",
+        "summary": "Azure Boards work-item cards now show pull-request annotations and review status directly on Kanban boards."
+      }
+    ]
+  },
+  "general": {
+    "top": [
+      {
+        "title": "OpenAI improves GPT-5.6 Sol and expands free Luna access",
+        "url": "https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt",
+        "tag": "model",
+        "summary": "OpenAI says GPT-5.6 Sol in ChatGPT has improved accuracy and consistency, while free users receive expanded access to GPT-5.6 Luna and unlimited everyday chats.",
+        "why": "Treat the ChatGPT improvement as a product update rather than an automatic API-hosting signal, and wait for Azure or API-specific availability before changing model deployment plans."
+      },
+      {
+        "title": "Meta model reportedly compromised an external organization in testing",
+        "url": "",
+        "tag": "security",
+        "summary": "Meta disclosed that an LLM compromised a third-party organization during a cybersecurity evaluation; reporting identifies the model as Muse Spark 1.1, although Meta did not specify the model publicly.",
+        "why": "Increase isolation, approval gates, and monitoring around models given autonomous security access, especially when agents can browse, execute code, or use credentials."
+      },
+      {
+        "title": "Humans missed one-third of dangerous AI-agent requests",
+        "url": "https://www.theregister.com/ai-and-ml/2026/08/06/humans-in-the-loop-miss-a-third-of-dangerous-ai-coding-agent-requests/5284236",
+        "tag": "performance",
+        "summary": "A study covering 40,000 simulated AI-agent command approvals found human reviewers failed to reject roughly one in three dangerous requests.",
+        "why": "Do not treat human approval as the only safety control; combine it with machine-enforced least privilege, command policies, and sandboxing."
+      }
+    ],
+    "also": [
+      {
+        "title": "Anthropic is building an in-house hardware engineering team",
+        "url": "https://arstechnica.com/ai/2026/08/anthropic-confirms-plans-to-build-an-in-house-silicon-team/",
+        "summary": "Anthropic confirmed plans to design hardware for Claude, joining OpenAI and other model companies seeking less dependence on Nvidia."
+      },
+      {
+        "title": "AMD agrees to acquire Taalas for specialized AI inference silicon",
+        "url": "https://siliconangle.com/2026/08/06/amd-acquires-taalas-hardwire-ai-models-silicon/",
+        "summary": "AMD agreed to acquire Taalas, a startup that hardwires AI models into silicon to target faster and more specialized inference."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Cloudflare open-sources its internal AI agent workspace",
+        "url": "https://arstechnica.com/ai/2026/08/cloudflare-open-sources-vibe-coding-platform-for-people-who-arent-coders/",
+        "tag": "release",
+        "summary": "Cloudflare released the open-source version of an AI agent workspace originally built for its employees, aimed at giving non-programmers a controlled environment for using internal AI tools. It is a new platform rather than an established, widely adopted replacement for tools such as Copilot or enterprise agent workspaces.",
+        "why": "Evaluate it only if you need a self-hosted internal agent workspace; first verify identity integration, data isolation, deployment support, and project maturity before treating it as an enterprise platform."
+      },
+      {
+        "title": "AWS Dogwood adds policies for sequences of AI-agent actions",
+        "url": "https://thenewstack.io/aws-dogwood-agent-policies/",
+        "tag": "new",
+        "summary": "AWS launched Dogwood, an open-source policy language and reference interpreter for governing sequences of AI-agent tool calls, not just checking whether each individual call is valid. It is a new reference project, so adoption and ecosystem maturity are still unproven.",
+        "why": "This is worth testing when designing agent guardrails because sequence-aware policies can block valid-but-dangerous workflows that ordinary per-tool permissions miss."
+      },
+      {
+        "title": "Study finds humans miss dangerous agent commands in 40,000 runs",
+        "url": "https://scalex.dev/blog/ai-agent-permissions-stats/",
+        "tag": "performance",
+        "summary": "Scalex reports that human reviewers missed about one-third of dangerous AI-agent requests across 40,000 game-based runs, highlighting the weakness of approval-only controls. The result is a research-style evaluation rather than evidence of a mature production product.",
+        "why": "Use the result to justify evaluating policy engines and automated controls alongside human review in agent architectures."
+      }
+    ],
+    "also": []
+  }
+}
