@@ -1,0 +1,94 @@
+{
+  "tldr": [
+    "OpenAI has slowed work on its unreleased Astra model after testing found it could independently identify and conduct attacks against well-protected systems.",
+    "Azure App Service now has guidance for durable Model Context Protocol tasks, while ExpressRoute's resiliency guard enters public preview for single- and multi-homed gateway designs.",
+    "Azure API Management's preview AI Gateway tier puts models, MCP servers and tools behind one governed endpoint, potentially simplifying multi-provider AI routing."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Run durable, long-lived MCP tasks on Azure App Service",
+        "url": "https://techcommunity.microsoft.com/t5/apps-on-azure-blog/build-durable-long-running-mcp-tasks-on-azure-app-service/ba-p/4545170",
+        "tag": "new",
+        "summary": "Microsoft's guidance applies the Model Context Protocol Tasks extension to operations that can run for minutes or hours, such as compliance scans, deployments awaiting approval and batch imports, rather than holding an HTTP request open.",
+        "why": "For long-running agent tools, redesign around durable task state and polling or callbacks instead of relying on a fragile App Service HTTP connection."
+      },
+      {
+        "title": "ExpressRoute resiliency guard enters public preview",
+        "url": "https://azure.microsoft.com/updates?id=568666",
+        "tag": "preview",
+        "summary": "A new ExpressRoute virtual network gateway resiliency model lets you declare whether the gateway is intended for a single-homed or multi-homed configuration, helping align the deployment with its availability design.",
+        "why": "If you operate ExpressRoute, test this in a non-production environment and verify that the declared topology matches your redundancy and failover plan."
+      }
+    ],
+    "also": [
+      {
+        "title": "Azure guidance presents a governance pattern for autonomous SRE agents",
+        "url": "https://techcommunity.microsoft.com/t5/apps-on-azure-blog/zero-ops-agents-operate-humans-govern/ba-p/4545151",
+        "summary": "An Apps on Azure community guide describes how Azure SRE Agent patterns can let agents operate services while humans retain approval, policy and governance controls."
+      }
+    ]
+  },
+  "general": {
+    "top": [
+      {
+        "title": "OpenAI slows Astra work after critical cyber-capability tests",
+        "url": "https://openai.com/index/responding-next-frontier-critical-cyber-capabilities",
+        "tag": "model",
+        "summary": "OpenAI published preliminary cybersecurity evaluations for its unreleased Astra model and said it is reducing related activity after the model reached its defined critical cybersecurity threshold: it could independently identify and carry out attacks against traditionally well-protected real-world systems.",
+        "why": "Treat frontier-model cyber capability as a deployment-gate issue: require stronger sandboxing, tool permissions and abuse monitoring before allowing comparable models to access production systems."
+      },
+      {
+        "title": "SK hynix approves more than $38 billion for two memory fabs",
+        "url": "https://siliconangle.com/2026/08/07/sk-hynix-approves-38b-investment-two-new-memory-fabs/",
+        "tag": "news",
+        "summary": "SK hynix approved a 54 trillion won, approximately $38.3 billion, investment in two new memory fabrication plants as part of a broader $430 billion capacity-expansion plan.",
+        "why": "This is a long-term signal for AI infrastructure capacity, but it does not remove near-term HBM constraints; keep memory availability and pricing risk in GPU expansion plans."
+      }
+    ],
+    "also": [
+      {
+        "title": "ByteDance is reportedly training a 10-trillion-parameter model",
+        "url": "https://arstechnica.com/ai/2026/08/bytedance-trains-massive-ai-model-in-bid-to-rival-anthropic/",
+        "summary": "ByteDance is reportedly training a model with 10 trillion parameters in an effort to compete with Anthropic, though the report provides no release timeline or deployment details."
+      },
+      {
+        "title": "Post-quantum deadlines make crypto-agility an infrastructure priority",
+        "url": "https://siliconangle.com/2026/08/07/post-quantum-security-demands-crypto-agility-now-blackhat/",
+        "summary": "The report argues that harvest-now-decrypt-later attacks make inventorying cryptography and preparing systems to change algorithms before quantum threats mature an active enterprise requirement."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Azure API Management previews a dedicated AI Gateway tier",
+        "url": "https://www.infoq.com/news/2026/08/azure-apim-ai-gateway-tier/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "preview",
+        "summary": "Azure API Management's new preview AI Gateway tier organizes governance around models, MCP servers and tools, and can front Foundry, Bedrock, Vertex AI and OpenAI through one endpoint with policy cards instead of traditional XML policies.",
+        "why": "Evaluate it as a possible central control point for multi-provider model and tool traffic, but clarify where policy enforcement ends before replacing provider-specific controls."
+      },
+      {
+        "title": "Cloudflare launches an open-source computer runtime for agents",
+        "url": "https://www.infoq.com/news/2026/08/cloudflare-computer-agents/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "new",
+        "summary": "Cloudflare Computer provides persistent, stateful, computer-like environments for AI agents using Cloudflare's isolates rather than ephemeral containers; Cloudflare positions it as a cheaper and faster runtime for browser and desktop-style tasks.",
+        "why": "It is an early company launch rather than proven infrastructure, but it is worth a small evaluation when agents need durable browser state without provisioning full virtual machines."
+      },
+      {
+        "title": "Instacart uses Blueberry to assist on-call incident investigations",
+        "url": "https://www.infoq.com/news/2026/08/instacart-blueberry-sre-ai/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "news",
+        "summary": "Instacart's Blueberry combines AI agents, operational data, incident history and MCP integrations to generate grounded root-cause hypotheses in Slack, using parallel subagents while keeping engineers in control.",
+        "why": "Use this as an architecture pattern for SRE automation: connect agents to historical evidence and operational tools, but keep diagnosis and remediation approval separate."
+      }
+    ],
+    "also": [
+      {
+        "title": "An npm supply-chain attack affected more than 400 packages",
+        "url": "https://thenewstack.io/npm-supply-chain-worm-attack/",
+        "summary": "Researchers disclosed an npm worm campaign affecting over 400 packages, using provenance attestations as camouflage while distributing malicious code."
+      }
+    ]
+  }
+}
