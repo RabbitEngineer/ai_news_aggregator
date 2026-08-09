@@ -1,0 +1,56 @@
+{
+  "tldr": [
+    "Amazon’s planned Texas AI data center may rely on a gas plant with exceptionally high emissions, making power sourcing and regional sustainability constraints part of the hosting decision.",
+    "DeepMind’s open-source WeatherNext model reportedly gives forecasters an extra day of hurricane warning using lower-resolution input data.",
+    "OpenAI, AWS, Cursor, GitHub and Microsoft are backing Agent Plugins 1.0.0, a potentially useful portability standard for agent components."
+  ],
+  "azure": {
+    "top": [],
+    "also": []
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Amazon’s Texas data center may rely on a huge polluting power plant",
+        "url": "https://techcrunch.com/2026/08/08/planned-amazon-data-center-could-become-the-biggest-climate-polluter-in-the-u-s/",
+        "tag": "news",
+        "summary": "Amazon is investing in an on-site gas-burning power plant for a planned West Texas data center that could reportedly become one of the largest single sources of greenhouse-gas emissions in the United States.",
+        "why": "Include power availability, emissions reporting and sustainability constraints in data-center location and capacity decisions rather than treating electricity as an invisible dependency."
+      },
+      {
+        "title": "DeepMind’s open WeatherNext model gives hurricane forecasts an extra day",
+        "url": "https://arstechnica.com/science/2026/08/deepminds-hurricane-model-bought-forecasters-an-extra-day/",
+        "tag": "performance",
+        "summary": "DeepMind’s open-source WeatherNext model reportedly produced accurate hurricane predictions from lower-resolution weather data and gave forecasters an additional day of warning.",
+        "why": "This is a practical example of a model improving outcomes while reducing input-data requirements, worth evaluating for forecasting workloads where bandwidth and data-pipeline cost matter."
+      },
+      {
+        "title": "OpenAI acquires presentation startup NextSlide",
+        "url": "https://techcrunch.com/2026/08/08/openai-acquires-presentation-startup-nextslide/",
+        "tag": "news",
+        "summary": "OpenAI acquired presentation startup NextSlide, whose team members are now working on ChatGPT.",
+        "why": "Expect more presentation-generation capability to arrive inside ChatGPT, but treat this as a product-roadmap signal rather than an immediate change to Azure model availability."
+      }
+    ],
+    "also": []
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "OpenAI, AWS and Microsoft back Agent Plugins 1.0.0",
+        "url": "https://thenewstack.io/agent-plugins-open-standard/",
+        "tag": "release",
+        "summary": "OpenAI, AWS, Cursor, GitHub and Microsoft have backed Agent Plugins 1.0.0, a portable package format for reusable components that extend AI agents.",
+        "why": "Track the standard before building a large proprietary skills ecosystem: broad adoption could reduce integration lock-in, while the early standard still needs security and lifecycle governance."
+      },
+      {
+        "title": "Cloudflare Precursor continuously detects bots and AI agents",
+        "url": "https://www.infoq.com/news/2026/08/cloudflare-precursor-detection/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "new",
+        "summary": "Cloudflare introduced Precursor, a client-side behavioral analysis engine that continuously examines interactions such as mouse movement and keyboard timing to detect sophisticated bots and AI agents without relying only on CAPTCHAs.",
+        "why": "Add behavioral bot detection to the evaluation list for public AI endpoints, but validate its false-positive rate and privacy implications before making it part of the edge security design."
+      }
+    ],
+    "also": []
+  }
+}
