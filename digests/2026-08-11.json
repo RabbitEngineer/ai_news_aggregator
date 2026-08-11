@@ -1,0 +1,74 @@
+{
+  "tldr": [
+    "Azure Fabric Item Recovery becomes opt-out on August 23, with a default three-day recovery window, so check tenant settings before the change.",
+    "OpenAI has released GPT-5.6-Cyber for authorised vulnerability research through its restricted Daybreak programme, adding a specialised model to the security-tooling landscape.",
+    "Meta's 30B-parameter Muse Glimmer is an open-weight model aimed at local agentic workloads, but the available quantisations and single-GPU requirements are not specified here."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Fabric Item Recovery becomes default for unconfigured tenants",
+        "url": "https://azure.microsoft.com/updates?id=569140",
+        "tag": "new",
+        "summary": "Starting August 23, 2026, Microsoft Fabric will enable Item Recovery for tenants that have not explicitly configured it, using a three-day recovery window for supported item types.",
+        "why": "Review and explicitly set the tenant recovery policy before August 23 so the platform does not silently change your retention and recovery behaviour."
+      }
+    ],
+    "also": [
+      {
+        "title": "Azure portal adds simpler ZIP deployment for Linux App Service",
+        "url": "https://techcommunity.microsoft.com/t5/apps-on-azure-blog/a-simpler-way-to-deploy-zip-packages-to-azure-app-service-from/ba-p/4545430",
+        "summary": "Linux App Service users can now upload ZIP packages from Deployment Center, inspect contents, choose a server-side build, and track deployment stages in the Azure portal."
+      }
+    ]
+  },
+  "general": {
+    "top": [
+      {
+        "title": "OpenAI releases restricted GPT-5.6-Cyber for security research",
+        "url": "https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows",
+        "tag": "model",
+        "summary": "OpenAI says GPT-5.6-Cyber is a cybersecurity-specific model available through Daybreak Red for authorised vulnerability research, exploit validation, and security testing; approved Daybreak partners can also use the models to provide governed services.",
+        "why": "Treat this as a controlled security-model option rather than a general production model, and assess whether your vulnerability-testing workflows need the additional access controls and partner approval."
+      },
+      {
+        "title": "Meta releases 30B-parameter open-weight Muse Glimmer model",
+        "url": "https://siliconangle.com/2026/08/10/meta-releases-open-source-muse-glimmer-model-30b-parameters/",
+        "tag": "model",
+        "summary": "Meta released Muse Glimmer, a 30-billion-parameter open-weight language model intended to run on personal computers. The candidate information does not specify available quantisations or establish whether it fits on a single GPU, so those deployment details still need verification.",
+        "why": "Evaluate it only after confirming the model files, quantisations, memory requirement, and licence; the claimed local-computer target could make it useful for privacy-sensitive or development workloads if the hardware requirement is practical."
+      },
+      {
+        "title": "Nvidia lines up $500 billion for global AI infrastructure",
+        "url": "https://siliconangle.com/2026/08/10/nvidia-taps-wall-street-half-trillion-dollars-fuel-global-ai-infrastructure-buildout/",
+        "tag": "news",
+        "summary": "Nvidia announced funding partnerships with Apollo, BlackRock, Blackstone, Brookfield, Goldman Sachs, and KKR that could direct half a trillion dollars toward AI infrastructure buildout.",
+        "why": "Do not treat this as immediate Azure capacity, but factor continued accelerator, power, and data-centre demand into availability and infrastructure-cost assumptions."
+      }
+    ],
+    "also": [
+      {
+        "title": "OpenAI expands Daybreak access with Blue and Red tiers",
+        "url": "https://siliconangle.com/2026/08/10/openai-expands-daybreak-cybersecurity-research-program/",
+        "summary": "OpenAI added Daybreak Blue and Daybreak Red access tiers and plans stronger guardrails to restrict the programme to authorised cybersecurity users."
+      },
+      {
+        "title": "OpenAI introduces a $125-per-month premium SKU",
+        "url": "https://www.theregister.com/ai-and-ml/2026/08/10/hey-big-spender-openai-has-a-new-sku-just-for-you/5285727",
+        "summary": "The Register reports that OpenAI has introduced a new $125 monthly SKU, adding another premium pricing option alongside increasingly capable open-weight alternatives."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Cloudflare previews one-switch WebMCP for existing websites",
+        "url": "https://www.infoq.com/news/2026/08/cloudflare-webmcp/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "preview",
+        "summary": "Cloudflare's developer preview lets a site enable a WebMCP interface from the dashboard, allowing browser-based agents to use structured tools on an otherwise unmodified web page instead of scraping it.",
+        "why": "This is worth a small proof of concept for agent-facing web services, but keep it behind feature controls because the capability is still a preview and changes how agents interact with your public application."
+      }
+    ],
+    "also": []
+  }
+}
