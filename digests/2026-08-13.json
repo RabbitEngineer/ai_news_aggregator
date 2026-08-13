@@ -1,0 +1,118 @@
+{
+  "tldr": [
+    "Azure will retire Sentinel's containerized SAP data connector on September 14, 2026, so affected deployments need a migration plan before SAP log ingestion stops.",
+    "Azure Content Understanding now supports the GPT-5 series and agent workflows, expanding model choices for extracting grounded data from enterprise documents and media.",
+    "The MCP specification has moved to stateless operation, changing how gateways can route agent tool traffic and potentially simplifying scalable deployments."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Sentinel's containerized SAP connector retires September 14",
+        "url": "https://azure.microsoft.com/updates?id=568457",
+        "tag": "deprecation",
+        "summary": "Microsoft will retire the containerized data connector agent for the Microsoft Sentinel solution for SAP applications on September 14, 2026. After that date, the agent will be permanently disabled and will stop sending SAP logs to Sentinel.",
+        "why": "Inventory SAP Sentinel deployments and schedule migration to the supported connector before the fixed deadline, or accept a gap in security telemetry."
+      },
+      {
+        "title": "Azure Content Understanding adds GPT-5 and agent workflows",
+        "url": "https://devblogs.microsoft.com/foundry/azure-content-understanding-updates-august-2026/",
+        "tag": "model",
+        "summary": "Azure Content Understanding adds support for the GPT-5 model series, synchronous APIs, and agentic workflows for turning documents, forms, tables, images, audio, and video into structured data. The update also targets more grounded and confidence-aware extraction.",
+        "why": "Revisit document-processing architectures that rely on custom asynchronous pipelines, because model selection and synchronous processing can change both latency and operational complexity."
+      },
+      {
+        "title": "Azure Front Door previews mutual TLS for client authentication",
+        "url": "https://azure.microsoft.com/updates?id=569251",
+        "tag": "preview",
+        "summary": "Azure Front Door Standard and Premium now offer public preview of mutual TLS, allowing Front Door to authenticate clients with X.509 certificates before requests reach an application.",
+        "why": "Evaluate it for business-to-business APIs and sensitive workloads where certificate-based client identity at the edge could reduce custom authentication components."
+      }
+    ],
+    "also": [
+      {
+        "title": "Azure Front Door batch rule updates are generally available",
+        "url": "https://azure.microsoft.com/updates?id=569246",
+        "summary": "Front Door Standard and Premium can now add, update, delete, or reorder multiple rules as one coordinated rule-set operation."
+      },
+      {
+        "title": "App Service previews Markdown responses for AI agents",
+        "url": "https://azure.microsoft.com/updates?id=568979",
+        "summary": "App Service can automatically return an application's content as Markdown when requested, giving agents and other tools a cleaner input format."
+      }
+    ]
+  },
+  "general": {
+    "top": [
+      {
+        "title": "SpaceXAI releases Grok 4.6 with advanced reasoning",
+        "url": "https://siliconangle.com/2026/08/12/spacexai-releases-flagship-grok-4-6-model-advanced-reasoning-capabilities/",
+        "tag": "model",
+        "summary": "SpaceXAI has released Grok 4.6, its flagship model, and claims it outperforms Anthropic's Claude Fable 5 in some areas. The supplied report does not provide independent benchmark results or deployment details.",
+        "why": "Treat this as a model to benchmark rather than an immediate platform choice, and wait for access, region, latency, and independent evaluation data before changing a production model strategy."
+      },
+      {
+        "title": "JudgeGPT trial increased Pakistani case resolution by 6.3%",
+        "url": "https://spectrum.ieee.org/judgegpt-experiment",
+        "tag": "performance",
+        "summary": "A large-scale trial of an AI tool for Pakistani judges, combined with appropriate training, increased the number of cases resolved by 6.3% with no obvious decline in judgment quality. The experiment addresses a backlog of 2.26 million cases.",
+        "why": "Use this as evidence that workflow design and user training can matter as much as model quality when estimating the productivity gains and governance requirements of agent deployments."
+      },
+      {
+        "title": "Compromised AI package exposes credentials from 2,500 users",
+        "url": "https://arstechnica.com/security/2026/08/terabytes-of-credentials-leaked-in-massive-supply-chain-attack/",
+        "tag": "security",
+        "summary": "A compromised AI package scraped and exfiltrated terabytes of credentials from 2,500 users, demonstrating the security exposure created by untrusted packages in AI development environments.",
+        "why": "Tighten package provenance, secret handling, and runtime isolation in AI build and agent environments; a popular package is not a sufficient trust boundary."
+      }
+    ],
+    "also": [
+      {
+        "title": "Palo Alto will run OpenAI cyber models inside customer networks",
+        "url": "https://siliconangle.com/2026/08/12/palo-alto-networks-run-openai-cyber-models-inside-customer-networks/",
+        "summary": "Palo Alto Networks' Unit 42 is expanding its Frontier AI Exposure Analysis service to run OpenAI cyber models inside customer environments to identify attack paths likely to be used by AI-equipped intruders."
+      },
+      {
+        "title": "Twitch lets streamers opt out of Amazon AI training",
+        "url": "https://www.theverge.com/tech/979112/twitch-streamers-can-now-opt-out-from-training-amazons-ai",
+        "summary": "Twitch now lets users opt out of having streams, videos, clips, chats, images, and channel text used for future training of Amazon generative AI models."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "MCP 2026-07-28 specification removes session state",
+        "url": "https://www.infoq.com/news/2026/08/mcp-stateless-gateway/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "release",
+        "summary": "The latest MCP specification removes the initialization handshake and session header, while adding required method and tool-name headers so gateways can route agent traffic without parsing JSON bodies.",
+        "why": "Review MCP gateway and load-balancing designs: stateless routing should simplify horizontal scaling, but clients and servers need compatibility testing before adopting the new specification."
+      },
+      {
+        "title": "New leaderboard compares 69 AI agent memory systems",
+        "url": "https://agentmemoryleaderboard.ai/leaderboard/academic/textual",
+        "tag": "performance",
+        "summary": "The Agent Memory Leaderboard publishes initial text-memory results from 69 representative frameworks, with 136 teams registered; its commercial track currently lists MemoraX first at 58.02, followed by MemOS at 45.89.",
+        "why": "Use the benchmark to form a shortlist for agent-memory experiments, but validate its task design and run production-like tests because it is a new evaluation rather than adoption evidence."
+      },
+      {
+        "title": "CodeRabbit adds an agentic change-management control layer",
+        "url": "https://thenewstack.io/coderabbit-agentic-change-management-review/",
+        "tag": "new",
+        "summary": "CodeRabbit announced Agentic Change Management, a service intended to address the pull request as the remaining bottleneck in AI-assisted software delivery by adding a control layer around agent-generated changes.",
+        "why": "Assess whether your repository governance needs controls beyond AI code review, especially for defining approval gates and accountability for autonomous changes."
+      }
+    ],
+    "also": [
+      {
+        "title": "A2ACompress claims 36% fewer tokens for agent messages",
+        "url": "https://github.com/reh8n/a2acompress",
+        "summary": "The small open-source A2ACompress project proposes lossless compression for agent messages and claims a 36% token reduction after counting its own overhead."
+      },
+      {
+        "title": "Rye argues agent sandboxes need runtime visibility",
+        "url": "https://rye.ai/blog/ai-agent-sandboxes-ebpf-runtime-visibility/",
+        "summary": "Rye argues that sandboxing can stop agent escapes but still leaves operators unable to see what happened inside, proposing eBPF-based runtime visibility."
+      }
+    ]
+  }
+}
