@@ -1,0 +1,70 @@
+{
+  "tldr": [
+    "Azure Databricks Runtime 10.4 LTS reaches end of life on November 1, 2026, so affected workspaces need a runtime migration plan.",
+    "Z.ai’s open-weight GLM-5.3 claims major coding and cybersecurity gains, but its 753-billion-parameter base makes self-hosting a multi-GPU decision rather than a single-node deployment.",
+    "An early macOS tool aims to give desktop automation agents a more reliable Playwright-like control surface, though it is not yet mature or cross-platform."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Azure Databricks Runtime 10.4 LTS retires on November 1, 2026",
+        "url": "https://azure.microsoft.com/updates?id=569353",
+        "tag": "deprecation",
+        "summary": "Azure Databricks Runtime 10.4 LTS, already out of support since March 18, 2025, will be removed from availability on November 1, 2026.",
+        "why": "Inventory workspaces still using Runtime 10.4 LTS and schedule validation on a supported runtime before the removal deadline."
+      }
+    ],
+    "also": []
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Z.ai releases open-weight GLM-5.3 for coding and cybersecurity",
+        "url": "https://siliconangle.com/2026/08/14/z-ai-debuts-glm-5-3-long-horizon-coding-cybersecurity-upgrades/",
+        "tag": "model",
+        "summary": "Z.ai released GLM-5.3, an open-source model based on the GLM-5.2 mixture-of-experts architecture, whose stated configuration has 753 billion parameters; the company claims records on several benchmarks and improvements in long-horizon coding and cybersecurity. The candidate does not specify available quantisations, so single-GPU suitability cannot be established; the full-size model is plainly a multi-GPU deployment.",
+        "why": "Treat this as a potentially useful self-hosted coding model to benchmark, but do not plan capacity from the launch claims until quantised checkpoints, active-parameter details, licensing, and measured inference costs are available."
+      }
+    ],
+    "also": [
+      {
+        "title": "Anthropic reports a more capable unreleased model and new alignment risks",
+        "url": "",
+        "summary": "Anthropic’s latest alignment report describes an unreleased model more capable than Claude Mythos 5 and discusses newly identified risks associated with its capabilities."
+      },
+      {
+        "title": "OpenAI and Anthropic cut prices as Chinese rivals gain ground",
+        "url": "https://arstechnica.com/ai/2026/08/openai-and-anthropic-in-price-war-as-chinese-ai-rivals-gain-ground/",
+        "summary": "The report says OpenAI and Anthropic are releasing cheaper models in response to stronger competition from Chinese AI providers."
+      },
+      {
+        "title": "Apple reportedly develops a China-specific AI model with Alibaba",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/980160/apple-intelligence-china-custom-ai-model-alibaba",
+        "summary": "Apple reportedly trained a China-focused AI model with Alibaba, creating a region-specific alternative to its broader Apple Intelligence stack."
+      },
+      {
+        "title": "Google lets users hide visible watermarks on AI-generated media",
+        "url": "https://techcrunch.com/2026/08/14/google-will-now-allow-users-to-remove-visible-watermark-from-its-ai-generations/",
+        "summary": "Google added a setting to remove visible watermarks from Gemini and Flow images, video, and music while retaining invisible provenance markers."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Agent-desktop brings Playwright-style control to desktop apps",
+        "url": "https://github.com/lahfir/agent-desktop/tree/main",
+        "tag": "new",
+        "summary": "This early Show HN project provides a CLI for automating native and Chromium-based desktop applications through their accessibility trees, aiming to make computer-use agents more reliable than raw screen interaction. macOS is described as ready, while Windows and Linux support is still in development.",
+        "why": "Evaluate it only for macOS prototypes where desktop-app automation is a bottleneck; keep browser automation and production workflows on mature tools until the project proves cross-platform reliability and security."
+      }
+    ],
+    "also": [
+      {
+        "title": "HashAgent runs shareable AI agents locally through WebGPU",
+        "url": "https://hashagent.pages.dev/",
+        "summary": "HashAgent packages an AI agent as a URL that runs locally in the browser using WebGPU, offering a lightweight alternative to server-hosted agent demos."
+      }
+    ]
+  }
+}
