@@ -1,0 +1,42 @@
+{
+  "tldr": [
+    "Cloudflare's new agent tracing records model calls, tool runs and approvals, but truncated payloads and per-span billing from October 1 make observability design and cost testing necessary.",
+    "SpaceX has completed its acquisition of Cursor, an important sign that AI coding tools are becoming strategic assets beyond conventional software companies.",
+    "Anthropic has provided more detail on Claude's watermarking approach, relevant to provenance, compliance and the treatment of generated code."
+  ],
+  "azure": {
+    "top": [],
+    "also": []
+  },
+  "general": {
+    "top": [
+      {
+        "title": "SpaceX completes its acquisition of Cursor",
+        "url": "https://techcrunch.com/2026/08/15/spacex-officially-closes-its-cursor-acquisition/",
+        "tag": "news",
+        "summary": "AI coding startup Cursor is now officially part of SpaceX after the acquisition closed.",
+        "why": "Treat AI coding platforms as increasingly strategic infrastructure dependencies and monitor whether SpaceX integration changes Cursor's hosting, data-use or enterprise roadmap."
+      },
+      {
+        "title": "Anthropic explains how Claude's new watermarks will work",
+        "url": "https://techcrunch.com/2026/08/15/anthropic-shares-more-details-about-how-claudes-new-watermarks-will-work/",
+        "tag": "news",
+        "summary": "Anthropic has shared more details about Claude's watermarking, including how the markers may withstand editing and how the approach affects generated code.",
+        "why": "Revisit provenance and compliance requirements for Claude-generated content before assuming that edits or code transformations remove the ability to identify its origin."
+      }
+    ],
+    "also": []
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Cloudflare adds agent tracing with billable spans from October",
+        "url": "https://www.infoq.com/news/2026/08/cloudflare-agent-tracing/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "new",
+        "summary": "Cloudflare's agent tracing adds spans for agent invocations, model calls, tool runs and approvals, with turn-by-turn session replay; traces can be truncated, payload defaults vary by framework, and every span becomes a billable event on October 1, 2026.",
+        "why": "Instrument a representative workload and set payload and retention policies before adopting it, because incomplete traces can limit debugging while span volume will directly affect observability cost."
+      }
+    ],
+    "also": []
+  }
+}
