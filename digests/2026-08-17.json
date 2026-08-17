@@ -1,0 +1,55 @@
+{
+  "tldr": [
+    "Stripe is reportedly buying OpenRouter for more than $7 billion, potentially making model routing a core part of a major payments platform.",
+    "AWS open-sourced Dogwood, a policy language that can govern sequences of AI-agent tool calls rather than evaluating each call in isolation.",
+    "ChatGPT's new macOS Computer History feature records user activity for later AI reference, raising data-governance questions for managed deployments."
+  ],
+  "azure": {
+    "top": [],
+    "also": []
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Stripe reportedly buying AI model router OpenRouter for $7B+",
+        "url": "https://techcrunch.com/2026/08/16/stripe-will-reportedly-acquire-ai-gateway-startup-openrouter-for-7b/",
+        "tag": "news",
+        "summary": "Stripe will reportedly acquire OpenRouter for more than $7 billion. OpenRouter gives developers one API for accessing more than 400 models, allowing them to switch providers without changing their application integration.",
+        "why": "Treat model gateways as a potential strategic dependency: assess portability, routing controls, data handling, and whether a large-platform acquisition changes OpenRouter's pricing or neutrality."
+      },
+      {
+        "title": "ChatGPT's macOS app records clicks and keystrokes for AI memory",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/980742/chatgpts-computer-history-tracks-your-clicks-and-keystrokes",
+        "tag": "security",
+        "summary": "ChatGPT's new Computer History feature builds a timeline of activity on a Mac so ChatGPT and Codex can reference past work, suggest automations, and resume unfinished tasks. The activity can become training data.",
+        "why": "Add endpoint capture and retention to your AI data-governance review before allowing this kind of assistant on developer or administrator workstations."
+      }
+    ],
+    "also": [
+      {
+        "title": "AWS faces CPU capacity pressure as AI workloads expand",
+        "url": "https://spectrum.ieee.org/ai-cpu-comeback",
+        "summary": "IEEE Spectrum reports that AI-driven demand is creating CPU server-capacity wait times at AWS, reviving attention on CPU supply alongside GPUs and memory."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "AWS open-sources Dogwood for governing agent tool-call sequences",
+        "url": "https://www.infoq.com/news/2026/08/aws-dogwood-agent-policy/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "release",
+        "summary": "AWS has released Dogwood under Apache 2.0 as a Cedar extension with temporal conditions, so policies can consider an agent's previous tool calls, approvals, rate limits, and cumulative totals. It is supported in AgentCore Policy, but the reference interpreter is not yet production-ready.",
+        "why": "Evaluate sequence-aware policy for agents that can take multiple actions, but treat Dogwood as an early control-plane component rather than a production dependency until its interpreter matures."
+      },
+      {
+        "title": "DynamoDB adds native vector search without a separate vector database",
+        "url": "https://www.infoq.com/news/2026/08/aws-dynamodb-vector-search/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "new",
+        "summary": "DynamoDB now supports storing embeddings beside application data and running approximate-nearest-neighbor queries with filtered similarity search and configurable vector indexes.",
+        "why": "Revisit retrieval-architecture choices for AWS-hosted applications: keeping vectors with transactional data could remove a separate database, but benchmark scale, latency, and cost before consolidating."
+      }
+    ],
+    "also": []
+  }
+}
