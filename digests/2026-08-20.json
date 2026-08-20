@@ -1,0 +1,97 @@
+{
+  "tldr": [
+    "Azure's Markdown for Agents preview reportedly cuts web responses by 97% at the median, potentially reducing agent token costs and input noise.",
+    "OpenAI is reaffirming zero data retention for eligible API customers and previewing private safety processing, which matters for enterprise data-boundary decisions.",
+    "Azure's GA VM controls let you disable hyper-threading or constrain cores, creating new performance and software-licensing options for selected workloads."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Azure GA adds VM controls for hyper-threading and core counts",
+        "url": "https://techcommunity.microsoft.com/t5/azure-compute-blog/announcing-general-availability-of-disable-multithreading-and/ba-p/4547908",
+        "tag": "ga",
+        "summary": "Azure now generally supports disabling Simultaneous Multithreading/Hyper-Threading and configuring constrained core counts on supported VM sizes. The controls provide one thread per physical core and more control over the vCPU configuration.",
+        "why": "Re-run performance and licensing models for workloads where predictable physical-core exposure or per-core software licensing matters, but first verify support for the target VM sizes."
+      },
+      {
+        "title": "Azure App Service previews Markdown responses for AI agents",
+        "url": "https://techcommunity.microsoft.com/t5/apps-on-azure-blog/announcing-public-preview-markdown-for-agents-in-azure-app/ba-p/4537023",
+        "tag": "preview",
+        "summary": "Markdown for Agents removes browser-oriented scripts, styles, and markup before returning web content to an agent; Microsoft says a test across more than 637,000 pages produced responses that were 97% smaller at the median, with a median conversion time of two milliseconds.",
+        "why": "Consider it for web-grounded agents because smaller inputs can reduce token spend and context pressure, while validating that the conversion does not remove content your application needs."
+      },
+      {
+        "title": "Azure API Management expands its AI Gateway tier for agents",
+        "url": "https://techcommunity.microsoft.com/t5/apps-on-azure-blog/what-the-new-api-management-ai-gateway-tier-changes-for-app/ba-p/4543974",
+        "tag": "new",
+        "summary": "The new API Management AI Gateway tier is positioned as the data path for App Service-hosted agents, providing model access, token limits, semantic caching, token metrics, and an MCP traffic contract alongside Foundry's gateway control plane.",
+        "why": "Revisit whether model routing, token governance, caching, and MCP controls belong in a shared APIM gateway rather than being implemented separately in each agent."
+      },
+      {
+        "title": "Azure Site Recovery GA lets failovers reuse a prebuilt NIC",
+        "url": "https://azure.microsoft.com/updates?id=569515",
+        "tag": "ga",
+        "summary": "Azure-to-Azure Site Recovery now supports attaching an existing, pre-provisioned network interface in the target region during test failover and failover, preserving prepared networking configurations.",
+        "why": "Update disaster-recovery runbooks and infrastructure templates where stable private IP, NSG, or other NIC configuration is important during AI-service failover."
+      }
+    ],
+    "also": [
+      {
+        "title": "Azure Databricks Lakebase reaches GA in four more regions",
+        "url": "https://azure.microsoft.com/updates?id=569684",
+        "summary": "Lakebase is now generally available in North Central US, France Central, Germany West Central, and East Asia, adding regional deployment options."
+      }
+    ]
+  },
+  "general": {
+    "top": [
+      {
+        "title": "OpenAI reaffirms zero data retention for eligible API customers",
+        "url": "https://openai.com/index/offering-zero-data-retention-for-frontier-models",
+        "tag": "security",
+        "summary": "OpenAI reaffirmed Zero Data Retention for eligible API customers and previewed Private Safety Processing, intended to support advanced safety measures without exposing customer data for retention.",
+        "why": "Use the eligibility and processing details when deciding whether sensitive workloads can use frontier models, rather than assuming every API deployment receives the same privacy treatment."
+      },
+      {
+        "title": "AI inference costs increasingly depend on the whole data-center stack",
+        "url": "https://siliconangle.com/2026/08/19/ai-inference-infrastructure-requires-full-stack-coordination-supermicroopenstoragesummit/",
+        "tag": "performance",
+        "summary": "A report on production inference argues that GPU throughput is only one part of the system: storage latency, network bandwidth, data movement, and power increasingly determine token speed and cost, with different trade-offs for interactive and batch workloads.",
+        "why": "Benchmark complete serving architectures—including storage, networking, power, and queueing—instead of selecting GPUs from model throughput numbers alone."
+      },
+      {
+        "title": "Stripe agrees to acquire OpenRouter in a reported $7.5B deal",
+        "url": "https://siliconangle.com/2026/08/19/stripe-buys-ai-model-router-openrouter-in-reported-7-5b-deal/",
+        "tag": "news",
+        "summary": "Stripe said it agreed to acquire model-routing startup OpenRouter, while reported valuations of $7.5 billion or more remain unconfirmed and differ between reports.",
+        "why": "Treat the deal as a signal that model routing is becoming strategic infrastructure, and monitor ownership, pricing, and provider-neutrality risks before making OpenRouter a central dependency."
+      }
+    ],
+    "also": [
+      {
+        "title": "Marvell shares rise after disclosing a Google AI-chip design deal",
+        "url": "https://siliconangle.com/2026/08/19/marvell-shares-jump-9-8-on-google-chip-design-deal/",
+        "summary": "Marvell disclosed a Google AI-chip design contract and a warrant allowing Google to purchase about 59 million shares valued at $12.2 billion."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "DeepSeek open-sources a modular runtime for autonomous agents",
+        "url": "https://www.infoq.com/news/2026/08/deep-seek-harness/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "release",
+        "summary": "DeepSeek released developer-preview DeepSeek Harness (dsh), an open-source execution runtime with a micro-kernel architecture, pluggable functional modules, and append-only event logging. It is positioned as an alternative to more tightly coupled agent frameworks, but its plugin ecosystem and API maintenance are unproven.",
+        "why": "Evaluate it only in a controlled agent-infrastructure pilot if modular execution and auditability are priorities; the developer-preview status makes it unsuitable for a foundational production dependency today."
+      },
+      {
+        "title": "Codex agents can continue working while awaiting developer input",
+        "url": "https://thenewstack.io/codex-async-developer-messaging/",
+        "tag": "release",
+        "summary": "Codex now supports asynchronous progress when a long-running coding agent needs an answer, allowing it to continue other work instead of stopping completely while it waits for developer input.",
+        "why": "Reconsider agent job orchestration and approval boundaries because unattended progress requires stronger workspace isolation, checkpointing, and review controls."
+      }
+    ],
+    "also": []
+  }
+}
