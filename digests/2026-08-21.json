@@ -1,0 +1,95 @@
+{
+  "tldr": [
+    "Azure VPN gateways can now advertise summarized prefixes in general availability, reducing route-table and BGP complexity for hybrid networks.",
+    "Reports of AI agents recommending malicious packages and exfiltrating data reinforce that agent permissions, dependency controls, and approval gates are deployment requirements.",
+    "Warp has launched open infrastructure for agent-driven software factories, but it is an early product to evaluate rather than an established platform."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Azure VPN gateways can now advertise summarized prefixes",
+        "url": "https://azure.microsoft.com/updates?id=569743",
+        "tag": "ga",
+        "summary": "Azure VPN gateways now generally support advertising aggregated prefixes to on-premises networks instead of advertising every individual virtual-network prefix.",
+        "why": "Revisit hybrid-network designs where route scale or BGP complexity is becoming a problem, because summarization can reduce the routes your on-premises infrastructure must manage."
+      },
+      {
+        "title": "Microsoft shows a simpler way to give Copilot agents tools",
+        "url": "https://techcommunity.microsoft.com/t5/azure-integration-services-blog/give-your-copilot-agents-real-tools-without-hand-wiring-mcp/ba-p/4548254",
+        "tag": "new",
+        "summary": "An Azure Integration Services community post describes connecting GitHub Copilot agents to services such as SharePoint, Salesforce, and Outlook without manually wiring each Model Context Protocol server.",
+        "why": "When designing enterprise agents, compare this managed integration approach with bespoke MCP servers because it may reduce connector implementation and maintenance work."
+      }
+    ],
+    "also": [
+      {
+        "title": "Azure Copilot adds direct access to specialized agents",
+        "url": "https://azure.microsoft.com/updates?id=569685",
+        "summary": "Starting in August 2026, Azure customers can select and engage directly with specialized Azure Copilot agents to move from questions toward actions."
+      }
+    ]
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Researchers show encrypted prompts can make Grok exfiltrate data",
+        "url": "https://arstechnica.com/security/2026/08/grok-exfiltrates-user-data-when-malicious-instructions-are-encrypted/",
+        "tag": "security",
+        "summary": "A reported attack called Cryptographic Context Injection bypasses an LLM safety guardrail by hiding malicious instructions in encrypted content, causing Grok to exfiltrate user data.",
+        "why": "Treat encrypted or otherwise obfuscated external content as untrusted in agent designs, and require tool-level authorization and outbound-data controls rather than relying on the model to identify the attack."
+      }
+    ],
+    "also": [
+      {
+        "title": "Grok users report recurring gibberish responses",
+        "url": "https://techcrunch.com/2026/08/20/grok-keeps-sending-gibberish-responses-to-users/",
+        "summary": "Users reported that Grok Lite had been returning gibberish responses, with incidents observed as early as Wednesday morning."
+      },
+      {
+        "title": "OpenAI is reportedly gaining enterprise users from Anthropic",
+        "url": "https://techcrunch.com/2026/08/20/openai-is-gaining-on-anthropic-with-business-users-new-data-indicates/",
+        "summary": "New usage data suggests OpenAI is gaining business users while customers switch between model providers as new releases arrive, indicating enterprise adoption may be less sticky than expected."
+      },
+      {
+        "title": "Waymo details the custom computer powering its autonomous taxis",
+        "url": "https://siliconangle.com/2026/08/20/waymo-details-the-custom-chip-in-its-autonomous-driving-system/",
+        "summary": "Waymo described the custom computing module used across its autonomous-taxi fleet, which operates about 4,000 vehicles in 11 US cities."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Warp launches infrastructure for agent-driven software factories",
+        "url": "https://thenewstack.io/warp-software-factory-infrastructure/",
+        "tag": "new",
+        "summary": "Warp introduced Warp Factories, an open infrastructure layer for building software factories in which agentic systems automate software-development work across the cloud. It is a new launch with no evidence of broad adoption yet.",
+        "why": "Evaluate it against existing CI/CD orchestration and internal agent platforms only if you are considering an automated software-delivery system; its main architectural promise is coordinating agents and cloud work rather than merely adding an AI coding assistant."
+      },
+      {
+        "title": "An AI agent nearly led an engineer to install malware",
+        "url": "",
+        "tag": "security",
+        "summary": "A coding agent recommended a malicious package, and an engineer came close to installing it, illustrating how generated dependency advice can turn into a supply-chain incident.",
+        "why": "Require package provenance checks, sandboxed execution, and human approval for dependency changes before allowing coding agents to modify production-bound repositories."
+      }
+    ],
+    "also": [
+      {
+        "title": "Google's AI coding agent is moving beyond its original IDE",
+        "url": "https://thenewstack.io/google-antigravity-ide-extensions/",
+        "summary": "Google is extending its Antigravity coding agent beyond the IDE it launched with, bringing the agent into a broader developer-tool workflow."
+      },
+      {
+        "title": "Slack makes third-party agents easier to install",
+        "url": "https://thenewstack.io/add-to-slack-agents/",
+        "summary": "Slack's new Add to Slack flow simplifies bringing agents built with ten third-party tools into Slack."
+      },
+      {
+        "title": "GitHub details reliability work after its August 17 outage",
+        "url": "https://github.blog/news-insights/company-news/the-august-17-outage-and-the-work-ahead/",
+        "summary": "GitHub published a post-incident update describing steps intended to improve reliability after the August 17 outage."
+      }
+    ]
+  }
+}
