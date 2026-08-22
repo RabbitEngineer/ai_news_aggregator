@@ -1,0 +1,64 @@
+{
+  "tldr": [
+    "DeepSeek launched a multimodal V4 Flash Vision model, but it is currently available only through its paid developer platform.",
+    "Nvidia reports that its agent harness raised Claude Opus 5's ARC-AGI-3 score from 30% to 100%, reinforcing that orchestration can matter as much as model selection.",
+    "Azure DevOps Remote MCP Server is now generally available, but current Entra limitations prevent connections from several major AI clients."
+  ],
+  "azure": {
+    "top": [],
+    "also": []
+  },
+  "general": {
+    "top": [
+      {
+        "title": "DeepSeek launches paid-only V4 Flash Vision multimodal model",
+        "url": "https://siliconangle.com/2026/08/21/deepseek-debuts-multimodal-language-model-competitive-with-opus-4-8/",
+        "tag": "model",
+        "summary": "DeepSeek debuted V4 Flash Vision Exp, a multimodal model positioned as competitive with Opus 4.8; it is currently available only through the company's paid developer platform, with a free version possible later.",
+        "why": "Treat this as a model-evaluation candidate rather than a deployable self-hosted option for now, and check whether its API regions, quotas, and data-handling terms fit your Azure architecture before considering integration."
+      }
+    ],
+    "also": [
+      {
+        "title": "Starcloud raises $250 million for orbital AI data centers",
+        "url": "https://siliconangle.com/2026/08/21/starcloud-raises-250m-to-build-ai-data-centers-in-orbit/",
+        "summary": "Starcloud raised $250 million at a reported $2.3 billion valuation to pursue space-based AI data centers, with Nvidia and Cisco among the backers."
+      },
+      {
+        "title": "Nscale reportedly targets a $3 billion US IPO",
+        "url": "https://siliconangle.com/2026/08/21/ai-data-center-builder-nscale-reportedly-seeking-3b-ipo/",
+        "summary": "Bloomberg sources say AI data-center builder Nscale is considering raising $3 billion in a US listing as soon as next month."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Azure DevOps Remote MCP Server reaches general availability",
+        "url": "https://www.infoq.com/news/2026/08/azure-devops-remote-mcp-ga/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "ga",
+        "summary": "Microsoft's hosted Azure DevOps Remote MCP Server is generally available, exposing work items, repositories, and pipelines without local installation. Claude Desktop, Claude Code, ChatGPT, and Cursor cannot connect yet because Entra does not support the required dynamic client registration and Client ID Metadata Documents.",
+        "why": "You can begin designing agent access to Azure DevOps without hosting the MCP endpoint yourself, but keep client compatibility and Entra authentication constraints in the rollout plan."
+      },
+      {
+        "title": "Nvidia harness lifts Claude Opus 5 ARC-AGI-3 score from 30% to 100%",
+        "url": "https://thenewstack.io/nvidia-avo-arcagi3-benchmark/",
+        "tag": "performance",
+        "summary": "Nvidia reports that Claude Opus 5 scored 30% on ARC-AGI-3 alone but reached 100% when wrapped in its Agentic Variation Operators system, which adds an agent harness around the model.",
+        "why": "Benchmark your full agent loop—including planning, tool use, retries, and verification—before changing models, because orchestration quality can materially alter capability and GPU cost."
+      }
+    ],
+    "also": [
+      {
+        "title": "Anthropic's Browser Use tool provides structured web-page access",
+        "url": "https://thenewstack.io/anthropic-browser-use-tool/",
+        "summary": "Anthropic launched a Browser Use tool that gives Claude a structured representation of web pages rather than operating a conventional visual browser."
+      },
+      {
+        "title": "Cloudflare says AI agents cut Astro GitHub issues by 85%",
+        "url": "https://www.infoq.com/news/2026/08/cloudflare-astro-ai-agents/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "Cloudflare reports using AI agents, GitHub Actions, and human review to automate Astro issue triage and reduce the issue backlog by 85%."
+      }
+    ]
+  }
+}
