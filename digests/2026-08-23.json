@@ -1,0 +1,62 @@
+{
+  "tldr": [
+    "Cloudflare’s Kitesurf proposes a lighter, isolated browser runtime for agent workloads, potentially reducing the cost and overhead of browser automation.",
+    "Inherent claims its Faraday agent beat leading models at reproducing scientific research, but the report is a company performance claim rather than an independent evaluation.",
+    "A reported agent-sandbox escape is a reminder that isolation, identity, and monitoring need to be designed as production controls rather than assumed from the runtime."
+  ],
+  "azure": {
+    "top": [],
+    "also": []
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Inherent claims its Faraday agent beats OpenAI and Anthropic",
+        "url": "https://techcrunch.com/2026/08/22/inherent-founded-by-deepmind-alumni-says-its-ai-teammate-just-outperformed-anthropic-and-openai-at-replicating-research/",
+        "tag": "performance",
+        "summary": "DeepMind alumni-founded Inherent released Faraday, an AI agent that the company says outperformed Anthropic and OpenAI systems at replicating scientific papers. The reported capability is positioned as a step toward automating parts of research and experimentation.",
+        "why": "Treat this as a capability signal to investigate, not a procurement result: wait for the underlying task definition and independent evaluation before changing your model or agent architecture."
+      },
+      {
+        "title": "Study finds frontier labs lack public rogue-model containment plans",
+        "url": "https://techcrunch.com/2026/08/22/frontier-ai-labs-still-wont-say-how-theyd-contain-a-rogue-model/",
+        "tag": "security",
+        "summary": "A new study reports that leading AI labs have few publicly documented plans for containing models that behave unexpectedly or dangerously. The gap raises questions about preparedness as model autonomy and capability increase.",
+        "why": "Use this as a prompt to document your own kill switches, network boundaries, tool permissions, and escalation paths instead of relying solely on safeguards provided by the model vendor."
+      }
+    ],
+    "also": []
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Cloudflare introduces Kitesurf browser runtime for AI agents",
+        "url": "https://www.infoq.com/news/2026/08/cloudflare-kitesurf-browser/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "new",
+        "summary": "Cloudflare introduced Kitesurf, a lightweight browser engine for automated workloads that runs browser components in isolated WebAssembly and Rust environments on Cloudflare Workers. It supports the Chrome DevTools Protocol, allowing Playwright and Puppeteer-style automation without a full Chromium process.",
+        "why": "Evaluate it as an alternative to full-browser containers for browser agents, but verify Chromium compatibility, isolation boundaries, debugging, and operational maturity before using it in production."
+      },
+      {
+        "title": "Hugging Face sandbox escape highlights agent isolation risks",
+        "url": "https://thenewstack.io/securing-ai-agent-sandboxes/",
+        "tag": "security",
+        "summary": "The article examines a production incident in which an intruder reportedly moved through Hugging Face systems after an AI-agent sandbox was compromised, focusing on how containment can fail.",
+        "why": "Revisit whether agent workloads have overly broad credentials or network access, and test that a compromised agent cannot pivot into control planes, registries, or customer data."
+      },
+      {
+        "title": "DoorDash combines small models and LLMs for moderation at scale",
+        "url": "https://www.infoq.com/presentations/doordash-llm-ai-moderation-platform/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "performance",
+        "summary": "DoorDash describes a hybrid moderation platform that uses fast internal models for obvious cases, multi-axis LLM scoring for nuanced content, and no-code workflows with backtesting to reduce safety incidents across millions of daily messages.",
+        "why": "Use the tiered pattern when designing high-volume AI services: reserve expensive model calls for ambiguous cases and measure the cost and quality of each routing stage."
+      }
+    ],
+    "also": [
+      {
+        "title": "LinkedIn built a context-aware multi-agent code-review platform",
+        "url": "https://www.infoq.com/news/2026/08/linkedin-ai-code-review/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "LinkedIn’s platform treats code review as production infrastructure, using multiple agents and organizational coding context to reduce hallucinations and low-signal feedback."
+      }
+    ]
+  }
+}
