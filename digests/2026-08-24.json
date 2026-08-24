@@ -1,0 +1,33 @@
+{
+  "tldr": [
+    "Cloudflare has open-sourced a sandboxed platform for building enterprise AI workflows grounded in internal knowledge and connectors.",
+    "Google's HEIR is an open-source compiler toolchain intended to make inference over encrypted data easier to deploy, though it is still an early technology."
+  ],
+  "azure": {
+    "top": [],
+    "also": []
+  },
+  "general": {
+    "top": [],
+    "also": []
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Cloudflare open-sources a sandboxed enterprise AI platform",
+        "url": "https://www.infoq.com/news/2026/08/cloudflare-os-ai-platform-secure/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "new",
+        "summary": "Cloudflare OS is an open-source platform for producing work artifacts from enterprise knowledge and connected systems, automating workflows with selective AI use, and building shareable internal applications inside a secure sandbox. It is positioned as a more controlled alternative to assembling separate agent, connector, and workflow tools, but the report provides no evidence yet of broad adoption.",
+        "why": "Evaluate it against your existing internal agent and workflow architecture if you need governed access to enterprise data, but treat the open-source release as an experiment rather than a proven production platform."
+      },
+      {
+        "title": "Google open-sources HEIR for encrypted AI inference",
+        "url": "https://www.infoq.com/news/2026/08/google-heir-homomorphic-llm/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "new",
+        "summary": "Google's HEIR is an open-source compiler and development toolchain that can convert models designed for ordinary inputs to operate on homomorphically encrypted data, allowing computation without exposing the underlying data. It targets simpler deployment of privacy-preserving inference, but remains an early infrastructure project rather than an established serving runtime.",
+        "why": "Keep it in mind for workloads involving highly sensitive data, but benchmark its performance and supported model operations before treating encrypted inference as a practical replacement for confidential-computing designs."
+      }
+    ],
+    "also": []
+  }
+}
