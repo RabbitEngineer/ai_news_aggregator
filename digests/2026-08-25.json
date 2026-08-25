@@ -1,0 +1,99 @@
+{
+  "tldr": [
+    "AKS eBPF host routing is generally available, offering a potential networking-performance improvement for production clusters.",
+    "Node 22 LTS support on Azure App Service ends April 30, 2027, so affected applications need a runtime migration plan.",
+    "Microsoft is describing a shift from documenting AI governance policies to enforcing and proving them at runtime."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "AKS eBPF host routing reaches general availability",
+        "url": "https://azure.microsoft.com/updates?id=569873",
+        "tag": "ga",
+        "summary": "Azure Kubernetes Service now generally supports eBPF host routing through Advanced Container Networking Services, moving packet forwarding and routing decisions into the Linux kernel to improve networking performance.",
+        "why": "Evaluate it for network-intensive AKS workloads, but benchmark before changing a working cluster because the benefit depends on your traffic and networking design."
+      },
+      {
+        "title": "Azure Database for PostgreSQL adds Extended Support",
+        "url": "https://azure.microsoft.com/updates?id=569526",
+        "tag": "new",
+        "summary": "Extended Support for Azure Database for PostgreSQL Flexible Server provides critical security updates, critical bug fixes, and technical support while workloads transition to newer PostgreSQL versions.",
+        "why": "Use Extended Support as a migration buffer rather than a permanent upgrade strategy, and revisit database upgrade timelines and support costs."
+      },
+      {
+        "title": "Node 22 LTS support ends on Azure App Service in April 2027",
+        "url": "https://azure.microsoft.com/updates?id=567334",
+        "tag": "deprecation",
+        "summary": "Azure App Service support for Node 22 LTS ends on April 30, 2027; applications will continue running, but security updates and Microsoft customer support will stop.",
+        "why": "Inventory App Service applications using Node 22 and schedule migration to a supported runtime before the deadline rather than treating continued execution as continued support."
+      }
+    ],
+    "also": [
+      {
+        "title": "Application Gateway WAF supports custom block responses",
+        "url": "https://azure.microsoft.com/updates?id=569504",
+        "summary": "Application Gateway WAF can now return customized HTTP status codes and response bodies when it blocks requests."
+      }
+    ]
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Nvidia puts Groq 3 LPX inference accelerator into production",
+        "url": "https://siliconangle.com/2026/08/24/nvidias-dedicated-inference-accelerator-groq-3-lpx-enters-full-production-to-supercharge-ai-agents/",
+        "tag": "news",
+        "summary": "Nvidia says its dedicated Groq 3 LPX inference accelerator has entered full production. Announced at Hot Chips 2026, it is designed as a purpose-built extension of Nvidia's Vera Rubin data-center platform for AI-agent inference.",
+        "why": "Track this as a possible alternative to general-purpose GPUs for latency-sensitive agent serving, but wait for Azure availability, workload benchmarks, and pricing before changing your hosting plan."
+      }
+    ],
+    "also": [
+      {
+        "title": "Hugging Face reportedly receives acquisition offers valuing it at $13B",
+        "url": "https://techcrunch.com/2026/08/24/hugging-face-reportedly-in-talks-to-be-acquired-for-13b/",
+        "summary": "Hugging Face is reportedly fielding acquisition offers valuing the model and machine-learning platform at about $13 billion, although its founders may resist a sale because of the community's interests."
+      },
+      {
+        "title": "Stanford study finds young employment down 19% in AI-exposed fields",
+        "url": "https://arstechnica.com/ai/2026/08/ai-is-hitting-entry-level-jobs-hardest-stanford-study-finds/",
+        "summary": "A Stanford study reports that employment among young workers in fields exposed to AI is 19% lower than in more AI-resistant occupations."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Microsoft outlines runtime-enforced AI governance",
+        "url": "https://www.infoq.com/news/2026/08/microsoft-ai-governance/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "news",
+        "summary": "Microsoft describes an AI governance architecture covering nine governance domains and four functions—policy, control, visibility, and proof—with runtime enforcement, continuous evaluation, observability, identity, security, and audit evidence.",
+        "why": "Design governance as an operational control plane with logs, evaluations, identity checks, and audit evidence, rather than relying only on pre-deployment policy documents."
+      },
+      {
+        "title": "JetBrains Junie adds fully offline operation",
+        "url": "https://thenewstack.io/jetbrains-junie-local-agent/",
+        "tag": "release",
+        "summary": "JetBrains' Junie coding agent can now run entirely offline, but the reported setup requires a Mac with 64 GB of memory and local models instead of cloud-hosted inference.",
+        "why": "Consider offline agents for sensitive codebases or disconnected environments, while including the hardware cost and local-model quality trade-off in the design decision."
+      },
+      {
+        "title": "Anthropic replaces Workbench with a new Playground",
+        "url": "https://thenewstack.io/anthropic-openai-playground-comparison/",
+        "tag": "release",
+        "summary": "Anthropic replaced the developer Console's Workbench with Playground on August 18, and a hands-on comparison reports that the newer tool outperformed OpenAI's longer-established Playground for prompt testing.",
+        "why": "Recheck your team’s prompt-evaluation workflow against Anthropic Playground rather than assuming OpenAI’s tool remains the default for model comparison."
+      }
+    ],
+    "also": [
+      {
+        "title": "AI coding assistants gain a privacy-focused memory backup tool",
+        "url": "https://github.com/DiegoSalazar/AiSyncing",
+        "summary": "AiSyncing backs up AI coding-assistant memories to GitHub, offering a way to version and restore assistant context across environments."
+      },
+      {
+        "title": "A report examines security boundaries between AI agents",
+        "url": "https://thenewstack.io/ai-agent-security-boundaries/",
+        "summary": "The article compares how Grok Bot and Hermes contain agent mistakes and argues that one agent's error can escape its intended task boundary."
+      }
+    ]
+  }
+}
