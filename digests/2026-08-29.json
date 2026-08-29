@@ -1,0 +1,91 @@
+{
+  "tldr": [
+    "Azure now supports workload identity for SMB-based Azure Files mounts in AKS, while advertised gateway prefixes can reduce route-table growth in large hub-and-spoke networks.",
+    "A federal judge ruled the Pentagon's Anthropic supply-chain-risk designation illegal, a decision with implications for government AI procurement and vendor access.",
+    "Microsoft published an AI-agent shared-responsibility model, giving architects a clearer starting point for dividing controls between Azure, the agent framework, and the application."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Azure gateways can now advertise summarized route prefixes",
+        "url": "https://techcommunity.microsoft.com/t5/azure-networking-blog/advertised-gateway-prefixes-in-azure/ba-p/4550940",
+        "tag": "new",
+        "summary": "Azure VPN Gateway and ExpressRoute Gateway can use advertised gateway prefixes to summarize hub and spoke address spaces before advertising routes to on-premises networks. This reduces the number of individual BGP routes in environments with many spokes and address ranges.",
+        "why": "Revisit your hybrid-network routing design if BGP table growth or route limits are becoming concerns; prefix summarization can reduce operational complexity without restructuring every spoke."
+      },
+      {
+        "title": "AKS Azure Files CSI adds workload identity for SMB",
+        "url": "https://azure.microsoft.com/updates?id=570120",
+        "tag": "ga",
+        "summary": "The Azure Files CSI driver for AKS now generally supports workload identity for pod-level authentication to SMB file shares, replacing the need to rely solely on broader managed-identity arrangements.",
+        "why": "Update your AKS storage and identity patterns where pods mount SMB shares, because access can now be scoped to workload identities instead of sharing broader node or cluster credentials."
+      }
+    ],
+    "also": []
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Court overturns Pentagon's Anthropic supply-chain-risk label",
+        "url": "https://techcrunch.com/2026/08/28/anthropic-gets-its-first-court-win-over-the-pentagons-supply-chain-risk-label/",
+        "tag": "news",
+        "summary": "A federal judge ruled that the Trump administration illegally designated Anthropic a supply-chain risk, giving the company a victory in its dispute with the Pentagon over use of its models.",
+        "why": "Treat model-vendor selection as a policy and procurement decision as well as a technical one: the ruling may affect government access, risk reviews, and the durability of restrictions on Anthropic deployments."
+      },
+      {
+        "title": "Lambda borrows $1B to buy Nvidia chips for Microsoft leases",
+        "url": "https://techcrunch.com/2026/08/28/neocloud-lambda-secures-1b-in-debt-to-buy-more-chips/",
+        "tag": "news",
+        "summary": "Neocloud provider Lambda secured $1 billion in private debt to purchase Nvidia AI chips and lease them to Microsoft, highlighting how heavily providers are financing expansion to meet AI compute demand.",
+        "why": "Keep capacity and financing risk in your GPU-hosting assumptions: leased or cloud GPU supply may expand, but constrained hardware and provider leverage can still affect availability and pricing."
+      }
+    ],
+    "also": [
+      {
+        "title": "Anthropic researcher reports self-improvement on ten safety benchmarks",
+        "url": "https://techcrunch.com/2026/08/28/an-anthropic-researcher-just-gave-us-a-peek-at-self-improving-ai/",
+        "summary": "Automated systems improved performance on all ten benchmarks for specific misaligned behaviours without reducing overall performance, according to an Anthropic researcher."
+      },
+      {
+        "title": "Nvidia says AI compute demand will keep capacity constrained",
+        "url": "https://siliconangle.com/2026/08/28/its-nvidias-world-we-just-live-in-it/",
+        "summary": "Nvidia's strong results and CEO comments indicate that demand for AI hardware continues to exceed available capacity."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Microsoft publishes a shared-responsibility model for AI agents",
+        "url": "https://learn.microsoft.com/en-us/azure/security/fundamentals/shared-responsibility-ai-agent",
+        "tag": "security",
+        "summary": "Microsoft's guidance sets out how security responsibilities are divided across the cloud platform, agent model and framework, tools, data, and the application that deploys an AI agent.",
+        "why": "Use the model as a checklist when reviewing agent architectures: it helps assign ownership for tool permissions, data access, prompt and model risks, monitoring, and application-level controls instead of treating the platform as responsible for everything."
+      },
+      {
+        "title": "FreeToken targets faster MoE inference on consumer hardware",
+        "url": "https://www.infoq.com/news/2026/08/freetoken-local-inference/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "new",
+        "summary": "Researchers from UC Berkeley and MIT released FreeToken, an open-source inference engine that dynamically schedules work and manages weights to improve decoding efficiency for Mixture-of-Experts models on consumer hardware.",
+        "why": "It is worth a contained proof of concept for edge or local inference, but do not change GPU procurement plans until you verify its supported models, quantisations, single-GPU fit, and performance against vLLM or existing runtimes."
+      }
+    ],
+    "also": [
+      {
+        "title": "JetBrains urges Cadence users to rotate exposed credentials",
+        "url": "https://thenewstack.io/jetbrains-told-everyone-to-patch-it-didnt-patch-itself/",
+        "summary": "JetBrains told Cadence cloud development-service users to rotate credentials and treat prior executions and outputs as potentially exposed after a security incident."
+      },
+      {
+        "title": "AI command-safety judges can be tricked by shell context",
+        "url": "https://thenewstack.io/bionic-shell-command-safety/",
+        "summary": "A report describes how an AI safety judge for shell commands can agree with a dangerous command when surrounding variables or context make an otherwise ordinary operation misleading."
+      },
+      {
+        "title": "New open-source agent memory engine exposes API and MCP interfaces",
+        "url": "https://itsuki.app/",
+        "summary": "Itsuki presents an open-source memory engine for AI agents with both an API and Model Context Protocol interface, but the candidate provides little evidence of maturity or adoption."
+      }
+    ]
+  }
+}
