@@ -1,0 +1,58 @@
+{
+  "tldr": [
+    "Sony Music and Warner are suing Anthropic over alleged use of tens of thousands of copyrighted works, raising another significant legal and training-data risk for model providers.",
+    "AWS has open-sourced Kiro Crew, a workspace for running asynchronous coding agents across tasks such as incident investigation, migrations, and pull-request monitoring.",
+    "Nvidia's data-centre advantage is increasingly shifting from GPUs alone toward networking and traffic-control systems that improve utilisation."
+  ],
+  "azure": {
+    "top": [],
+    "also": []
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Sony Music and Warner sue Anthropic over training-data piracy",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/986438/sony-music-warner-chappell-anthropic-lawsuit-copyright",
+        "tag": "news",
+        "summary": "Sony Music and Warner Chappell have sued Anthropic in the US, seeking damages over alleged use of tens of thousands of copyrighted works, with potential penalties of up to $150,000 per work and $25,000 per instance of stripped copyright information.",
+        "why": "Treat training-data provenance and copyright controls as a model-provider risk: this case could affect which models are acceptable for production and how vendors price legal protection."
+      },
+      {
+        "title": "Nvidia's AI advantage is expanding from GPUs to networking",
+        "url": "https://techcrunch.com/2026/08/29/nvidias-ai-advantage-is-moving-beyond-the-gpu/",
+        "tag": "news",
+        "summary": "The latest generation of data-centre systems is improving AI efficiency through smarter traffic control and networking, rather than relying only on additional processor cycles.",
+        "why": "When sizing large inference or training clusters, evaluate the network fabric and traffic-management stack as part of performance and cost—not just GPU count."
+      }
+    ],
+    "also": []
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "AWS open-sources Kiro Crew for asynchronous coding agents",
+        "url": "https://www.infoq.com/news/2026/08/kiro-crew-coding-agents/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "release",
+        "summary": "AWS has announced Kiro Crew, an open-source workspace for running multiple Kiro coding agents across sessions, tools, and tasks, including incident investigation, ticket triage, migrations, and pull-request monitoring without continuous supervision.",
+        "why": "This is worth evaluating as an alternative to manually orchestrated coding-agent jobs, but require approval gates, isolated credentials, and audit logs before allowing it to change production systems."
+      }
+    ],
+    "also": [
+      {
+        "title": "Runplane targets the risk of unsupervised AI trading agents",
+        "url": "https://runplane.ai",
+        "summary": "The project was built after an AI agent misread a risk signal and moved $1.2 million in trades, positioning it as a response to the need for stronger controls around autonomous actions."
+      },
+      {
+        "title": "AgentGate adds signed receipts for AI-agent SaaS actions",
+        "url": "https://github.com/Clawdlinux/agentgate",
+        "summary": "This early Show HN project records AI-agent SaaS actions with signed receipts, aiming to provide verifiable evidence of what an agent did."
+      },
+      {
+        "title": "AI-generated commits are outpacing code-verification capacity",
+        "url": "https://thenewstack.io/scaling-ai-code-verification/",
+        "summary": "The report says GitHub commits have doubled in four months while the capacity to review and verify that code has not kept pace."
+      }
+    ]
+  }
+}
