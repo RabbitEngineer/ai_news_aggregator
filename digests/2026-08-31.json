@@ -1,0 +1,41 @@
+{
+  "tldr": [
+    "BizTalk Server 2020 sales end March 31, 2027, making migration planning urgent even though mainstream support continues through April 2028.",
+    "Foundry Model Router now spans up to 28 regions and automatically changes the model pool for default deployments, which can alter both availability and effective context limits."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "BizTalk Server 2020 sales end March 31, 2027",
+        "url": "https://techcommunity.microsoft.com/t5/azure-integration-services-blog/biztalk-server-2020-end-of-sale-announcement/ba-p/4551317",
+        "tag": "deprecation",
+        "summary": "Microsoft says BizTalk Server 2020 is the final release, with sales of BizTalk Server 2020 and Host Integration Server 2020 ending March 31, 2027. Mainstream support continues through April 12, 2028, with paid extended-mainstream support potentially available through April 10, 2030.",
+        "why": "Inventory BizTalk workloads and start migration planning now; the end-of-sale date limits new purchases even though existing deployments remain supported for longer."
+      }
+    ],
+    "also": []
+  },
+  "general": {
+    "top": [],
+    "also": []
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Foundry Model Router expands to 28 regions and refreshes its pool",
+        "url": "https://www.infoq.com/news/2026/08/foundry-model-router-regions/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "release",
+        "summary": "Microsoft expanded Foundry Model Router from two regions to 28 for global standard deployments and 21 for data-zone deployments, while adding Claude Opus 4.8 and GPT-5.6 and removing four deprecated models. Default deployments receive pool changes automatically, while configured subsets do not; the effective context window is limited by the smallest model in the pool.",
+        "why": "Recheck routing, region, regression-testing, and context-window assumptions: an unchanged default deployment can receive different models, while a configured subset may silently miss new capacity."
+      },
+      {
+        "title": "Cloudflare extends AI Search for agents and custom data",
+        "url": "",
+        "tag": "release",
+        "summary": "Cloudflare expanded its built-in AI Search service to provide search and retrieval over custom data, with agent integration, multimodal search, and connections to other Cloudflare tools.",
+        "why": "Evaluate it as a managed alternative to assembling a separate search or vector-retrieval stack when workloads already run at Cloudflare’s edge."
+      }
+    ],
+    "also": []
+  }
+}
