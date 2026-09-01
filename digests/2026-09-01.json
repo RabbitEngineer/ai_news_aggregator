@@ -1,0 +1,118 @@
+{
+  "tldr": [
+    "Azure Multicloud Interconnect enters preview with managed private Azure–AWS connectivity, potentially replacing a custom ExpressRoute and colocation design.",
+    "Azure adds per-disk VM resiliency in preview, changing how disk-connectivity failures can be recovered without application-side automation.",
+    "DoorDash reports 130,000 monthly engineering tasks through an isolated, auditable cloud-agent platform, offering a concrete pattern for governing agent workloads."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Azure previews managed private connectivity to AWS",
+        "url": "https://techcommunity.microsoft.com/t5/azure-networking-blog/simpler-private-connectivity-between-azure-and-aws-with-azure/ba-p/4550556",
+        "tag": "preview",
+        "summary": "Azure Multicloud Interconnect provides managed private connectivity between Azure and supported cloud providers, with AWS as the first preview integration. It is intended to simplify the ExpressRoute- and colocation-style networking traditionally needed for private Azure–AWS links.",
+        "why": "For hybrid AI architectures, evaluate whether this can replace parts of your existing cross-cloud network design, while checking preview limits, supported regions, and traffic pricing before committing."
+      },
+      {
+        "title": "Azure previews per-disk resiliency for virtual machines",
+        "url": "https://azure.microsoft.com/updates?id=569711",
+        "tag": "preview",
+        "summary": "Azure can automatically recover a VM that loses access to an attached managed disk for an extended period by shutting it down and restarting it after disk connectivity returns; this remains the default behavior. The preview adds resiliency at the individual-disk level.",
+        "why": "Review VM recovery and stateful workload runbooks: this may reduce custom remediation for transient disk failures, but restart behavior still needs to be tested against application availability and consistency requirements."
+      },
+      {
+        "title": "Azure DevOps previews enterprise migrations to GitHub Enterprise Cloud",
+        "url": "https://devblogs.microsoft.com/devops/enterprise-live-migrations-public-preview/",
+        "tag": "preview",
+        "summary": "Enterprise Live Migrations can move Azure Repos repositories to GitHub Enterprise Cloud while minimizing disruption and supporting data-residency requirements. Microsoft positions it for migrations at enterprise scale.",
+        "why": "If your organization is standardizing on GitHub for AI-assisted development, assess this as a way to reduce migration downtime and validate repository residency before planning a large move."
+      }
+    ],
+    "also": [
+      {
+        "title": "Azure Multicloud Interconnect enters public preview",
+        "url": "https://azure.microsoft.com/updates?id=570364",
+        "summary": "Microsoft announces Azure Multicloud Interconnect as a managed private-connectivity service, initially supporting AWS in preview."
+      }
+    ]
+  },
+  "general": {
+    "top": [
+      {
+        "title": "ChatGPT is classified as an EU Very Large Online Platform",
+        "url": "",
+        "tag": "news",
+        "summary": "ChatGPT will face the European Union's strictest online-safety obligations under the Digital Services Act, including requirements related to minors, mental health risks, and illegal content. The designation follows the service's rapid growth.",
+        "why": "For AI services offered to EU users, involve compliance and safety teams earlier and preserve stronger moderation, reporting, and audit evidence in the deployment design."
+      },
+      {
+        "title": "Nvidia invests $3.5B in MediaTek as custom AI chips expand",
+        "url": "",
+        "tag": "news",
+        "summary": "Nvidia is investing $3.5 billion in Taiwanese chipmaker MediaTek as major technology companies increasingly develop their own AI silicon. The deal signals a strategy of partnering with custom-chip capabilities rather than relying only on Nvidia's standard platforms.",
+        "why": "Treat accelerator supply and instance diversity as strategic planning risks: avoid designing an AI platform around one GPU generation or one cloud SKU."
+      },
+      {
+        "title": "Pentagon adds ChatGPT and Grok alongside Gemini",
+        "url": "https://techcrunch.com/2026/08/31/the-pentagon-now-has-its-own-version-of-chatgpt-and-grok/",
+        "tag": "news",
+        "summary": "The Pentagon's central AI-tools portal will include versions of OpenAI's ChatGPT and SpaceXAI's Grok, alongside Google's Gemini.",
+        "why": "The multi-model government deployment is another signal that enterprise AI estates will be heterogeneous, so keep model routing, policy enforcement, and evaluation separate from any single provider."
+      }
+    ],
+    "also": [
+      {
+        "title": "OpenAI says ChatGPT ads reached a $1B annualized run rate",
+        "url": "https://siliconangle.com/2026/08/31/openai-says-its-ad-business-has-already-hit-1b-in-annualized-revenue/",
+        "summary": "OpenAI says its ChatGPT advertising business has surpassed a $1 billion annualized revenue run rate several months after launch."
+      },
+      {
+        "title": "Nearly 40% of data sent to AI tools is reportedly sensitive",
+        "url": "",
+        "summary": "A cited 2026 Cyberhaven report says nearly 40% of data moving into AI tools involves sensitive material, driving renewed interest in contextual, AI-assisted data-loss prevention."
+      },
+      {
+        "title": "Debian allows responsible use of generative AI in contributions",
+        "url": "https://www.theverge.com/tech/986789/linux-debian-generative-ai-policy",
+        "summary": "Debian voted to permit AI tools in development, maintenance, and documentation under its existing contribution standards rather than creating a separate AI-specific rule set."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "DoorDash runs 130,000 engineering tasks through cloud agents",
+        "url": "https://www.infoq.com/news/2026/08/doordash-flux-cloud-agent/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "news",
+        "summary": "DoorDash moved engineering-agent workloads from developer laptops to its Flux cloud platform, which automated 130,000 tasks in one month and more than 25,000 code reviews per week. Flux uses isolated Firecracker microVMs, an MCP gateway, reusable playbooks, scoped access, and centralized auditing.",
+        "why": "Use this as a reference architecture for production agents: isolation, constrained permissions, reusable workflows, and audit trails are prerequisites for scaling beyond local experiments."
+      },
+      {
+        "title": "A proposed MCP extension targets enterprise tool discovery",
+        "url": "https://thenewstack.io/ard-agent-discovery-specification/",
+        "tag": "new",
+        "summary": "The proposed Agent Resource Discovery specification addresses a gap in MCP: finding and governing tools across organizations with hundreds of available integrations, rather than merely connecting an agent to one tool. The candidate is an emerging specification, not an established standard.",
+        "why": "Track this if you are building an internal agent platform, but avoid depending on it yet; enterprise tool catalogs and authorization should remain behind your own stable abstraction."
+      },
+      {
+        "title": "OpenClaw 2.0 simplifies installation despite security concerns",
+        "url": "https://www.theregister.com/ai-and-ml/2026/08/31/openclaw-20-pours-glitter-on-slow-burning-security-dumpster-fire/5293492",
+        "tag": "release",
+        "summary": "OpenClaw 2.0 makes installation easier and adds a new interface wrapper, while criticism says the project still leaves too much security responsibility to users. The release therefore improves usability without resolving the underlying trust and isolation concerns.",
+        "why": "Do not treat easier installation as production readiness: require sandboxing, least-privilege tool access, and an explicit threat assessment before evaluating this agent harness."
+      }
+    ],
+    "also": [
+      {
+        "title": "Google launches 330M-parameter TimesFM-3 forecasting model",
+        "url": "https://thenewstack.io/google-timesfm-3-multivariate-forecasting/",
+        "summary": "Google launched TimesFM-3, a 330-million-parameter time-series forecasting model trained on more than one trillion real-world and synthetic data points, but it is not yet available for workplace use."
+      },
+      {
+        "title": "Outcome-based AI pricing shifts billing from tokens to results",
+        "url": "https://thenewstack.io/openai-outcome-based-pricing/",
+        "summary": "OpenAI is exploring pricing customers for successful AI outcomes rather than only for the tokens consumed, a model that could make forecasting agent costs more dependent on task completion."
+      }
+    ]
+  }
+}
