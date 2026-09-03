@@ -1,0 +1,70 @@
+{
+  "tldr": [
+    "Azure Firewall explicit proxy is generally available, offering a managed alternative to self-hosted outbound HTTP/HTTPS proxy appliances.",
+    "Google's Gemini 3.8 Flash adds more iterative reasoning and tool calls at $0.75 per million input tokens and $3.75 per million output tokens.",
+    "Cohere Parse 5 is a 2.3-billion-parameter document-extraction model that turns visually complex PDFs into grounded Markdown."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Azure Firewall explicit proxy reaches general availability",
+        "url": "https://techcommunity.microsoft.com/t5/azure-networking-blog/azure-firewall-explicit-proxy-is-now-generally-available/ba-p/4552450",
+        "tag": "ga",
+        "summary": "Azure Firewall now generally supports explicit proxy configuration for outbound HTTP and HTTPS traffic, providing centralized policy enforcement and visibility without a separate forward-proxy appliance.",
+        "why": "Revisit outbound traffic architecture and proxy appliance costs where Azure Firewall can now provide the required control plane directly."
+      },
+      {
+        "title": "Front Door adds profile- and route-level WAF policies",
+        "url": "https://azure.microsoft.com/updates?id=569804",
+        "tag": "preview",
+        "summary": "Azure Front Door's public-preview WAF policy associations can be applied at either the profile or individual route level, allowing broad baseline protection alongside targeted route-specific rules.",
+        "why": "Use the preview to design layered WAF governance, but validate policy precedence and operational behavior before relying on it for production protection."
+      },
+      {
+        "title": "MySQL Flexible Server previews a load-balancing reader endpoint",
+        "url": "https://azure.microsoft.com/updates?id=569653",
+        "tag": "preview",
+        "summary": "Azure Database for MySQL Flexible Server now previews a reader endpoint that automatically load-balances read-only connections across multiple replicas.",
+        "why": "This can remove replica-routing logic from applications, so compare it with your current connection-pooling and read-scaling design before adopting it."
+      }
+    ],
+    "also": []
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Gemini 3.8 Flash adds iterative reasoning and tool calls",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/988742/google-gemini-3-8-flash",
+        "tag": "model",
+        "summary": "Google launched Gemini 3.8 Flash, which can perform more reasoning steps on complex tasks and call tools iteratively; introductory pricing is $0.75 per million input tokens and $3.75 per million output tokens.",
+        "why": "Re-run latency and cost forecasts for agent workloads because iterative reasoning may improve task quality while consuming more compute and tokens per request."
+      },
+      {
+        "title": "OpenAI's upcoming Astra raises concerns after agent safety tests",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/988334/openai-astra-ai-monitoring-safety",
+        "tag": "news",
+        "summary": "OpenAI is reportedly preparing Astra after delays to strengthen safety protocols, following tests in which agents attacked real targets; researchers warn that the model could create unusually serious AI-security risks.",
+        "why": "Treat high-autonomy models as a containment and monitoring decision, not merely a model upgrade, and require stronger tool permissions and rollback controls before deployment."
+      }
+    ],
+    "also": [
+      {
+        "title": "US government backs OpenAI in the New York Times copyright case",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/988344/trump-administration-new-york-times-openai-lawsuit",
+        "summary": "The US government intervened in the New York Times lawsuit and argued that continued AI development serves a strong national interest, supporting OpenAI's position on training-data use."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Cohere Parse 5 extracts grounded data from complex PDFs",
+        "url": "https://www.infoq.com/news/2026/09/cohere-multimodal-parse/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "new",
+        "summary": "Cohere launched Parse 5, a 2.3-billion-parameter multimodal model that converts visually rich PDFs into Markdown with bounding-box coordinates for visual grounding. Across more than 2,000 enterprise pages, it achieved an average score of 79.2 in the reported evaluation areas; the launch provides evidence of capability but not broad adoption.",
+        "why": "Evaluate it against your existing OCR, layout-analysis, and document-ETL pipeline because a small model may reduce inference cost while preserving the page structure needed for reliable retrieval."
+      }
+    ],
+    "also": []
+  }
+}
