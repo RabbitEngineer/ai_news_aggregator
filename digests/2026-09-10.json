@@ -1,0 +1,91 @@
+{
+  "tldr": [
+    "Microsoft Foundry has added stable Hosted Agent and Toolbox SDK paths, Claude tools on Azure-hosted deployments, and SDK migrations to check before upgrading.",
+    "Azure Storage user-bound delegation SAS is now generally available, tying a SAS token to a specific Entra ID identity and reducing token-reuse risk.",
+    "OpenAI has announced GPT-6 Astra for business workloads, with stronger reasoning and computer-use capabilities, but the candidate provides no pricing or Azure availability details."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Microsoft Foundry adds stable agent SDKs and Claude tools",
+        "url": "https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-july-august-2026/",
+        "tag": "release",
+        "summary": "Microsoft’s July–August Foundry roundup covers stable Hosted Agent and Toolbox SDK paths, Claude tools on Azure-hosted deployments, Model Router updates, local inference improvements, and SDK migrations.",
+        "why": "Review the migration guidance and retest agent integrations before upgrading, because SDK path changes and new hosted-model tooling can affect both deployment design and application compatibility."
+      },
+      {
+        "title": "Azure Storage user-bound delegation SAS reaches general availability",
+        "url": "https://azure.microsoft.com/updates?id=569241",
+        "tag": "security",
+        "summary": "Azure Storage now generally supports user-bound user-delegation SAS, which combines Entra ID-backed delegation with a restriction that the token can be used only by a specified identity.",
+        "why": "Use this when designing temporary storage access for AI workloads or automation to reduce the damage from a copied SAS token without returning to account keys."
+      },
+      {
+        "title": "Ephemeral OS disks with full caching are generally available",
+        "url": "https://azure.microsoft.com/updates?id=570551",
+        "tag": "ga",
+        "summary": "Azure now generally supports full caching for ephemeral OS disks on new VMs and VM Scale Sets, allowing the complete OS image to be cached on local storage after startup and avoiding subsequent remote-storage reads.",
+        "why": "Revisit VM and VMSS designs for stateless, scale-out workloads where faster local OS reads and lower storage traffic may improve startup and operating-cost models, while remembering that the OS disk is nonpersistent."
+      }
+    ],
+    "also": []
+  },
+  "general": {
+    "top": [
+      {
+        "title": "OpenAI announces GPT-6 Astra for business workloads",
+        "url": "https://openai.com/index/gpt-6-astra-next-generation-work",
+        "tag": "model",
+        "summary": "OpenAI introduced GPT-6 Astra as its most capable business model, highlighting advanced reasoning, computer use, and stronger writing and design judgment.",
+        "why": "Treat this as a model to evaluate rather than an immediate platform decision: confirm Azure availability, API compatibility, latency, quotas, and pricing before planning a migration or new deployment."
+      },
+      {
+        "title": "Massachusetts adds clean-power restrictions for data centers",
+        "url": "",
+        "tag": "news",
+        "summary": "Massachusetts has become the third US state in three months to impose new restrictions on data-center development, focused on clean-power requirements.",
+        "why": "Include power policy in region-selection and capacity planning for GPU-heavy services, because local permitting and electricity constraints can become deployment blockers even when Azure capacity exists."
+      }
+    ],
+    "also": [
+      {
+        "title": "IBM releases commercially licensed Granite time-series model",
+        "url": "https://huggingface.co/blog/ibm-research/ibm-releases-sota-granite-time-series",
+        "summary": "IBM Research released the Granite Time Series PatchTST-FM-r2 model, describing it as state of the art and offering a commercial-friendly license."
+      },
+      {
+        "title": "Apple adds hardware-backed provenance for iPhone photos",
+        "url": "https://www.theverge.com/tech/992766/apple-iphone-18-pro-reference-image",
+        "summary": "Apple’s Reference Image feature is designed to sign pixels captured by the iPhone 18 Pro so users can distinguish original camera output from later AI manipulation."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Unikraft targets million-scale AI sandboxes per server",
+        "url": "https://www.infoq.com/presentations/unikraft-microvm-sandboxes-cloud-scaling/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "performance",
+        "summary": "Unikraft describes a sandboxing design aimed at fitting up to 1 million isolated sandboxes on one server, using millisecond cold boots, stateful scale-to-zero, kernel optimizations, and snapshotting while integrating with Kubernetes.",
+        "why": "Evaluate this only for architectures that need large numbers of short-lived, untrusted agent or code-execution environments; the claimed density could change the choice between containers, microVMs, and separate worker nodes, but the source is a technical presentation rather than adoption evidence."
+      }
+    ],
+    "also": [
+      {
+        "title": "Claude leads an agent-building benchmark but passes under 25%",
+        "url": "https://thenewstack.io/claude-build-agents-benchmark/",
+        "summary": "A new benchmark for agents that build other agents ranked Claude first, but it passed fewer than one quarter of the tests."
+      },
+      {
+        "title": "OpenAI lets an AI security reviewer block engineers’ code",
+        "url": "https://thenewstack.io/openai-ai-code-review/",
+        "summary": "OpenAI now routes every engineer pull request through automated security review and allows the model to block code that fails its checks."
+      },
+      {
+        "title": "K2 Horizon launches six fully open AI models",
+        "url": "https://thenewstack.io/k2-horizon-fully-open/",
+        "summary": "Abu Dhabi’s Institute of Foundation Models released six models under fully open terms, although developers have raised questions about their practical quality."
+      }
+    ]
+  }
+}
