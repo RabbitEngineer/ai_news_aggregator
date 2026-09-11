@@ -1,0 +1,116 @@
+{
+  "tldr": [
+    "DeepSeek claims its smaller open-weight V4.1-Flash beats its much larger V4-Pro on performance, speed, cost and runtime, but deployment specifications still need verification.",
+    "GPT-6 Astra is now positioned for coding, computer use and long-running agents across ChatGPT, Codex and the API, making agent-hosting evaluations timely.",
+    "Azure Functions Flex Consumption now supports site-scoped TLS certificates and end-to-end TLS at general availability."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Azure Speech LLM 2607 improves multilingual recognition and tuning",
+        "url": "https://devblogs.microsoft.com/foundry/announcing-azure-ai-speech-llm-2607/",
+        "tag": "model",
+        "summary": "Azure AI Speech LLM 2607 brings better multilingual and mixed-language recognition, lower latency and simpler domain customization through enhanced phrase lists.",
+        "why": "Re-test speech accuracy and latency for multilingual workloads before keeping custom recognition pipelines or capacity assumptions unchanged."
+      },
+      {
+        "title": "Functions Flex Consumption adds GA certificates and end-to-end TLS",
+        "url": "https://azure.microsoft.com/updates?id=570940",
+        "tag": "ga",
+        "summary": "Azure Functions Flex Consumption now supports site-scoped TLS certificates, with up to three private PFX and three public CER certificates per function app, plus end-to-end TLS encryption.",
+        "why": "You can move more Flex-hosted services behind native certificate handling and encrypted backend connections instead of maintaining a separate certificate workaround."
+      },
+      {
+        "title": "Azure Copilot Troubleshooting Agent is generally available",
+        "url": "https://azure.microsoft.com/updates?id=570980",
+        "tag": "ga",
+        "summary": "Azure Copilot Troubleshooting Agent is now generally available through Azure Copilot and Support to investigate and resolve operational issues.",
+        "why": "Decide whether to include the agent in your incident-response process, while validating its permissions, evidence trail and escalation boundaries before relying on it for production diagnosis."
+      },
+      {
+        "title": "September security patches released for Azure DevOps Server",
+        "url": "https://devblogs.microsoft.com/devops/september-patches-for-azure-devops-server-3/",
+        "tag": "security",
+        "summary": "Microsoft released September patches for self-hosted Azure DevOps Server and recommends updating supported installations to the latest secure version.",
+        "why": "Schedule patching for self-hosted DevOps Server and check your supported-version inventory; this does not affect the Microsoft-hosted Azure DevOps service."
+      }
+    ],
+    "also": []
+  },
+  "general": {
+    "top": [
+      {
+        "title": "DeepSeek says smaller V4.1-Flash beats its V4-Pro flagship",
+        "url": "https://siliconangle.com/2026/09/10/deepseek-releases-v4-1-flash-says-it-outperforms-flagship-v4-pro/",
+        "tag": "model",
+        "summary": "DeepSeek released V4.1-Flash, an open-weight model it says multiple parties found superior to the much larger V4-Pro on performance, cost, speed and total runtime; V4-Pro requests will reportedly change from September 14. The supplied report does not specify the model's parameter count, available quantisations or whether it fits on a single GPU.",
+        "why": "Treat this as a potentially important inference-cost signal, but wait for the model card and hardware tests before changing GPU sizing or self-hosting plans."
+      },
+      {
+        "title": "OpenAI releases GPT-6 Astra for coding and computer use",
+        "url": "https://www.infoq.com/news/2026/09/openai-gpt6-astra/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "model",
+        "summary": "OpenAI released GPT-6 Astra for coding, computer use, long-running agentic tasks and cybersecurity, with availability across ChatGPT, Codex and the OpenAI API.",
+        "why": "Start a controlled evaluation against your current model stack, paying particular attention to tool permissions, session duration, latency and the operational cost of computer-use workloads."
+      },
+      {
+        "title": "AI data-center power failures expose an architecture problem",
+        "url": "https://www.technologyreview.com/2026/09/10/1141649/powering-ai-is-an-architecture-problem/",
+        "tag": "news",
+        "summary": "A transmission-line fault in Ashburn dropped more than 3 gigawatts of data-center load in seconds; an earlier surge-arrester failure affected roughly 60 Virginia facilities and 1,500 megawatts.",
+        "why": "Include power and regional-failure assumptions in AI capacity planning instead of treating cloud GPU availability as independent of local grid resilience."
+      },
+      {
+        "title": "OpenAI pauses Pro sign-ups while adding capacity for Astra demand",
+        "url": "https://techcrunch.com/2026/09/10/openai-puts-pro-subscriptions-on-hold-due-to-astra-demand/",
+        "tag": "news",
+        "summary": "OpenAI temporarily stopped new Pro subscriptions because that tier placed the greatest strain on its systems while the company adds capacity.",
+        "why": "Use the pause as a reminder to model provider capacity and throttling risk explicitly, with fallback deployments for workloads that cannot tolerate service saturation."
+      }
+    ],
+    "also": [
+      {
+        "title": "Anthropic reports escalating model-distillation campaigns",
+        "url": "https://techcrunch.com/2026/09/10/anthropic-details-distillation-campaigns-from-alibaba-moonshot-ai-and-deepseek/",
+        "summary": "Anthropic says Alibaba, Moonshot AI and DeepSeek have conducted persistent efforts to extract capabilities from its models through distillation."
+      },
+      {
+        "title": "AI agents are flooding public services with new requests",
+        "url": "https://techcrunch.com/2026/09/10/ai-agents-are-flooding-public-services-with-new-requests/",
+        "summary": "Researchers report that automated agents are generating large numbers of public-service requests, most of which appear to concern claims users are actually entitled to make."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Salesforce previews an enterprise AI harness and control plane",
+        "url": "",
+        "tag": "preview",
+        "summary": "Salesforce previewed an Enterprise AI Harness and AI Control Plane for packaging prompts, connectors and other agent assets, combining six existing tools into a managed approach to building and operating agents.",
+        "why": "Compare this control-plane pattern with your own Azure agent platform before adding another orchestration layer, especially around asset versioning, permissions and deployment governance."
+      },
+      {
+        "title": "AWS open-sources Pizza Bot for background-agent inboxes",
+        "url": "https://thenewstack.io/aws-pizza-bot-agent-inbox/",
+        "tag": "release",
+        "summary": "AWS released Pizza Bot, an open-source application that gives developers an email-style inbox for monitoring and interacting with background AI agents.",
+        "why": "Evaluate the pattern if you need human review and asynchronous handoffs for long-running agents, but treat it as a new reference application rather than a mature operations product."
+      },
+      {
+        "title": "OpenAI splits voice-agent components to simplify real-time systems",
+        "url": "https://thenewstack.io/gpt-live-1-voice-api/",
+        "tag": "release",
+        "summary": "An account of OpenAI's voice-agent work describes separating the model's components and deleting 23,000 lines of code to make the voice API architecture less cumbersome.",
+        "why": "Use the architecture as a prompt to reassess whether your voice stack should separate speech, reasoning and tool execution rather than building one tightly coupled loop."
+      }
+    ],
+    "also": [
+      {
+        "title": "GitHub Copilot app combines diffs, terminal and browser views",
+        "url": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-using-the-diff-terminal-and-browser/",
+        "summary": "The GitHub Copilot app lets developers review agent-generated diffs, run terminal commands and preview web applications side by side."
+      }
+    ]
+  }
+}
