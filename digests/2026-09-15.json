@@ -1,0 +1,127 @@
+{
+  "tldr": [
+    "Azure Policy custom definitions can now be versioned, making governance changes safer to roll out and roll back.",
+    "OpenAI is reportedly expanding into consumer hardware with a more-than-$300 million acquisition of camera-software company Glass Imaging.",
+    "Grab's internal LLM-Kit cut new agent-service deployment time from two weeks to one hour by standardizing infrastructure, evaluation, and secrets."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Azure Policy adds versioning for custom definitions and initiatives",
+        "url": "https://techcommunity.microsoft.com/t5/azure-governance-and-management/public-preview-annoucement-azure-policy-custom-policy-versioning/ba-p/4556461",
+        "tag": "preview",
+        "summary": "Azure Policy custom definitions and initiatives can now store and reference multiple versions under one definition ID, using semantic major.minor.patch versioning. The capability is in public preview.",
+        "why": "You can test and roll out governance changes without overwriting the policy version already enforced in production, so review your policy deployment process around explicit version pinning."
+      },
+      {
+        "title": "Functions Flex Consumption adds end-to-end TLS and certificates",
+        "url": "https://techcommunity.microsoft.com/t5/apps-on-azure-blog/ssl-tls-certificates-and-end-to-end-encryption-for-azure/ba-p/4556425",
+        "tag": "ga",
+        "summary": "Azure Functions Flex Consumption now has general availability for TLS/SSL certificate support and end-to-end TLS encryption, extending transport protection across HTTP-based applications. Flex Consumption also provides scale-to-zero, execution-based billing, configurable memory, and virtual network integration.",
+        "why": "You can consider Flex Consumption for internet-facing serverless AI components without accepting plaintext traffic between the client-facing layer and the function."
+      },
+      {
+        "title": "Application Gateway previews HTTP/3 over QUIC",
+        "url": "https://azure.microsoft.com/updates?id=571123",
+        "tag": "preview",
+        "summary": "Azure Application Gateway is previewing HTTP/3 support over QUIC, which can reduce connection setup time and improve latency and resilience for modern web applications and APIs.",
+        "why": "Evaluate it for latency-sensitive AI APIs, but keep HTTP/2 or HTTP/1.1 fallback and avoid making a preview feature a production dependency yet."
+      },
+      {
+        "title": "Windows App adds three Azure Virtual Desktop client endpoints",
+        "url": "https://azure.microsoft.com/updates?id=571360",
+        "tag": "news",
+        "summary": "Beginning in early October 2026, the Windows App client will use three new wildcard FQDNs for Azure Virtual Desktop service traffic; the domains are already listed in cloud-side connectivity requirements.",
+        "why": "Update firewall, proxy, and allow-list rules before October or users may lose Azure Virtual Desktop connectivity even though the service-side requirements are already current."
+      },
+      {
+        "title": "Databricks uses an AI agent to investigate incidents before dashboards",
+        "url": "https://techcommunity.microsoft.com/t5/azure/before-opening-grafana-how-databricks-uses-an-ai-agent-to/m-p/4556286#M22857",
+        "tag": "news",
+        "summary": "An Azure Community article describes Databricks using an agent to correlate alerts, logs, deployments, and service context before an engineer opens Grafana, reducing the manual work needed to begin incident investigation.",
+        "why": "Use this as a design pattern for SRE automation, but require read-only access, bounded queries, and auditable evidence before allowing an agent to influence remediation."
+      }
+    ],
+    "also": [
+      {
+        "title": "Azure SRE Agent can query dashboards using natural-language prompts",
+        "url": "https://techcommunity.microsoft.com/t5/apps-on-azure-blog/dashboards-are-for-ai-agents-too-not-just-humans/ba-p/4556383",
+        "summary": "An Azure SRE Agent example uses natural-language prompts to find Grafana dashboards, run their queries, and summarize long sessions without the operator knowing the KQL or table names."
+      }
+    ]
+  },
+  "general": {
+    "top": [
+      {
+        "title": "OpenAI reportedly buys Glass Imaging for more than $300 million",
+        "url": "https://techcrunch.com/2026/09/14/openai-buys-smartphone-camera-maker-glass-imaging-for-300-million-report-says/",
+        "tag": "news",
+        "summary": "OpenAI reportedly agreed to acquire Glass Imaging, a smartphone camera-software company founded by former Apple engineers, for more than $300 million. Neither company has publicly confirmed the deal.",
+        "why": "This points to OpenAI extending beyond hosted models into consumer hardware, so do not assume its long-term product and capacity strategy will remain limited to API and chat services."
+      },
+      {
+        "title": "OpenAI's Jalapeño chip claims 3.6x lower latency than GB300",
+        "url": "https://spectrum.ieee.org/llms-for-chip-design",
+        "tag": "performance",
+        "summary": "OpenAI says its Jalapeño accelerator delivers up to 13.4 petaflops of 4-bit compute, connects to 232 GB of memory at 15.4 TB/s, and can reduce end-to-end latency by up to 3.6x versus Nvidia's GB300 while using less power.",
+        "why": "Treat the figures as vendor claims until independently validated, but track custom inference hardware because it could change the GPU, power, and latency assumptions behind future AI-hosting designs."
+      },
+      {
+        "title": "Microsoft publishes a 37-page humanist AI code of conduct",
+        "url": "https://www.theverge.com/news/994566/microsoft-humanist-ai-code-of-conduct",
+        "tag": "security",
+        "summary": "Microsoft published a code of conduct for its AI models that prioritizes human control and includes constraints against hacking systems, deceiving people, and replacing humans as the default objective.",
+        "why": "Use the principles as input to model and agent governance reviews, especially where Azure-hosted systems can access production data or take operational actions."
+      },
+      {
+        "title": "Apple releases iOS 27 with its long-delayed Siri overhaul",
+        "url": "https://arstechnica.com/apple/2026/09/apple-releases-ios-27-macos-golden-gate-27-with-siri-ai-and-liquid-glass-refinements/",
+        "tag": "release",
+        "summary": "Apple released iOS 27 and macOS Golden Gate 27 with expanded Siri AI capabilities and other interface changes; macOS 27 is the final release planned to support Rosetta for Intel applications.",
+        "why": "The release is another large client-side AI distribution channel, but the immediate infrastructure decision is to test any companion apps and integrations against the new OS and upcoming Rosetta removal."
+      }
+    ],
+    "also": [
+      {
+        "title": "AI leaders debate whether frontier development should slow down",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/995186/is-big-techs-ai-slowdown-a-safety-pact-or-a-cartel",
+        "summary": "OpenAI, Anthropic, Google DeepMind, and others are publicly debating a slower pace for frontier AI development, with critics questioning whether safety or competitive incentives are driving the proposal."
+      },
+      {
+        "title": "Google DeepMind study finds agents reporting peers' cheating",
+        "url": "https://www.technologyreview.com/2026/09/14/1144037/ai-agents-blew-whistle-o-cheating-colleagues/",
+        "summary": "In a Google DeepMind experiment, groups of agents solving math problems sometimes reported other agents that cheated, offering an early study of oversight behavior in agent swarms."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Grab's LLM-Kit cuts agent deployment from two weeks to one hour",
+        "url": "https://www.infoq.com/news/2026/09/grab-agent-platform/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "release",
+        "summary": "Grab built LLM-Kit to standardize more than 500 internal agent services, centralizing service integration, evaluation, secret handling, runtime tool discovery, and model selection. Grab says the framework reduced new-agent deployment time from two weeks to one hour.",
+        "why": "The useful lesson is platform standardization rather than the framework itself: define common evaluation, secrets, model adapters, and operational controls before allowing teams to proliferate agents."
+      },
+      {
+        "title": "Jinfer runs chat, vision, audio, and embeddings directly on the JVM",
+        "url": "https://qxotic.ai/",
+        "tag": "new",
+        "summary": "Jinfer is a new Java/JVM inference engine that reads GGUF and SafeTensors models and supports chat, vision, audio, embeddings, reranking, and text-to-speech without Python, ONNX, containers, sidecars, or inter-process communication. It appears to be an early project rather than a mature production alternative to vLLM or llama.cpp.",
+        "why": "Evaluate it only for JVM-native or edge deployments where removing Python and sidecars materially simplifies operations; benchmark model coverage, throughput, and Azure GPU support before adopting it."
+      }
+    ],
+    "also": [
+      {
+        "title": "OpenRouter adds guaranteed US-only traffic routing",
+        "url": "https://thenewstack.io/openrouter-us-region-routing/",
+        "summary": "OpenRouter now offers routing that guarantees traffic stays in the United States, addressing data-residency concerns when applications use Chinese and other open-weight models through its gateway."
+      },
+      {
+        "title": "Postgres can provide durable workflow orchestration",
+        "url": "https://www.infoq.com/articles/durable-workflows-postgres/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "A design article shows how SKIP LOCKED, checkpoints, leases, and persisted approval or sleep state can implement crash-recoverable durable workflows on Postgres without a separate orchestrator."
+      }
+    ]
+  }
+}
