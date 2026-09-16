@@ -1,0 +1,100 @@
+{
+  "tldr": [
+    "Microsoft's Foundry Dev Pack standardizes local setup for terminal, VS Code and coding-agent development, reducing friction but also creating a new toolchain to govern.",
+    "Enterprise agent reliability is becoming an operational concern: Cohesity is adding rollback for agent memory and configuration, while AWS demonstrates keeping agents advisory and deterministic code in control.",
+    "Open models are reportedly closing the capability gap with frontier systems, but data-center opposition and power constraints increasingly affect where AI workloads can be deployed."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Microsoft launches one-command Foundry developer setup",
+        "url": "https://devblogs.microsoft.com/foundry/foundry-devpack-announcement/",
+        "tag": "new",
+        "summary": "Foundry Dev Pack is an all-in-one installer for the tools used to build Microsoft Foundry applications from the terminal, VS Code and coding agents.",
+        "why": "Evaluate it as a standard workstation bootstrap for AI teams, but first decide how its installed tools fit your enterprise image, update and security controls."
+      },
+      {
+        "title": "Azure Databricks uses an agent to investigate incidents before engineers",
+        "url": "https://techcommunity.microsoft.com/t5/azure/before-opening-grafana-how-azure-databricks-uses-an-ai-agent-to/m-p/4556286#M22857",
+        "tag": "new",
+        "summary": "Azure Databricks describes an internal incident-investigation agent that gathers dashboard, log, deployment and dependency context before an engineer starts debugging; the company says this work represents 60% to 80% of investigation time.",
+        "why": "Use this as a design pattern for reducing on-call toil, while keeping the agent read-only and requiring human approval for remediation."
+      },
+      {
+        "title": "Spark real-time mode targets sub-millisecond anomaly detection",
+        "url": "https://techcommunity.microsoft.com/t5/azure/detecting-corrupted-data-in-under-1ms-what-changes-when-spark/m-p/4555842#M22854",
+        "tag": "performance",
+        "summary": "An Azure Community article examines Apache Spark's Real-time mode, which avoids waiting for traditional one-to-two-second micro-batches when detecting fraud, invalid payloads or corrupted data.",
+        "why": "Consider this only for pipelines where batch latency causes real business or safety risk; otherwise the additional streaming complexity is unlikely to justify replacing micro-batches."
+      }
+    ],
+    "also": []
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Cohesity adds rollback for failed AI-agent state",
+        "url": "https://siliconangle.com/2026/09/16/cohesitys-new-agent-resilience-lets-companies-roll-back-ai-agents-that-go-wrong/",
+        "tag": "new",
+        "summary": "Cohesity introduced Agent Resilience, which backs up an enterprise agent's memory and configuration so it can be restored to a trusted state after an error or undesirable change.",
+        "why": "Treat agent memory and configuration as recoverable production state, and include restore-point frequency and rollback testing in your reliability design."
+      },
+      {
+        "title": "Open models reportedly trail frontier systems by only months",
+        "url": "https://arstechnica.com/ai/2026/09/exclusive-open-chinese-models-close-gap-with-silicon-valleys-frontier-ai-models/",
+        "tag": "performance",
+        "summary": "A preview of Mozilla research reports that paid frontier models provide roughly a four-month capability lead while costing about five times more than comparable open models.",
+        "why": "Re-run the buy-versus-host decision for workloads that do not need the absolute frontier, including GPU, serving and operational costs rather than API price alone."
+      },
+      {
+        "title": "61% of surveyed voters oppose new AI data centers",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/995917/data-center-nyt-midterm-poll-september",
+        "tag": "news",
+        "summary": "A New York Times–Siena poll of 1,503 likely voters found that 61% oppose construction of data centers intended to power AI technology.",
+        "why": "Treat community acceptance, grid capacity and permitting as deployment risks in addition to Azure region, GPU quota and price when planning large AI estates."
+      }
+    ],
+    "also": [
+      {
+        "title": "OpenAI, Anthropic and Google discuss a shared AI-safety framework",
+        "url": "https://techcrunch.com/2026/09/15/openai-anthropic-google-have-been-in-talks-on-ai-safety-for-weeks/",
+        "summary": "OpenAI confirmed weeks of safety discussions with Anthropic and Google DeepMind as governments debate how quickly frontier AI should advance."
+      },
+      {
+        "title": "Meta exposes WhatsApp Business setup through an MCP server",
+        "url": "https://techcrunch.com/2026/09/15/meta-now-lets-ai-agents-handle-the-boring-parts-of-whatsapp-business-setup/",
+        "summary": "The new WhatsApp Business MCP server lets coding agents configure accounts, messaging templates, testing and troubleshooting."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "GitHub AI agent reportedly leaked private repositories",
+        "url": "https://noma.security/noma-labs/gitlost-how-we-tricked-githubs-ai-agent-into-leaking-private-repos",
+        "tag": "security",
+        "summary": "Noma Security reports tricking GitHub's AI agent into exposing private repository data, highlighting how agent instructions and tool access can be combined against repository boundaries.",
+        "why": "Do not give coding agents unrestricted repository or network access; isolate credentials, constrain tool calls and test prompt-injection paths before production use."
+      },
+      {
+        "title": "AWS pattern keeps agents advisory and code in control",
+        "url": "https://thenewstack.io/aws-agents-deterministic-validation/",
+        "tag": "release",
+        "summary": "An AWS Step Functions pattern lets an AI agent suggest airline rebooking options while deterministic application code validates and executes the booking.",
+        "why": "Use the same split for high-impact Azure workflows: let the model generate candidates, but keep authorization, validation and irreversible actions in ordinary code."
+      }
+    ],
+    "also": [
+      {
+        "title": "Meta's WhatsApp MCP lacks a separate agent identity",
+        "url": "https://thenewstack.io/meta-mcp-whatsapp-business-claude/",
+        "summary": "Meta's WhatsApp Business MCP integration lets Claude and Codex perform setup and messaging work, but the agents do not receive an independent identity."
+      },
+      {
+        "title": "Bolt.new trades 50x more compute for training-data rights",
+        "url": "https://thenewstack.io/bolt-forge-training-data/",
+        "summary": "StackBlitz is testing a plan that gives developers substantially more coding-model usage in exchange for allowing their interactions to train the service."
+      }
+    ]
+  }
+}
