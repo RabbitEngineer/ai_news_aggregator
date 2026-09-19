@@ -1,0 +1,161 @@
+{
+  "tldr": [
+    "Foundry hosted agents can now enforce outbound network rules, a necessary control before deploying agents that call external services.",
+    "A reported $22,000 Marketplace bill shows that Azure sponsorship credits may not cover third-party models such as Claude; verify billing boundaries before deployment.",
+    "WSO2 Agent Manager is now generally available as an open-source control plane for agent identity, security and lifecycle management across environments."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Foundry adds outbound network controls for hosted agents",
+        "url": "https://azure.microsoft.com/updates?id=571821",
+        "tag": "security",
+        "summary": "Microsoft Foundry's hosted agents can now use ordered allow and deny rules for outbound destinations, including wildcard FQDNs such as *.contoso.com.",
+        "why": "Use this preview to replace unrestricted agent egress with an explicit allowlist before agents are trusted with production data or tools."
+      },
+      {
+        "title": "Foundry Routines automate scheduled and event-driven agents",
+        "url": "https://azure.microsoft.com/updates?id=563536",
+        "tag": "preview",
+        "summary": "Foundry Agent Service now previews Foundry Routines, a native trigger primitive for running published agents on schedules or in response to business events.",
+        "why": "This can remove separate scheduler and event-orchestration components, but you should still design for retries, duplicate events and run-level cost controls."
+      },
+      {
+        "title": "Azure sponsorship customer reports an unexpected $22,000 Claude bill",
+        "url": "https://techcommunity.microsoft.com/t5/azure/unexpected-22-000-azure-marketplace-charge-with-no-meaningful/m-p/4558058#M22870",
+        "tag": "pricing",
+        "summary": "An Azure Community customer reports that Claude deployments through Azure AI Foundry generated a roughly $22,000 Marketplace charge despite the organisation expecting Azure Sponsorship credits to cover its usage.",
+        "why": "Treat third-party model billing as a separate cost boundary and confirm sponsorship, Marketplace and budget-alert coverage before enabling production inference."
+      },
+      {
+        "title": "Foundry agents gain GA enable and disable controls in Agent 365",
+        "url": "https://azure.microsoft.com/updates?id=571826",
+        "tag": "ga",
+        "summary": "Microsoft Foundry agents can now be enabled or disabled from the Agent 365 governance surface in Microsoft Admin Center.",
+        "why": "This gives administrators a central emergency and lifecycle control, so include agent disablement in operational runbooks and access reviews."
+      },
+      {
+        "title": "PostgreSQL 18 reaches Azure elastic clusters",
+        "url": "https://azure.microsoft.com/updates?id=571047",
+        "tag": "ga",
+        "summary": "Azure Database for PostgreSQL elastic clusters now support PostgreSQL 18 for distributed, cloud-scale workloads.",
+        "why": "Teams planning a PostgreSQL 18 migration can consider the elastic-cluster option, but should validate extension, compatibility and distributed-query behaviour first."
+      }
+    ],
+    "also": [
+      {
+        "title": "Foundry agents can now publish to Microsoft 365 Copilot and Teams",
+        "url": "https://azure.microsoft.com/updates?id=571816",
+        "summary": "Publishing Microsoft Foundry agents to Microsoft 365 Copilot and Teams is now generally available, providing a native route to end users."
+      },
+      {
+        "title": "Azure adds a replication-slot sync metric for PostgreSQL",
+        "url": "https://azure.microsoft.com/updates?id=568414",
+        "summary": "A new Azure Monitor metric reports the synchronization status of logical replication slots on PostgreSQL Flexible Server."
+      },
+      {
+        "title": "Azure previews guided Copilot app building in VS Code",
+        "url": "https://techcommunity.microsoft.com/t5/apps-on-azure-blog/introducing-a-guided-copilot-experience-for-building-azure-apps/ba-p/4557120",
+        "summary": "A structured GitHub Copilot workflow in VS Code guides users from an application idea through deployment to Azure instead of relying on free-form chat."
+      }
+    ]
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Researchers used Claude to reach OpenAI's GitHub repository",
+        "url": "https://arstechnica.com/ai/2026/09/researchers-used-claude-to-hack-openai/",
+        "tag": "security",
+        "summary": "Security researchers reportedly used Claude to compromise an OpenAI employee account and access sensitive GitHub data, demonstrating that an AI coding assistant can materially accelerate an intrusion.",
+        "why": "Treat agentic coding tools as privileged production identities: enforce least privilege, isolate repositories and require human approval for credentials and high-impact actions."
+      },
+      {
+        "title": "Anthropic opens a robot-powered biology research lab",
+        "url": "https://siliconangle.com/2026/09/18/anthropic-opens-ai-powered-biology-research-lab/",
+        "tag": "news",
+        "summary": "Anthropic has opened a San Francisco Bay Area wet lab where robots will automate biology tasks using Claude models, although the specific research projects remain unclear.",
+        "why": "This is a notable move from selling models toward operating model-driven physical systems, raising the importance of isolation, tool permissions and auditable workflows in AI hosting designs."
+      },
+      {
+        "title": "AI hallucination nearly triggered a US military operation",
+        "url": "https://arstechnica.com/ai/2026/09/report-us-almost-boarded-chinese-ship-over-hallucinated-ai-arms-report/",
+        "tag": "performance",
+        "summary": "A report says an AI system incorrectly identified Chinese nuclear components and nearly contributed to a military operation, underscoring the danger of treating generated intelligence as verified fact.",
+        "why": "For high-consequence workloads, require source grounding, confidence and uncertainty signals, and human confirmation rather than allowing an LLM output to trigger action directly."
+      },
+      {
+        "title": "Virginia moves to give communities more control over data centers",
+        "url": "",
+        "tag": "news",
+        "summary": "Virginia's governor ordered an AI task force and measures that could increase local influence over data-center development and slow approvals; the order also bans executive-branch nondisclosure agreements.",
+        "why": "If your capacity plan depends on Virginia, add permitting, power and community-approval risk to the assumptions behind GPU and regional expansion decisions."
+      },
+      {
+        "title": "PrismML launches a 27B ternary model for local hardware",
+        "url": "https://siliconangle.com/2026/09/18/prismml-launches-bonsai-2-27b-a-high-intelligence-ai-model-so-small-it-fits-on-consumer-hardware/",
+        "tag": "model",
+        "summary": "PrismML announced Bonsai 2 27B, a multimodal model based on Qwen3.8 27B that uses ternary compression and is claimed to fit on PCs and some high-end mobile devices.",
+        "why": "Evaluate this class of compressed model for private or edge inference where lower hosting and data-transfer costs matter, while independently checking quality and hardware requirements."
+      }
+    ],
+    "also": [
+      {
+        "title": "OpenAI documents warned that its web strategy could create a 'doom loop'",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/997633/openai-microsoft-chatgpt-ai-new-york-times-doom-loop-theft-google-zero",
+        "summary": "Unsealed documents in The New York Times' case describe internal concerns that OpenAI and Microsoft's scraping and AI-search strategy could damage the web ecosystem."
+      },
+      {
+        "title": "FAA plans an $875 million AI traffic-congestion system",
+        "url": "https://arstechnica.com/ai/2026/09/faa-tees-up-875m-ai-tool-to-help-manage-air-traffic-congestion/",
+        "summary": "The FAA is preparing an $875 million AI system to manage Washington-area air traffic congestion before considering a nationwide rollout."
+      },
+      {
+        "title": "OpenAI proposes a six-pillar youth safety blueprint in Australia",
+        "url": "https://openai.com/index/australian-youth-safety-blueprint",
+        "summary": "OpenAI published an Australian Youth Safety Blueprint describing six areas for protecting and empowering young people using AI services."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "WSO2 Agent Manager reaches GA for cross-platform agent governance",
+        "url": "https://www.infoq.com/news/2026/09/ws02-agent-manager/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "ga",
+        "summary": "WSO2 Agent Manager is now generally available as an open-source platform for centralised governance, identity management, security controls and operational oversight across models, agent frameworks and deployment environments.",
+        "why": "Evaluate it as a control-plane alternative to building separate agent registries, identity integrations and policy tooling, while verifying its Azure and enterprise-operations fit."
+      },
+      {
+        "title": "DoorDash reports measurable results from multi-agent flag cleanup",
+        "url": "https://www.infoq.com/news/2026/09/doordash-feature-flag-cleanup/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "performance",
+        "summary": "DoorDash used multiple agents, MCP, isolated Git worktrees, engineer approval and automated validation across 60,000 flags and 623 repositories; 45 of 50 evaluated flags produced usable pull requests at an average of 13.8 minutes and $4.79 each.",
+        "why": "The concrete cost and success rate provide a useful benchmark for deciding whether agent automation is economical for repetitive repository-maintenance work."
+      },
+      {
+        "title": "MariaDB 13 reaches GA with Oracle compatibility changes",
+        "url": "https://www.infoq.com/news/2026/09/mariadb-13-released/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "release",
+        "summary": "MariaDB Community Server 13.0 is generally available with expanded procedural SQL and DML capabilities, observability improvements, performance changes and new deprecations.",
+        "why": "If MariaDB backs an AI application or agent service, review the deprecations and compatibility changes before adopting the new major version in shared production infrastructure."
+      }
+    ],
+    "also": [
+      {
+        "title": "Open-weight models now produce most Vercel AI Gateway tokens",
+        "url": "https://thenewstack.io/open-weight-anthropic-spend/",
+        "summary": "The report says open-weight models account for a majority of tokens on Vercel's AI Gateway, while Anthropic still represents 64% of spending."
+      },
+      {
+        "title": "Kubernetes inference deployments need better cost accounting",
+        "url": "https://thenewstack.io/kubernetes-ai-inference-costs/",
+        "summary": "The article examines why Kubernetes can run AI inference without necessarily exposing the full GPU, utilisation and per-request cost of that workload."
+      },
+      {
+        "title": "Buildpacks are presented as a way to scale container security controls",
+        "url": "https://thenewstack.io/buildpacks-container-security-scale/",
+        "summary": "The article argues that standardised buildpacks can make container security controls more consistently enforceable across many services."
+      }
+    ]
+  }
+}
