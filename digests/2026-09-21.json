@@ -1,0 +1,34 @@
+{
+  "tldr": [
+    "The U.S. president proposed an AI czar and a new AI force, but provided no structure or timeline that changes deployment decisions yet.",
+    "Alibaba open-sourced OpenCodeReview, a CLI that combines deterministic code-selection and rule checks with LLM-based analysis; it is worth watching as an alternative to AI-assisted review tools."
+  ],
+  "azure": {
+    "top": [],
+    "also": []
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Trump proposes an AI czar and a new AI force",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/997867/trump-ai-force-ai-czar",
+        "tag": "news",
+        "summary": "President Trump said he wants to appoint an AI czar and establish an “AI force,” while promising not to hinder AI development. The announcement did not specify the organization’s remit, membership, authority, or implementation timeline.",
+        "why": "There is no immediate architecture action, but track the policy direction because a new federal AI organization could affect procurement, safety requirements, and public-sector hosting expectations."
+      }
+    ],
+    "also": []
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Alibaba open-sources OpenCodeReview for AI-assisted review",
+        "url": "https://www.infoq.com/news/2026/09/alibaba-opencodereview/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "new",
+        "summary": "Alibaba released OpenCodeReview, a CLI that uses deterministic pipelines for file selection, bundling, and rule matching, then applies an LLM agent for deeper analysis; built-in checks include null-pointer errors, thread safety, XSS, and SQL injection. It is a new open-source release, with no adoption evidence in the report.",
+        "why": "Evaluate it against your existing static-analysis and AI-review pipeline if you want LLM assistance without letting the model control the entire review workflow, but treat it as an early project until reliability and integration maturity are demonstrated."
+      }
+    ],
+    "also": []
+  }
+}
