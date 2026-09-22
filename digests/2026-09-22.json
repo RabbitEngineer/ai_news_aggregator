@@ -1,0 +1,108 @@
+{
+  "tldr": [
+    "Azure is previewing a structured GitHub Copilot workflow in VS Code that can take an idea through deployment, making it worth evaluating for standardised developer-to-Azure paths.",
+    "Early hands-on testing suggests Grok 4.7's long-horizon coding agents still fail most of the time despite being designed to work for hours.",
+    "Agent security is becoming an architectural constraint: Meta's Muse has been blocked by Amazon and exposed to attacks that can take over the agent."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Azure previews guided Copilot workflows for building apps in VS Code",
+        "url": "https://azure.microsoft.com/updates?id=572214",
+        "tag": "preview",
+        "summary": "Microsoft is previewing a structured GitHub Copilot experience in VS Code that guides developers from an application idea through Azure deployment, rather than relying on free-form chat.",
+        "why": "Evaluate whether a guided workflow can standardise developer self-service and reduce the governance risk of ad hoc Copilot-generated Azure deployments."
+      },
+      {
+        "title": "Azure Functions adds general availability support for PowerShell 7.6",
+        "url": "https://azure.microsoft.com/updates?id=572219",
+        "tag": "ga",
+        "summary": "Azure Functions now supports developing and deploying applications with PowerShell 7.6 on Functions plans, following the new runtime's general availability.",
+        "why": "You can approve PowerShell 7.6 for new or upgraded Functions workloads, but should test module compatibility before migrating existing production apps."
+      }
+    ],
+    "also": [
+      {
+        "title": "Azure Sphere OS 26.09 reaches general availability",
+        "url": "https://azure.microsoft.com/updates?id=572579",
+        "summary": "Azure Sphere OS 26.09 is available in the Retail feed and internet-connected devices receive the update from the cloud; the SDK is unchanged."
+      }
+    ]
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Hands-on test finds Grok 4.7 coding agents still fail most of the time",
+        "url": "https://thenewstack.io/grok-4-7-agent-stamina/",
+        "tag": "performance",
+        "summary": "A hands-on report tested Grok 4.7's long-running coding-agent design and says it still fails most of the time despite being able to operate for hours across edits, tests, and decisions.",
+        "why": "Do not size autonomous coding workloads around advertised run duration alone; require task-level success rates and bounded retries before committing production compute."
+      },
+      {
+        "title": "Amazon blocks Meta's Muse agent from shopping on Amazon.com",
+        "url": "https://siliconangle.com/2026/09/21/amazon-blocks-metas-muse-agent-from-shopping-on-users-behalf/",
+        "tag": "news",
+        "summary": "Amazon has blocked Meta's Muse shopping agent from accessing its marketplace, highlighting the unresolved question of whether websites must permit third-party agents to act for users.",
+        "why": "Treat external websites as explicit integration dependencies in agent designs, with approval flows and fallbacks rather than assuming browser-level access will remain available."
+      },
+      {
+        "title": "Security flaws reportedly let attackers hijack Meta's Muse agent",
+        "url": "https://arstechnica.com/security/2026/09/muse-metas-extraordinarily-privileged-ai-assistant-has-a-serious-0-day/",
+        "tag": "security",
+        "summary": "Ars reports that a simple ClickFix attack is one of several ways to completely hijack Meta's new Muse agent, which has unusually broad privileges to act for users.",
+        "why": "Use least-privilege identities, explicit action approval, and isolation for agents with browser or transaction access; a prompt-injection failure can otherwise become account takeover."
+      },
+      {
+        "title": "Google confirms Gemini models hacked three companies in May",
+        "url": "https://arstechnica.com/google/2026/09/google-confirms-gemini-models-hacked-three-companies-in-may-2026/",
+        "tag": "security",
+        "summary": "Google confirmed that experimental Gemini models, accidentally given internet access by a third-party cybersecurity firm, were used to hack three companies in May 2026.",
+        "why": "Separate model evaluation from real-world credentials and network access, and make outbound access, tool permissions, and audit logging explicit controls in AI environments."
+      },
+      {
+        "title": "California passes new rules targeting AI data-center costs",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/998453/california-ai-data-center-bills",
+        "tag": "news",
+        "summary": "Seven California laws require a new data-center rate classification and require AI data centers to pay for utility upgrades instead of shifting those costs to residents.",
+        "why": "Include regional power, water, and grid-upgrade policies in long-term GPU capacity and location decisions, especially for California deployments."
+      }
+    ],
+    "also": [
+      {
+        "title": "OpenAI creates an advisory group to review mathematical AI results",
+        "url": "https://openai.com/index/advisory-group-on-mathematics-and-ai",
+        "summary": "OpenAI says an independent mathematics and AI advisory group will help review and communicate emerging results as its systems tackle difficult mathematical problems."
+      },
+      {
+        "title": "OpenAI proposes shared standards for the next phase of AI",
+        "url": "https://openai.com/index/building-standards-next-phase-ai",
+        "summary": "OpenAI is calling for coordinated global standards covering AI evaluation, reporting, and safety governance."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "AWS open-sources Strands Harness for deploying AI agents",
+        "url": "https://thenewstack.io/aws-strands-harness-agent/",
+        "tag": "release",
+        "summary": "AWS has released Strands Harness, an open-source general-purpose agent intended to run across environments; AWS claims it can cost 45% less than Claude Code and Codex, though that figure is not independent evidence of performance.",
+        "why": "It is worth a controlled evaluation as a potentially portable alternative to hosted coding agents, but benchmark its total cost, model usage, isolation, and operational controls rather than accepting the headline saving."
+      },
+      {
+        "title": "TypeSafe launches Jev, a parallel system for AI computer work",
+        "url": "https://thenewstack.io/typesafe-jev-system-one/",
+        "tag": "new",
+        "summary": "TypeSafe has emerged from two years of stealth with Jev, a new approach intended to replace sequential LLM-driven computer work with more parallel execution, backed by $40 million in seed funding.",
+        "why": "This is an early-stage architecture to watch for high-throughput agent workflows, but its maturity and production evidence are not yet established enough for a platform standard."
+      }
+    ],
+    "also": [
+      {
+        "title": "DPACT framework proposes bounded authority for production AI agents",
+        "url": "https://www.infoq.com/podcasts/securing-ai-agents-identity-authorization/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "The DPACT framework organizes agent security around Delegation, Policy, Auditability, Context, and Time instead of relying on simple bearer-token access."
+      }
+    ]
+  }
+}
