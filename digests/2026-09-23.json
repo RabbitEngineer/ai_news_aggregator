@@ -1,0 +1,102 @@
+{
+  "tldr": [
+    "OpenAI and Anthropic both released cheaper frontier models, making model-routing and inference-cost assumptions worth revisiting.",
+    "Azure Functions workloads on Node.js 22 have a clear migration deadline: move to Node.js 24 by April 30, 2027.",
+    "Google open-sourced AX, a Kubernetes-style orchestrator for stateful autonomous-agent workloads, but its production maturity is not yet established."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Azure Functions Node.js 22 support ends April 30, 2027",
+        "url": "https://azure.microsoft.com/updates?id=572771",
+        "tag": "deprecation",
+        "summary": "Azure will end support for Node.js 22 in Function apps on April 30, 2027; existing apps will continue running, but will no longer receive security patches, updates, or customer support.",
+        "why": "Inventory your Function apps and plan a Node.js 24 migration before the deadline, especially where runtime changes require dependency or deployment testing."
+      },
+      {
+        "title": "AKS previews Flex Nodes for hybrid and edge workers",
+        "url": "https://azure.microsoft.com/updates?id=571919",
+        "tag": "preview",
+        "summary": "Flex Nodes lets teams connect hybrid and edge infrastructure as worker nodes to an AKS control plane hosted in Azure, providing a common Kubernetes management layer across locations.",
+        "why": "Evaluate this if edge or on-premises capacity is part of your platform roadmap, but keep it out of production architecture until the preview's operational limits are clear."
+      },
+      {
+        "title": "Azure Resource Graph adds a faster route to configuration changes",
+        "url": "https://techcommunity.microsoft.com/t5/azure-networking-blog/change-analysis-in-azure-resource-graph-your-first-stop-for-what/ba-p/4559038",
+        "tag": "news",
+        "summary": "A Microsoft Tech Community article presents Change Analysis in Azure Resource Graph as a first stop for finding configuration changes before VPN, firewall, routing, VM, or application failures.",
+        "why": "Add Change Analysis queries to incident runbooks so engineers can test whether an Azure configuration change preceded an outage before escalating to deeper network or platform investigation."
+      }
+    ],
+    "also": []
+  },
+  "general": {
+    "top": [
+      {
+        "title": "OpenAI launches cheaper GPT-6 Sol and Luna models",
+        "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna",
+        "tag": "model",
+        "summary": "OpenAI introduced GPT-6 Sol and Luna as lower-cost alternatives to its GPT-6 Astra flagship, with different balances of capability and price; reporting says their token prices are roughly half those of their predecessors.",
+        "why": "Re-run model-routing and serving cost forecasts: workloads currently using a flagship model may be able to move to Sol or Luna without retaining the same per-token budget."
+      },
+      {
+        "title": "Anthropic releases Claude Opus 5.5 with a 20% price cut",
+        "url": "https://techcrunch.com/2026/09/22/anthropic-releases-opus-5-5-with-lower-prices-and-fable-level-performance/",
+        "tag": "model",
+        "summary": "Anthropic released Claude Opus 5.5, describing it as its strongest-performing model tested so far, while cutting its price by 20%; the release also adds stricter safeguards for risky cybersecurity behavior.",
+        "why": "Benchmark Opus 5.5 against your current production model on representative prompts before changing routing, because the lower price may alter the quality-versus-cost break-even point."
+      },
+      {
+        "title": "Cisco finds malware that votes among four AI models",
+        "url": "https://siliconangle.com/2026/09/22/cisco-talos-finds-malware-that-puts-its-next-move-to-a-four-model-vote/",
+        "tag": "security",
+        "summary": "Cisco Talos described CLOSEDQUORUM, an open-source hunting toolkit and Windows credential-stealer sample whose next action is selected by a vote among four AI models rather than a conventional command-and-control server.",
+        "why": "Treat model-mediated decision-making as an emerging malware pattern and ensure endpoint and network detections do not depend solely on finding a fixed command-and-control domain."
+      },
+      {
+        "title": "Microsoft disrupts AI-assisted platform behind 12,000 compromises",
+        "url": "https://arstechnica.com/security/2026/09/microsoft-disrupts-ai-assisted-platform-that-compromised-12000/",
+        "tag": "security",
+        "summary": "Microsoft disrupted EvilTokens, an end-to-end platform that used AI assistance to make mass account compromises faster and easier; the operation reportedly affected about 12,000 accounts.",
+        "why": "Include AI-enabled abuse services in threat models for identity and application platforms, particularly where automated credential attacks can scale faster than manual investigation."
+      }
+    ],
+    "also": [
+      {
+        "title": "Qualcomm says its new chip can run a 30B mixture-of-experts model",
+        "url": "https://techcrunch.com/2026/09/22/qualcomm-launches-two-new-smartphone-chips-with-emphasis-on-ai/",
+        "summary": "Qualcomm launched two smartphone chips and says the higher-end model can run a 30-billion-parameter mixture-of-experts model locally."
+      },
+      {
+        "title": "Snorkel AI raises $350 million for training-data services",
+        "url": "",
+        "summary": "Snorkel AI raised a $350 million Series E at a reported $3.5 billion valuation to expand its data-as-a-service training-data business."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Google open-sources AX for stateful autonomous agents",
+        "url": "https://www.infoq.com/news/2026/09/google-ax-orchestrator/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "release",
+        "summary": "Google open-sourced AX, a Kubernetes-style orchestrator for autonomous-agent workloads that runs agents as stateful actors and can suspend and resume idle tasks to reduce resource use and latency.",
+        "why": "Watch AX as a possible alternative to bespoke agent schedulers, but treat it as an early evaluation candidate rather than a proven production control plane until adoption and operational maturity emerge."
+      },
+      {
+        "title": "GitLab Duo Self-Hosted adds Microsoft Foundry models",
+        "url": "https://www.infoq.com/news/2026/09/gitlab-microsoft-foundry/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "release",
+        "summary": "GitLab Duo Self-Hosted can now use models deployed through Microsoft Foundry, allowing GitLab's AI development features to run against models hosted in an organization's selected Azure environment.",
+        "why": "If GitLab is part of your engineering platform, assess whether this provides a simpler path to keep code-assistance traffic inside your Azure boundary instead of sending it to a vendor-hosted model endpoint."
+      }
+    ],
+    "also": [
+      {
+        "title": "JetBrains expands its IDEs around agentic development",
+        "url": "https://thenewstack.io/jetbrains-air-agents-ide/",
+        "summary": "JetBrains is making a major push to integrate coding agents into its IDEs, betting that agent-assisted development will remain centered on an IDE rather than move entirely to standalone tools."
+      }
+    ]
+  }
+}
