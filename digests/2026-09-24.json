@@ -1,0 +1,105 @@
+{
+  "tldr": [
+    "Two Azure Function runtime deadlines arrive on November 10, 2026: PowerShell 7.4 and .NET 8/9 will lose security updates and support.",
+    "Google released two Gemini 3.8 Flash text-to-speech models, separating higher audio quality from lower-cost, faster inference.",
+    "Graphify is an early open-source attempt to give coding agents a queryable knowledge graph of an entire codebase, but integration remains immature."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Azure Functions PowerShell 7.4 support ends November 10, 2026",
+        "url": "https://azure.microsoft.com/updates?id=572770",
+        "tag": "deprecation",
+        "summary": "Microsoft will end support for PowerShell 7.4 on November 10, 2026, and recommends moving Azure Function apps to PowerShell 7.6. Existing apps will continue running, but will no longer receive security patches or customer support.",
+        "why": "Inventory Function apps and test the 7.6 runtime now; leaving workloads on 7.4 creates an unsupported security and operations risk even if deployments keep working."
+      },
+      {
+        "title": "Azure Functions .NET 8 and .NET 9 support ends November 10",
+        "url": "https://azure.microsoft.com/updates?id=572838",
+        "tag": "deprecation",
+        "summary": "Support for .NET 8 and .NET 9 on Azure Functions ends November 10, 2026, with .NET 10 as the target upgrade. Apps should continue to run after the deadline, but Microsoft will stop providing security updates and support.",
+        "why": "Map every Function app and extension to .NET 10 compatibility before the deadline, since postponing the upgrade turns a routine runtime change into an unsupported production dependency."
+      },
+      {
+        "title": "Azure says resilience must be maintained, not merely designed",
+        "url": "https://azure.microsoft.com/en-us/blog/your-architecture-diagram-is-not-your-resilience/",
+        "tag": "news",
+        "summary": "An Azure Blog post argues that resilience is an ongoing operating property rather than a one-time architecture project, with designs needing continual validation as systems and dependencies change.",
+        "why": "Use the principle to schedule recurring failure tests, recovery reviews, and dependency checks instead of treating an approved architecture diagram as evidence that a service will recover."
+      }
+    ],
+    "also": []
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Google releases two Gemini 3.8 Flash text-to-speech models",
+        "url": "https://siliconangle.com/2026/09/23/google-launches-two-benchmark-topping-speech-generation-models/",
+        "tag": "model",
+        "summary": "Google launched Gemini 3.8 Flash TTS and Gemini 3.8 Flash-Lite TTS through its cloud platform with similar APIs. Flash targets higher audio quality, while Flash-Lite is optimized for lower cost and faster inference.",
+        "why": "For voice features, benchmark both variants against your latency and audio-quality targets rather than defaulting to the more capable model; the choice now directly affects serving cost and responsiveness."
+      },
+      {
+        "title": "Meta expands its Muse agent with email, video chat, and more tools",
+        "url": "",
+        "tag": "news",
+        "summary": "Meta says Muse agents will receive email addresses, support video conversations, and gain broader task capabilities as the company connects the agent to glasses and other devices.",
+        "why": "Treat agent integrations with messaging, personal data, and external actions as a growing permission boundary: require explicit consent, least-privilege access, and auditable actions in comparable designs."
+      }
+    ],
+    "also": [
+      {
+        "title": "Google DeepMind says Gemini 4 is in its final refinement stage",
+        "url": "https://www.theverge.com/tech/999802/google-deepmind-gemini-4-timeline-koray-kavukcuoglu",
+        "summary": "Google DeepMind's new chief said Gemini 4 is nearing launch and is currently in refinement, but provided no release date or technical specifications."
+      },
+      {
+        "title": "OpenAI introduces MentalHealthBench for safer model evaluations",
+        "url": "https://openai.com/index/introducing-mentalhealthbench",
+        "summary": "MentalHealthBench is an expert-informed benchmark for testing whether AI responses are both helpful and safe across realistic mental-health conversations."
+      },
+      {
+        "title": "OpenAI extends civilian cyber-defense access to Ukraine",
+        "url": "https://openai.com/index/openai-extends-cyber-access-to-ukraine-for-civilian-defense",
+        "summary": "OpenAI is extending its Daybreak program to Ukraine's government to support cyber defense of civilian infrastructure."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Graphify builds a queryable knowledge graph for coding agents",
+        "url": "https://www.infoq.com/news/2026/09/graphify-codebase-exploration/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "new",
+        "summary": "Graphify is an open-source tool that converts codebases and unstructured data into queryable knowledge graphs for AI coding assistants. Launched in April 2026, it has improved parsing and cross-file resolution, but early feedback still reports integration problems in daily workflows.",
+        "why": "Evaluate it only where agents struggle with multi-repository or cross-file context; its architecture is promising, but the reported integration friction makes it an experiment rather than a production dependency."
+      },
+      {
+        "title": "Modal describes infrastructure for a million concurrent sandboxes",
+        "url": "https://www.infoq.com/news/2026/09/modal-scaling-sandboxes/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "news",
+        "summary": "Modal engineers describe rebuilding their sandbox platform to support millions of concurrent sandboxes and tens of thousands of sandbox creations per second, rather than relying solely on Kubernetes.",
+        "why": "For agent systems that execute untrusted code, compare this sandbox-oriented model with AKS-based isolation; workload startup rate and isolation requirements may matter more than standard cluster capacity."
+      },
+      {
+        "title": "Google XProf adds cycle-level profiling for TPU kernels",
+        "url": "https://www.infoq.com/news/2026/09/google-tpu-xprof/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "release",
+        "summary": "The open-source XProf profiler now exposes cycle-level details for custom Pallas kernels, which previously appeared as opaque single blocks in TPU traces.",
+        "why": "This makes low-level TPU performance tuning materially more practical, though it matters mainly if your serving or training design uses Google TPUs rather than Azure GPU infrastructure."
+      }
+    ],
+    "also": [
+      {
+        "title": "Q.ANT open-sources software stack for light-powered AI chips",
+        "url": "https://thenewstack.io/q-ant-open-sources-cuda/",
+        "summary": "German startup Q.ANT is giving away software for its photonic AI processors in an attempt to attract developers with a CUDA-like ecosystem."
+      },
+      {
+        "title": "JayBase offers append-only, auditable storage for agent writes",
+        "url": "https://jaybase.ai",
+        "summary": "The newly hosted JayBase service provides an append-only data store with built-in history and auditability for AI agents writing business data."
+      }
+    ]
+  }
+}
