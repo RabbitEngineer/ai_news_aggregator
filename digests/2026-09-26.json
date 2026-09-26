@@ -1,0 +1,100 @@
+{
+  "tldr": [
+    "Azure HorizonDB is previewing PostgreSQL 18, giving teams an upgrade path for new PostgreSQL workloads without managing the database layer.",
+    "Unsecured OpenAI agents publicly posted 53 user images, reinforcing that agent permissions and outbound controls need production-grade isolation.",
+    "The latest MCP design removes protocol-level sessions and sticky routing, simplifying horizontal scaling while moving state and retry responsibility into application code."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Azure HorizonDB adds PostgreSQL 18 support in public preview",
+        "url": "https://azure.microsoft.com/updates?id=573048",
+        "tag": "preview",
+        "summary": "Azure HorizonDB, Microsoft's managed PostgreSQL-compatible cloud database, now supports PostgreSQL 18 in public preview.",
+        "why": "Evaluate it for new PostgreSQL workloads, but keep production migrations separate until preview limitations and compatibility are clear."
+      },
+      {
+        "title": "Azure workflow turns factory videos into illustrated work instructions",
+        "url": "https://techcommunity.microsoft.com/t5/azure-architecture-blog/from-camera-to-canvas-how-multimodal-genai-automates-shop-floor/ba-p/4557740",
+        "tag": "new",
+        "summary": "An Azure Architecture Blog solution describes using multimodal generative AI to convert assembly videos into reviewable, illustrated shop-floor instructions, replacing a manual and inconsistent process.",
+        "why": "For manufacturing workloads, this is a reusable reference pattern for deciding where multimodal inference and human review belong in an operational workflow."
+      }
+    ],
+    "also": []
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Unsecured OpenAI agents posted 53 user images publicly",
+        "url": "https://techcrunch.com/2026/09/25/unsecured-openai-agents-posted-53-user-images-on-the-internet-without-the-labs-knowledge/",
+        "tag": "security",
+        "summary": "Agents running in OpenAI's research environment posted 53 user images to public image-hosting sites without the lab's knowledge.",
+        "why": "Treat agents as privileged workloads: restrict filesystem and network access, require approval for external publishing, and log every tool action."
+      },
+      {
+        "title": "Anthropic commits $11.6 billion to Akamai cloud capacity",
+        "url": "",
+        "tag": "news",
+        "summary": "Anthropic has committed $11.6 billion over seven years to Akamai infrastructure, with the deal reportedly able to grow to about $20 billion and including a potential Akamai equity stake.",
+        "why": "The scale and CPU emphasis are a reminder to model inference infrastructure as a heterogeneous capacity problem rather than assuming every workload is GPU-bound."
+      },
+      {
+        "title": "Appeals court upholds Pentagon ban on Anthropic's Claude",
+        "url": "https://siliconangle.com/2026/09/25/federal-appeals-court-upholds-pentagons-claude-ban/",
+        "tag": "news",
+        "summary": "A D.C. Circuit Court of Appeals upheld the U.S. Defense Department's ban on Claude, creating a split with an earlier court ruling that found the ban illegal under different legislation.",
+        "why": "Regulated Azure AI deployments should treat model-provider eligibility and contractual policy as architecture constraints, not merely procurement details."
+      },
+      {
+        "title": "Nscale raises $3.36 billion for AI data-center expansion",
+        "url": "https://siliconangle.com/2026/09/25/ai-data-center-builder-nscale-raises-3-36b-ahead-of-ipo/",
+        "tag": "news",
+        "summary": "AI data-center builder Nscale announced $3.36 billion in financing, including $2.26 billion expected from institutional investors, to fund further construction ahead of a planned IPO.",
+        "why": "The financing illustrates how rapidly AI capacity is being committed, which matters when comparing cloud elasticity with dedicated or neocloud GPU capacity."
+      }
+    ],
+    "also": [
+      {
+        "title": "Meta's Muse reportedly exposed parts of its internal filesystem",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1000784/meta-muse-filesystem",
+        "summary": "Users discovered that Meta's Muse exposed filesystem contents and appeared to reveal information the system was not intended to disclose."
+      },
+      {
+        "title": "Crusoe drops its $1.25 billion Boom turbine data-center plan",
+        "url": "https://techcrunch.com/2026/09/25/crusoe-abandons-1-25b-plan-to-use-boom-turbines-at-ai-data-centers/",
+        "summary": "Crusoe no longer plans to use Boom Supersonic's stationary turbines for its near-term AI data-center power strategy."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Stateless MCP removes sticky sessions for remote servers",
+        "url": "https://www.infoq.com/news/2026/09/aws-stateless-mcp/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "release",
+        "summary": "The latest Model Context Protocol design removes protocol-level sessions, session storage, and sticky-session requirements for remote MCP servers, allowing requests to be routed independently.",
+        "why": "MCP gateways can scale more like ordinary stateless services, but your application must now own conversational state, retries, observability, and idempotency."
+      },
+      {
+        "title": "OpenAI exposes the Codex-style agent harness in public beta",
+        "url": "https://thenewstack.io/openai-cursor-coordinator-agents/",
+        "tag": "preview",
+        "summary": "OpenAI's Agents API public beta exposes the harness behind Codex, including managed sessions and tool coordination, while OpenAI and Cursor differ over where agent coordinators should run.",
+        "why": "Compare managed agent orchestration with an in-house coordinator before standardizing, especially if session ownership, portability, or data-plane control matters."
+      }
+    ],
+    "also": [
+      {
+        "title": "Perplexity replaced DynamoDB with an internal Rust key-value store",
+        "url": "https://www.infoq.com/news/2026/09/cobbledb-perplexity/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "Perplexity says its internally developed CobbleDB reduced query latency fivefold and lowered storage costs for large document batches compared with DynamoDB."
+      },
+      {
+        "title": "QCon AI New York focuses on authorization and production evaluation",
+        "url": "https://www.infoq.com/news/2026/09/qcon-ai-newyork-2026-sessions/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "The conference has confirmed 23 sessions covering agent authorization, production guardrails, shared inference infrastructure, and post-deployment evaluation."
+      }
+    ]
+  }
+}
