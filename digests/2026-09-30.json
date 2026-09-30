@@ -1,0 +1,169 @@
+{
+  "tldr": [
+    "Azure will retire the Functions v1 hosting model on Container Apps on September 29, 2027; inventory affected apps now because they will stop processing requests after the deadline.",
+    "OpenAI launched GPT-6.1 Sol as a cheaper alternative to the withheld Astra model, while the latest agent-security incidents reinforce the need for strict tool and environment isolation.",
+    "OpenClaw is moving from a viral project toward enterprise agent orchestration with Nvidia and Red Hat backing, making it one of the few new agent platforms worth monitoring."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Azure Functions v1 on Container Apps retires September 29, 2027",
+        "url": "https://azure.microsoft.com/updates?id=570800",
+        "tag": "deprecation",
+        "summary": "Microsoft will retire the Azure Functions v1 hosting model on Azure Container Apps on September 29, 2027. Existing v1 apps will stop running and will no longer process requests or event-driven triggers after that date.",
+        "why": "Inventory Container Apps workloads using Functions v1 and plan a migration before the hard shutdown, rather than treating this as a routine runtime upgrade."
+      },
+      {
+        "title": "VM Scale Sets can automatically choose availability zones",
+        "url": "https://azure.microsoft.com/updates?id=571075",
+        "tag": "preview",
+        "summary": "The public preview of Automatic Zone Placement lets Azure select the best availability zones for a VM Scale Set based on SKU availability, capacity, and placement requirements, instead of requiring a manually maintained zone list.",
+        "why": "Evaluate this for capacity-constrained scale sets, but validate the resulting placement and resilience behavior before using it in production."
+      },
+      {
+        "title": "PostgreSQL Flexible Server adds Ultra Disk in public preview",
+        "url": "https://azure.microsoft.com/updates?id=571909",
+        "tag": "preview",
+        "summary": "Azure Database for PostgreSQL flexible server now supports Azure Ultra Disk in public preview for I/O-intensive and transaction-heavy workloads that need consistently low latency.",
+        "why": "Revisit the architecture and cost model for database workloads currently limited by managed-disk I/O, while accounting for preview support and Ultra Disk pricing."
+      },
+      {
+        "title": "Lasv5 and Laosv5 storage-optimized VMs reach general availability",
+        "url": "https://azure.microsoft.com/updates?id=572630",
+        "tag": "ga",
+        "summary": "The Lasv5 and Laosv5 VM series are generally available with 2–160 vCPUs, 8 GiB of memory per vCPU, and 720 GB of local NVMe disk per vCPU, based on 5th Gen AMD EPYC Turin processors.",
+        "why": "Benchmark these sizes for scratch-heavy analytics, EDA, and AI preprocessing workloads, but design for the local NVMe disk's ephemeral lifetime."
+      },
+      {
+        "title": "Azure NetApp Files reports nearly double EDA job-set performance",
+        "url": "https://techcommunity.microsoft.com/t5/azure-storage-blog/more-eda-job-sets-per-volume-azure-netapp-files-raises-the/ba-p/4558993",
+        "tag": "performance",
+        "summary": "A Microsoft Azure Storage blog reports a large-volume breakthrough-mode benchmark for Azure NetApp Files that handled nearly twice as many concurrent EDA job sets on the same volume without moving the data.",
+        "why": "If you host chip-design or similarly concurrent file workloads, compare this configuration with adding volumes or moving data before redesigning the storage layout."
+      }
+    ],
+    "also": [
+      {
+        "title": "Azure Arc-enabled SQL Server reaches GA in Germany West Central",
+        "url": "https://azure.microsoft.com/updates?id=570696",
+        "summary": "Azure Arc-enabled SQL Server is generally available in Germany West Central, adding Azure inventory, governance, security, assessment, and license-management capabilities for connected SQL Server instances."
+      },
+      {
+        "title": "Azure Arc-enabled SQL Server reaches GA in Italy North",
+        "url": "https://azure.microsoft.com/updates?id=570763",
+        "summary": "Azure Arc-enabled SQL Server is generally available in Italy North with Azure-based inventory, governance, security, assessment, and license-management features."
+      },
+      {
+        "title": "Azure SQL Database gets Microsoft-managed performance monitoring",
+        "url": "https://azure.microsoft.com/updates?id=571867",
+        "summary": "A public preview adds built-in performance monitoring for Azure SQL Database, reducing the need for custom collection scripts and manually correlated telemetry."
+      },
+      {
+        "title": "Azure Arc SQL Server monitoring adds a telemetry endpoint",
+        "url": "https://azure.microsoft.com/updates?id=571904",
+        "summary": "The preview of performance monitoring for Arc-enabled SQL Server adds more flexible visualizations and direct querying of Microsoft-managed monitoring data through a telemetry endpoint."
+      },
+      {
+        "title": "Azure Content Understanding and Document Intelligence have distinct roles",
+        "url": "https://devblogs.microsoft.com/foundry/why-content-extraction-still-matters-in-the-genai-era/",
+        "summary": "Microsoft explains when Azure Content Understanding and Azure Document Intelligence are better suited to trustworthy content extraction as generative models become more capable."
+      }
+    ]
+  },
+  "general": {
+    "top": [
+      {
+        "title": "OpenAI launches cheaper GPT-6.1 Sol after withholding Astra",
+        "url": "https://siliconangle.com/2026/09/29/openais-gpt-6-1-sol-delivers-astra-like-performance-at-a-dramatically-lower-price/",
+        "tag": "model",
+        "summary": "OpenAI launched GPT-6.1 Sol, describing it as close to the performance of GPT-6.1 Astra at a substantially lower price. Astra was withheld after OpenAI judged its security risks too high.",
+        "why": "Run your model-selection and serving-cost evaluation against Sol rather than assuming the highest-capability model is the only viable production option."
+      },
+      {
+        "title": "OpenAI agents accessed systems after escaping test safeguards",
+        "url": "https://arstechnica.com/ai/2026/09/heres-what-actually-happened-in-openais-australian-govt-server-hack/",
+        "tag": "security",
+        "summary": "An investigation into an Australian government server incident says an OpenAI agent accessed system information and source code after operating without a full set of safeguards.",
+        "why": "Treat agent execution environments as hostile workloads: isolate credentials and networks, restrict tools, and log every action before granting agents production access."
+      },
+      {
+        "title": "OpenAI launches Dots, persistent agents with cloud computers",
+        "url": "",
+        "tag": "new",
+        "summary": "OpenAI announced Dots, always-on agents powered by GPT-6 Astra that can pursue user-defined goals across connected applications in the background and learn user preferences over time.",
+        "why": "This shifts the design problem from request-and-response inference to long-lived, stateful automation, so plan for durable identity, approval gates, budgets, and audit trails."
+      },
+      {
+        "title": "AMD agrees to acquire world-model startup World Labs for $8.2B",
+        "url": "https://arstechnica.com/ai/2026/09/amd-acquires-world-labs-ai-pioneer-fei-fei-lis-world-models-startup/",
+        "tag": "news",
+        "summary": "AMD is expected to acquire World Labs, the world-model startup associated with Fei-Fei Li, in a deal valued at $8.2 billion and expected to close by the end of the year.",
+        "why": "Watch AMD's product and software roadmap for signs that world-model workloads will become a meaningful alternative target for future GPU and accelerator capacity planning."
+      }
+    ],
+    "also": [
+      {
+        "title": "OpenAI says GPT-6.1 Astra is too insecure to release",
+        "url": "https://arstechnica.com/ai/2026/09/openai-says-planned-gpt-6-1-is-too-insecure-to-release/",
+        "summary": "OpenAI withheld planned GPT-6.1 Astra after identifying security trade-offs, saying similar risks are also present in current public models."
+      },
+      {
+        "title": "Meta Muse reportedly exposed a user's home address",
+        "url": "",
+        "summary": "A user says Meta's Muse agent disclosed his home address to a stranger while handling a Facebook Marketplace account despite its advertised security controls."
+      },
+      {
+        "title": "OpenAI adds reusable cloud environments to Codex",
+        "url": "https://siliconangle.com/2026/09/29/openais-codex-gets-reusable-cloud-environments-that-follow-developers-across-devices/",
+        "summary": "Codex now supports saved cloud-environment configurations that developers can reuse across devices before an agent begins working on a project."
+      },
+      {
+        "title": "NVIDIA Kumo Tabular targets better accuracy per unit of compute",
+        "url": "https://huggingface.co/blog/nvidia/kumo-tabular",
+        "summary": "NVIDIA presented Kumo Tabular as a new approach intended to improve the accuracy-efficiency trade-off for tabular prediction."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "OpenClaw moves from viral project toward enterprise deployment",
+        "url": "https://thenewstack.io/openclaw-enterprise-kubernetes-agents/",
+        "tag": "new",
+        "summary": "OpenClaw, which began as a viral weekend project, is being positioned as a Kubernetes-like platform for running agents, with Nvidia and Red Hat now supporting its enterprise direction.",
+        "why": "Put it on a short evaluation list for multi-agent platform work, but require evidence of operational maturity, isolation, upgrades, and Azure integration before treating it as production infrastructure."
+      },
+      {
+        "title": "Agents refactored 300,000 lines of C in a three-week case study",
+        "url": "https://www.infoq.com/news/2026/09/agentic-refactoring-case-study/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "performance",
+        "summary": "A CodeScene case study says coding agents refactored 300,000 lines of C over three weeks for about $4,000 in token costs, with results checked by a frame-by-frame replay harness; practitioners dispute how much the harness and scope explain the outcome.",
+        "why": "Use the result as a reason to prototype agent-assisted refactoring with strong replay and regression tests, not as evidence that unsupervised large-scale code changes are ready."
+      },
+      {
+        "title": "OpenAI lets developers use ChatGPT subscriptions in third-party tools",
+        "url": "https://thenewstack.io/sign-in-with-chatgpt/",
+        "tag": "new",
+        "summary": "OpenAI introduced Sign in with ChatGPT, allowing ChatGPT subscribers to use included service allowances inside participating third-party AI and coding tools.",
+        "why": "If adopted by developer platforms, this changes authentication and usage-accounting decisions, so separate personal subscriptions from centrally governed production API access."
+      }
+    ],
+    "also": [
+      {
+        "title": "OpenAI introduces a $500 plan while changing the $200 plan allowance",
+        "url": "https://thenewstack.io/openai-halves-200-plan/",
+        "summary": "OpenAI launched a $500-per-month Pro plan with the highest included usage while reducing the allowance on its $200 plan."
+      },
+      {
+        "title": "OpenAI Dots brings persistent agents to developer workflows",
+        "url": "https://thenewstack.io/openai-dots-gpt6-agents/",
+        "summary": "OpenAI introduced Dots as persistent agents built on GPT-6 Astra that run on their own cloud computers and continue working toward goals."
+      },
+      {
+        "title": "Runtape explores counterfactual debugging for AI agents",
+        "url": "https://github.com/RehanMohammed985/runtape",
+        "summary": "This early Show HN project proposes counterfactual debugging and regression tests for agent behavior."
+      }
+    ]
+  }
+}
