@@ -1,0 +1,138 @@
+{
+  "tldr": [
+    "Azure retired the NVv3 and NVv4 GPU VM series, so any remaining workloads need an immediate migration plan.",
+    "Google launched Gemini 4 Argon, but access is initially restricted to vetted cybersecurity defenders rather than general customers.",
+    "Azure Container Apps Express is now generally available with scale-to-zero and subsecond startup, but its sandbox omits several production features."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Azure retires the NVv3 and NVv4 GPU VM series",
+        "url": "https://azure.microsoft.com/updates?id=573414",
+        "tag": "deprecation",
+        "summary": "Azure retired the listed NVv3 and NVv4 VM sizes on September 30, 2026. The affected families include Standard_NV12s_v3 through Standard_NV48s_v3 and Standard_NV4as_v4 through Standard_NV32ahs_v4.",
+        "why": "Audit subscriptions and capacity reservations immediately, then migrate graphics or GPU workloads to supported VM families before Azure removes remaining capacity and tooling support."
+      },
+      {
+        "title": "SQL performance monitoring for Azure VMs enters public preview",
+        "url": "https://azure.microsoft.com/updates?id=571894",
+        "tag": "preview",
+        "summary": "Microsoft-managed performance monitoring for SQL Server on Azure Virtual Machines is now in public preview, removing the need for custom collection scripts and manual telemetry correlation.",
+        "why": "Evaluate it for standardizing SQL VM monitoring and reducing operational code, while checking preview limitations before making it part of a production support model."
+      },
+      {
+        "title": "Network security perimeter metrics reach general availability",
+        "url": "https://techcommunity.microsoft.com/t5/azure-networking-blog/network-security-perimeter-metrics-are-now-generally-available/ba-p/4561244",
+        "tag": "ga",
+        "summary": "Network security perimeter metrics are generally available through Azure Monitor, showing access patterns, the effect of perimeter rules, and unexpected traffic for protected resources.",
+        "why": "Add these metrics to dashboards and alerts so perimeter rule changes can be validated with evidence instead of discovered through blocked application traffic."
+      }
+    ],
+    "also": [
+      {
+        "title": "Azure community post explores Lakeflow in Azure Databricks",
+        "url": "https://techcommunity.microsoft.com/t5/azure/lakeflow-in-azure-databricks/m-p/4561326#M22894",
+        "summary": "A Microsoft Tech Community post examines how Lakeflow can reduce the fragmentation between ingestion, orchestration, transformation, and pipeline monitoring in data platforms."
+      },
+      {
+        "title": "Dv3, Dsv3, Ev3 and Esv3 VMs will retire in November 2029",
+        "url": "https://azure.microsoft.com/updates?id=572346",
+        "summary": "Azure has placed the Dv3, Dsv3, Ev3, and Esv3 VM families on an end-of-life path with retirement scheduled for November 15, 2029."
+      },
+      {
+        "title": "AKS adds Ubuntu 26.04 support in public preview",
+        "url": "https://azure.microsoft.com/updates?id=573214",
+        "summary": "AKS now offers an Ubuntu2604 node OS SKU based on Ubuntu Minimal for teams preparing to move to the Ubuntu 26.04 LTS release."
+      },
+      {
+        "title": "Azure canvases bring tools and workflows into GitHub Copilot",
+        "url": "https://azure.microsoft.com/updates?id=573385",
+        "summary": "Azure canvases provide shared interactive workspaces beside Copilot conversations for exploring resources, analyzing costs, and building hosted skills."
+      }
+    ]
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Google launches Gemini 4 Argon with restricted initial access",
+        "url": "https://www.theverge.com/tech/1002980/google-gemini-4-argon",
+        "tag": "model",
+        "summary": "Google announced Gemini 4 Argon as a frontier model for software engineering, enterprise knowledge work, and cybersecurity, but initially limits access to vetted cybersecurity defenders through its Fairwind Program.",
+        "why": "Do not plan an immediate production migration around Argon; track when API or cloud availability opens so you can benchmark it against the models already approved for your Azure workloads."
+      },
+      {
+        "title": "Micron reports an AI-driven surge in memory demand",
+        "url": "https://siliconangle.com/2026/09/30/micron-almost-quadruples-its-revenue-thanks-to-ais-insatiable-demand-for-memory-chips/",
+        "tag": "news",
+        "summary": "Micron reported fiscal fourth-quarter adjusted earnings of $33.42 per share versus a $31.61 analyst target, with revenue described as nearly quadrupling amid sustained AI infrastructure demand.",
+        "why": "Treat memory supply and pricing as continuing risks in GPU-hosting plans, especially when sizing high-memory inference nodes or forecasting capacity expansion."
+      },
+      {
+        "title": "FTC reportedly examines OpenAI and Anthropic consumer risks",
+        "url": "https://siliconangle.com/2026/09/30/ftc-reportedly-investigating-openai-anthropic-over-potential-consumer-risks/",
+        "tag": "news",
+        "summary": "The New York Times reported that the FTC is investigating OpenAI, Anthropic, and other AI providers over possible unfair or deceptive practices and related consumer risks.",
+        "why": "Keep provenance, safety controls, and user disclosures in architecture reviews because regulatory scrutiny could change the evidence and guardrails required for customer-facing AI services."
+      }
+    ],
+    "also": [
+      {
+        "title": "Google limits Gemini 4 Argon to trusted cyber defenders at launch",
+        "url": "",
+        "summary": "Google says Gemini 4 Argon beats rival Anthropic and OpenAI models on most of its benchmarks, but external access is currently limited to members of its Fairwind Program."
+      },
+      {
+        "title": "D-Wave opens a beta for its gate-model quantum simulator",
+        "url": "https://siliconangle.com/2026/10/01/d-wave-opens-quantum-computing-gate-model-simulator-beta-program/",
+        "summary": "D-Wave launched a beta simulator for error-aware programs built around its dual-rail superconducting gate-model technology."
+      },
+      {
+        "title": "Reddit plans to end RSS feeds and public API access",
+        "url": "https://techcrunch.com/2026/09/30/reddit-is-killing-rss-feeds-ending-public-api-access-because-of-ai-bots/",
+        "summary": "Reddit is ending RSS support and tightening public API access as it responds to automated AI-bot collection of its user-generated content."
+      },
+      {
+        "title": "Google tests paying publishers for AI search contributions",
+        "url": "https://www.theverge.com/tech/1002665/google-paying-publishers-ai-search-features",
+        "summary": "Google is reportedly piloting payments to about 100 publishers whose content contributes to AI-powered search features."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Azure Container Apps Express reaches general availability",
+        "url": "https://www.infoq.com/news/2026/10/container-apps-express-sandboxes/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "ga",
+        "summary": "Container Apps Express is generally available on the new Container Apps Sandboxes microVM layer. It skips environment provisioning, scales to zero, and starts in under a second from prewarmed pools, but lacks custom domains, zone redundancy, Key Vault references, OpenTelemetry, and Dapr.",
+        "why": "Consider Express for bursty, stateless agent or API workloads where fast scale-out matters, but use standard Container Apps or another platform when those missing networking, identity, resilience, or observability features are required."
+      },
+      {
+        "title": "Jev returns typed probabilities instead of generated text",
+        "url": "",
+        "tag": "new",
+        "summary": "TypeSafe AI released Jev, a decision-focused model that evaluates inputs in parallel and returns typed outputs with probability and confidence values rather than prose; the report cites integrations with Vercel and Netlify.",
+        "why": "Evaluate it for routing, classification, and policy decisions where predictable structured output may be cheaper and easier to validate than asking a general language model to produce text; treat adoption and maturity claims as early-stage."
+      },
+      {
+        "title": "Cohere Embed 5 targets faster retrieval with limited quality loss",
+        "url": "https://thenewstack.io/cohere-embed-pro-fast/",
+        "tag": "performance",
+        "summary": "Cohere released Embed 5, including Embed 5 Pro for indexing and a faster query model that the company says only slightly reduces retrieval quality in its tests.",
+        "why": "Benchmark it against your current embedding and query stack before changing a RAG design, because lower query latency may improve cost and throughput without automatically preserving your domain’s retrieval quality."
+      }
+    ],
+    "also": [
+      {
+        "title": "Longer tests found more boundary failures in OpenAI Dots",
+        "url": "https://thenewstack.io/openai-dots-agent-permissions/",
+        "summary": "Testing of OpenAI’s always-on Dots agents found that the rate of boundary problems doubled during longer-running evaluations."
+      },
+      {
+        "title": "New report argues agent data access is the production bottleneck",
+        "url": "https://thenewstack.io/unified-api-layer-agents/",
+        "summary": "The report says development agents can accelerate application work, while fragmented access to enterprise data remains a major obstacle to deploying them."
+      }
+    ]
+  }
+}
