@@ -1,0 +1,91 @@
+{
+  "tldr": [
+    "Azure's DCsv3 and DCdsv3 confidential-computing VMs have a firm October 31, 2029 retirement date, so new deployments should target their successors.",
+    "Docker is proposing a portable OCI-based standard for packaging AI-agent permissions, which could make agent isolation part of the deployment artifact.",
+    "Microsoft has introduced streaming transcription and text-to-speech models aimed at lower-latency voice agents, expanding the model choices for real-time workloads."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Azure DCsv3 and DCdsv3 VMs retire on October 31, 2029",
+        "url": "https://azure.microsoft.com/updates?id=569592",
+        "tag": "deprecation",
+        "summary": "Azure will retire the DCsv3 and DCdsv3-series Linux, Windows and Dedicated Host VMs on October 31, 2029; they will no longer be available for purchase or use after that date.",
+        "why": "Avoid placing new confidential-computing workloads on these families, and add successor-VM migration to your platform roadmap well before the deadline."
+      },
+      {
+        "title": "Microsoft outlines governance for AI agents across tenants",
+        "url": "https://techcommunity.microsoft.com/t5/azure-architecture-blog/build-and-govern-ai-agents-across-a-multitenant-organization/ba-p/4559921",
+        "tag": "preview",
+        "summary": "Microsoft's architecture guidance combines generally available Microsoft Agent 365 with preview Entra Tenant Governance, multitenant agent management and a dedicated Azure API Management AI Gateway tier.",
+        "why": "Use this as a reference architecture for centrally controlling agents across tenants, but validate regional availability and preview terms before making it a production baseline."
+      },
+      {
+        "title": "GitHub-hosted Azure Pipelines agents reach GA with usage pricing",
+        "url": "https://devblogs.microsoft.com/devops/github-hosted-agents-with-pay-as-you-go-pricing-are-now-generally-available-in-azure-pipelines/",
+        "tag": "pricing",
+        "summary": "GitHub-hosted agents and pay-as-you-go billing are generally available in Azure Pipelines, adding native Apple silicon and larger Linux and Windows machines without pre-purchased parallel-job capacity.",
+        "why": "Recalculate CI cost and capacity plans: bursty teams can avoid idle parallel-job commitments, while high-volume pipelines should compare per-minute charges with reserved capacity."
+      }
+    ],
+    "also": []
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Microsoft adds streaming transcription models for voice agents",
+        "url": "https://siliconangle.com/2026/10/01/microsoft-targets-ultra-realistic-voice-agents-with-its-first-streaming-transcription-model/",
+        "tag": "model",
+        "summary": "Microsoft expanded its MAI model family with its first streaming transcription model and two text-to-speech models, targeting voice agents that can listen and respond with near-conversational latency.",
+        "why": "For real-time voice workloads, compare these models against your current speech stack on latency, turn-taking quality and regional availability before choosing a hosting architecture."
+      },
+      {
+        "title": "IBM makes its Bob agent platform deployable on private infrastructure",
+        "url": "https://siliconangle.com/2026/10/01/ibm-allows-on-prem-deployment-of-its-bob-agentic-development-platform/",
+        "tag": "news",
+        "summary": "IBM added self-hosted deployment for its Bob agentic development platform across on-premises, private-cloud, sovereign-cloud and air-gapped environments.",
+        "why": "This is relevant where source code or regulated systems cannot reach a public SaaS platform, but you will need to price the operational burden of running the agent stack yourself."
+      },
+      {
+        "title": "AI beats the top Stratego player by modelling hidden pieces",
+        "url": "https://arstechnica.com/science/2026/10/ai-finally-beat-the-best-stratego-player-in-history-and-did-it-on-a-budget/",
+        "tag": "performance",
+        "summary": "An AI system defeated the strongest known Stratego player by adding a second neural network to estimate the identities of hidden pieces, and did so on a relatively modest budget.",
+        "why": "The result is a useful reminder that production systems may need separate models for uncertainty or hidden state rather than relying on one general-purpose model."
+      }
+    ],
+    "also": []
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Docker proposes portable OCI packaging for agent permissions",
+        "url": "https://www.infoq.com/news/2026/10/docker-sandbox-ai-agent/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "release",
+        "summary": "Docker announced the Sandbox Kit Specification and plans to bring it to the CNCF, aiming to package an AI agent's allowed tools and resources as portable OCI images.",
+        "why": "If the specification gains adoption, security policy can travel with the agent artifact instead of being rebuilt per cluster or cloud, so it is worth tracking for your deployment standard."
+      },
+      {
+        "title": "Dynatrace acquires Arize to strengthen agent observability",
+        "url": "https://thenewstack.io/dynatrace-arize-agents-observability/",
+        "tag": "news",
+        "summary": "Dynatrace acquired Arize as AI agents generate volumes of traces and model-specific telemetry that conventional application monitoring does not adequately explain.",
+        "why": "Expect agent tracing and evaluation to consolidate with mainstream observability platforms; review whether your telemetry design captures prompts, tool calls, costs and quality signals."
+      },
+      {
+        "title": "DigitalOcean previews managed infrastructure for AI agents",
+        "url": "https://www.infoq.com/news/2026/10/digitalocean-managed-agents/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "preview",
+        "summary": "DigitalOcean Managed Agents is a public preview providing isolated microVM runtimes, governed tool access and serverless inference for agent workloads.",
+        "why": "It is an early managed alternative to assembling sandboxing, tool permissions and inference yourself; evaluate it only if a smaller operational footprint outweighs Azure integration and maturity concerns."
+      }
+    ],
+    "also": [
+      {
+        "title": "Cloudflare tests a gateway for charging AI agents to use tools",
+        "url": "https://thenewstack.io/cloudflare-x402-agent-spending/",
+        "summary": "Cloudflare opened a closed beta of Monetization Gateway, allowing domain owners to charge AI agents for access to MCP tools and other services."
+      }
+    ]
+  }
+}
