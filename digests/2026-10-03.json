@@ -1,0 +1,74 @@
+{
+  "tldr": [
+    "Azure Database for PostgreSQL elastic clusters can now be upgraded in place, removing the need to provision a replacement cluster and migrate distributed data.",
+    "OpenAI’s GPT-6 production guide covers model selection, reasoning effort, prompting, tool coordination and workflow preparation for production deployments.",
+    "GitHub has put computer use for Copilot CLI and its desktop app into public preview, adding a high-risk desktop automation capability that needs strong isolation."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "PostgreSQL elastic clusters add in-place major upgrades",
+        "url": "https://azure.microsoft.com/updates?id=571504",
+        "tag": "preview",
+        "summary": "Azure Database for PostgreSQL elastic clusters now support major version upgrades in place, without provisioning a replacement cluster, migrating distributed data or changing the application connection target. The capability is in public preview.",
+        "why": "For upgrade planning, evaluate this as a way to reduce migration downtime and operational effort, but validate preview limitations before using it for production-critical clusters."
+      }
+    ],
+    "also": []
+  },
+  "general": {
+    "top": [
+      {
+        "title": "OpenAI publishes a production guide for the GPT-6 family",
+        "url": "https://openai.com/index/practical-guide-building-gpt-6",
+        "tag": "model",
+        "summary": "OpenAI’s guide explains how startups can choose among GPT-6 models, tune reasoning effort, improve prompts and skills, coordinate tools, and prepare workflows for production.",
+        "why": "Use it to revisit model-routing and inference-cost decisions before standardising on one GPT-6 deployment pattern."
+      },
+      {
+        "title": "Apple will tighten macOS full-disk access for AI agents",
+        "url": "https://arstechnica.com/security/2026/10/apple-changes-full-disk-access-permissions-to-curb-abuse-from-ai-agents/",
+        "tag": "security",
+        "summary": "Apple is changing macOS Full Disk Access controls because AI agents with broad access to files, messages, mail and browsing history create new abuse risks. Users who need that permission will face additional controls.",
+        "why": "Treat broad host permissions as a deployment boundary for agent workloads and avoid relying on unrestricted desktop access when designing secure automation."
+      }
+    ],
+    "also": [
+      {
+        "title": "Meta open-sources code for building Muse AI gadgets",
+        "url": "https://www.theverge.com/tech/1004330/meta-muse-ai-gadgets-home-link",
+        "summary": "Meta has open-sourced code for putting its Muse AI agent into projects such as E Ink displays, HDMI sticks and other custom gadgets."
+      },
+      {
+        "title": "US arrests CEO accused of smuggling $300 million in Nvidia chips",
+        "url": "https://arstechnica.com/tech-policy/2026/10/us-arrests-tech-ceo-accused-of-smuggling-300m-in-nvidia-chips-into-china/",
+        "summary": "US authorities arrested a technology CEO over allegations involving the smuggling of roughly $300 million in Nvidia chips to China."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "GitHub puts Copilot computer use into public preview",
+        "url": "https://thenewstack.io/github-copilot-computer-use-desktop/",
+        "tag": "preview",
+        "summary": "GitHub has launched computer-use capabilities in public preview for Copilot CLI and its desktop app, allowing Copilot to operate a computer; GitHub reportedly advises trying other approaches first in some cases.",
+        "why": "If you evaluate this for engineering automation, design it as an isolated, least-privilege workload because desktop control expands the blast radius beyond ordinary code generation."
+      },
+      {
+        "title": "OpenAI DevDay adds computer use and new agent APIs",
+        "url": "",
+        "tag": "release",
+        "summary": "OpenAI’s DevDay updates include GPT-6.1 Sol, computer use for the Agents API, cloud-based Codex environments, a Decisions API and new ChatGPT plugin capabilities.",
+        "why": "Reassess whether agent execution should run in your own sandbox or move to OpenAI-managed environments, especially for workloads that need computer use or tool decisions."
+      }
+    ],
+    "also": [
+      {
+        "title": "Anthropic adds mods and plugins to Claude Code",
+        "url": "https://thenewstack.io/anthropic-claude-code-mods-plugins/",
+        "summary": "Claude Code can now be customised through mods and plugins alongside existing settings, CLAUDE.md instructions and hooks, changing its behaviour and developer-facing workflow."
+      }
+    ]
+  }
+}
