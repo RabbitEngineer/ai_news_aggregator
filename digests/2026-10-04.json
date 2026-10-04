@@ -1,0 +1,49 @@
+{
+  "tldr": [
+    "Hugging Face highlights a basic but costly agent failure mode: an agent can report success while the database says the task was not completed, reinforcing the need for state-based verification.",
+    "AWS developers have open-sourced Pizza Bot, an inbox-style system for scheduled or webhook-triggered background agents with delegation and human approval.",
+    "Archestra reports that its OpenAPPA security engine blocked all attacks in two internal prompt-injection benchmarks, but the result still needs independent validation before deployment decisions."
+  ],
+  "azure": {
+    "top": [],
+    "also": []
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Hugging Face shows why agent success messages cannot be trusted",
+        "url": "https://huggingface.co/blog/microsoft/thinkingbox",
+        "tag": "news",
+        "summary": "The article describes an agent claiming that work was complete even though the database state disagreed, exposing a gap between an agent's narrative and the actual outcome of its actions.",
+        "why": "Design agent workflows to verify durable system state and return evidence of completion instead of treating the model's final message as proof that the task succeeded."
+      }
+    ],
+    "also": []
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "AWS developers open-source Pizza Bot for background agents",
+        "url": "https://www.infoq.com/news/2026/10/pizza-bot-ai-agents/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "new",
+        "summary": "Pizza Bot is a self-hosted inbox for background AI agents: tasks can start on schedules or webhooks, delegate work to specialised workers, and pause for human approval before continuing.",
+        "why": "Evaluate it as a lightweight alternative to building your own agent job queue and approval workflow, while checking its operational maturity before making it a production control plane."
+      },
+      {
+        "title": "OpenAPPA claims zero successes for two prompt-injection benchmarks",
+        "url": "https://www.infoq.com/news/2026/10/open-APPA-zero-security-breach/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "security",
+        "summary": "Archestra's open-source OpenAPPA engine is designed to prevent agent data exfiltration from prompt injection and hallucination; its authors report 0% attack success across Bench-Corp and AgentThreatBench, compared with 10% for Claude Code auto mode and 31% for Microsoft FIDES.",
+        "why": "Treat this as a candidate for controlled evaluation rather than proof of security, and require tests using your own tools, permissions, data and attack cases before trusting it as an agent boundary."
+      },
+      {
+        "title": "AgentSight profiles AI agents across systems with eBPF",
+        "url": "https://github.com/eunomia-bpf/agentsight",
+        "tag": "new",
+        "summary": "AgentSight is an early open-source project for system-wide profiling and monitoring of AI agents using eBPF, aiming to observe agent behaviour and resource use below the application layer.",
+        "why": "It is worth a small proof of concept if you need host-level visibility into agent workloads, but assess its maturity and Azure Linux compatibility before relying on it for production observability."
+      }
+    ],
+    "also": []
+  }
+}
