@@ -26,7 +26,7 @@ Not here: your API key, which is a repo secret named OPENROUTER_API_KEY.
 #   google/gemini-3-flash-preview  $2.70-3.82  cheapest of the good tier
 #   openai/gpt-5                     ~$11.50   frontier pricing to summarize
 # Repo variable: MODEL
-MODEL = "openai/gpt-5.6-luna"
+MODEL = "openai/gpt-6-luna"
 
 # Change only to point at a different OpenAI-compatible gateway.
 OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
