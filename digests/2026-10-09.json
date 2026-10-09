@@ -1,0 +1,125 @@
+{
+  "tldr": [
+    "Azure API Management is adding control-plane IPs; replace hard-coded addresses with its service tag by November 30 to avoid disruption.",
+    "Azure Deployment Environments is retiring in February 2027, and its shutdown process has already begun.",
+    "AKS now supports a generally available, Azure-managed StandardV2 NAT Gateway, changing the default outbound networking option for new clusters in supported regions."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Update API Management network rules by November 30",
+        "url": "https://techcommunity.microsoft.com/t5/azure-integration-services-blog/update-network-rules-for-the-api-management-service-tag/ba-p/4562518",
+        "tag": "news",
+        "summary": "Azure is adding control-plane IP addresses for API Management, and they will be included in the ApiManagement service tag. Customers using classic v1 tiers with internal or external VNet deployment should update NSGs, routes, and firewalls by November 30, 2026.",
+        "why": "Check your APIM network rules now and replace hard-coded IPs with the service tag where supported to avoid a connectivity disruption."
+      },
+      {
+        "title": "Azure Deployment Environments will retire in February 2027",
+        "url": "https://azure.microsoft.com/updates?id=567934",
+        "tag": "deprecation",
+        "summary": "Azure Deployment Environments will no longer be available after February 22, 2027; its closing-down process began September 14, 2026.",
+        "why": "Inventory any development-environment workflows that depend on the service and plan a replacement before the shutdown window."
+      },
+      {
+        "title": "AKS makes StandardV2 its managed NAT Gateway default",
+        "url": "https://azure.microsoft.com/updates?id=574430",
+        "tag": "ga",
+        "summary": "AKS can now provision and manage a StandardV2 NAT Gateway for clusters using an AKS-managed virtual network. In supported regions, it is the default managed NAT Gateway SKU for new clusters using the managedNATGateway outbound type.",
+        "why": "Review outbound connectivity and cost assumptions for new AKS clusters, especially if you rely on the managed NAT Gateway option."
+      },
+      {
+        "title": "Anyscale on Azure is generally available for managed Ray workloads",
+        "url": "https://azure.microsoft.com/updates?id=573744",
+        "tag": "ga",
+        "summary": "Anyscale on Azure is a managed platform for distributed Python workloads using Ray, deployed on your AKS cluster and integrated with Azure services.",
+        "why": "Consider it when choosing how to run distributed AI or data workloads: it adds a managed Ray option while keeping workloads in your Azure subscription and network."
+      },
+      {
+        "title": "WAF exceptions are generally available for Application Gateway and Front Door",
+        "url": "https://azure.microsoft.com/updates?id=574343",
+        "tag": "security",
+        "summary": "Azure Web Application Firewall now supports exceptions for Application Gateway and Front Door, allowing specific requests or rules to be excluded from WAF checks.",
+        "why": "Use narrowly scoped exceptions to address false positives without broadly weakening protection for an application."
+      }
+    ],
+    "also": [
+      {
+        "title": "Microsoft Dev Box retirement is set for September 2028",
+        "url": "https://azure.microsoft.com/updates?id=567933",
+        "summary": "Dev Box will be retired on September 18, 2028, and its closing-down process began September 14, 2026."
+      },
+      {
+        "title": "Agent 365 integration with Azure API Management enters preview",
+        "url": "https://azure.microsoft.com/updates?id=574204",
+        "summary": "The preview connects Agent 365 governance with APIM runtime enforcement for MCP servers and tools."
+      },
+      {
+        "title": "Azure PostgreSQL flexible server adds the East US 3 region",
+        "url": "https://azure.microsoft.com/updates?id=573691",
+        "summary": "Azure Database for PostgreSQL flexible server can now be deployed in the East US 3 region."
+      },
+      {
+        "title": "Logic Apps Automation preview introduces pricing and monthly free grants",
+        "url": "https://techcommunity.microsoft.com/t5/azure-integration-services-blog/announcing-free-grant-and-pricing-for-logic-apps-automation/ba-p/4562264",
+        "summary": "Azure has announced preview pricing and monthly free grants for Logic Apps Automation, a managed platform for business-process automation and orchestration."
+      }
+    ]
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Google introduces a Gemini agent for business tasks across apps",
+        "url": "https://techcrunch.com/2026/10/08/google-brings-agentic-ai-to-gemini-starting-with-businesses/",
+        "tag": "news",
+        "summary": "Google is bringing an enterprise Gemini agent that can plan and execute tasks across business apps, delegate work to subagents, and use multiple models. It can also have its own workplace identity.",
+        "why": "This raises the bar for enterprise agent design: assess how identity, permissions, and oversight should work when an agent acts across multiple systems."
+      },
+      {
+        "title": "Anthropic offers free periodic AI security scans to open-source projects",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1008521/anthropic-open-source-oss-scanner",
+        "tag": "security",
+        "summary": "Anthropic’s new OSS Scanner offers open-source projects that opt in periodic vulnerability scans using its strongest models, at no cost.",
+        "why": "It may help surface issues in dependencies or projects you use, but treat model findings as leads to verify rather than confirmed vulnerabilities."
+      }
+    ],
+    "also": [
+      {
+        "title": "US nuclear plant operators are adopting AI for operational support",
+        "url": "https://spectrum.ieee.org/ai-assistants-nuclear-power-plant",
+        "summary": "The report describes nuclear operators using AI assistants to help manage the complexity of plant operations, despite the sector’s traditionally cautious approach."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Cloudflare releases Clef decision models for agent workflows",
+        "url": "https://www.infoq.com/news/2026/10/clef-decision-models/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "model",
+        "summary": "Cloudflare released open-weight Clef models in 9B- and 27B-parameter sizes to choose among predefined options rather than generate text, alongside a platform for adapting them to specific decisions. The announcement does not specify quantizations or single-GPU requirements.",
+        "why": "Evaluate this approach for bounded choices such as tool routing, but verify licensing and hardware needs before treating it as a self-hostable alternative to a general-purpose model."
+      },
+      {
+        "title": "Harness acquires Augment’s Cosmos software factory and coding tools",
+        "url": "https://thenewstack.io/harness-augment-cosmos-acquisition/",
+        "tag": "news",
+        "summary": "Harness acquired Augment Code’s Cosmos software factory, Auggie CLI, and Code Context Engine; the report says a key feature has not shipped yet.",
+        "why": "If you are evaluating agentic software-development platforms, track whether Harness integrates these assets into a usable product before changing tool choices."
+      },
+      {
+        "title": "GitHub Copilot is preparing to route some coding tasks to local models",
+        "url": "https://thenewstack.io/https-thenewstack-io-copilot-local-inference-routing/",
+        "tag": "news",
+        "summary": "GitHub Copilot is expected to decide whether coding tasks run locally or use cloud models, but Microsoft has not clarified what data may still be sent to the cloud.",
+        "why": "Do not treat local routing as a data-residency guarantee; wait for the routing controls and data-handling details before relying on it for sensitive code."
+      }
+    ],
+    "also": [
+      {
+        "title": "Netflix describes an ontology-driven observability system at 38 million events per second",
+        "url": "https://www.infoq.com/presentations/netflix-observability-aiops-ontology-scale/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "Netflix’s system unifies telemetry in a queryable knowledge graph to support agent-assisted incident triage, root-cause analysis, and self-healing workflows."
+      }
+    ]
+  }
+}
