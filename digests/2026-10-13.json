@@ -1,0 +1,56 @@
+{
+  "tldr": [
+    "A hands-on Azure report shows Qwen3.8-Flash-Next reaching about 200 tokens/s on two H100s, but latency degrades sharply as concurrency rises.",
+    "Meta has released two larger Muse agent models, though the announcement provides no concrete benchmark figures.",
+    "OpenCode 2.0 puts its terminal, desktop, and web apps on a shared service—a notable architectural change if you use the project."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Two H100s run Qwen3.8-Flash-Next at about 200 tokens/s on Azure",
+        "url": "https://techcommunity.microsoft.com/t5/apps-on-azure-blog/qwen3-8-flash-next-on-two-h100s-in-an-azure-spot-vm/ba-p/4563893",
+        "tag": "performance",
+        "summary": "In a community-authored hands-on report, a 150,000-token request decoded at about 200 tokens/s with its first token arriving in under a second, helped by a 95% prompt-cache hit rate. With up to five concurrent requests performance held up; at seven, one in twenty waited at least 23 seconds for its first token.",
+        "why": "Use concurrency and cache-hit rate—not just peak tokens per second—to size GPU capacity and set latency expectations for self-hosted model workloads."
+      },
+      {
+        "title": "Azure details Maia 300, its chip for cloud-scale agent inference",
+        "url": "https://azure.microsoft.com/en-us/blog/deep-dive-into-azure-maia-300-architecture/",
+        "tag": "new",
+        "summary": "Microsoft describes Maia 300 as a platform designed for cloud-scale agentic inference; the announcement does not specify customer availability or Azure pricing.",
+        "why": "Treat this as a signal of future Azure inference options, not a reason to change hosting or cost plans until Microsoft publishes deployable SKUs and performance data."
+      }
+    ],
+    "also": []
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Meta releases Muse Wonder models for longer, multistep agent tasks",
+        "url": "https://techcrunch.com/2026/10/12/meta-releases-its-first-frontier-model-muse-wonder/",
+        "tag": "model",
+        "summary": "Meta released Muse Wonder and Muse Wonder Full, larger models than Muse Spark that it says perform better on complex tasks such as coding and agent workflows. The announcement reports higher benchmark scores but gives no figures in the available coverage.",
+        "why": "Consider them candidates for agent-workload evaluations, but wait for reproducible results and access details before updating model or hosting plans."
+      }
+    ],
+    "also": [
+      {
+        "title": "Character.AI files for bankruptcy and plans a $20 million asset sale to Disney",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1009802/character-ai-files-for-bankruptcy-disney",
+        "summary": "The chatbot company, which has faced scrutiny and lawsuits over chatbot safety, is selling some assets to Disney for $20 million."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "OpenCode 2.0 brings its terminal, desktop, and web apps onto one service",
+        "url": "https://thenewstack.io/opencode-2-shared-service/",
+        "tag": "release",
+        "summary": "OpenCode 2.0 formalizes a substantial architectural change: its terminal, desktop, and web apps now use one shared service, following a public beta launch about three months earlier.",
+        "why": "If you use OpenCode across multiple interfaces, assess whether the shared service changes how you deploy it or manage state; otherwise, this is not yet a reason to switch tools."
+      }
+    ],
+    "also": []
+  }
+}
