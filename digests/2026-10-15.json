@@ -1,0 +1,74 @@
+{
+  "tldr": [
+    "Azure Site Recovery now covers Azure Arc-managed Windows VMware VMs and physical servers, extending disaster-recovery options for hybrid estates.",
+    "Eight U.S. states have sued OpenAI over alleged harms to children and misleading safety claims, adding to the regulatory risks around deploying consumer AI.",
+    "Anthropic reportedly reached $16.8 billion in Q3 revenue, up 45% sequentially, and turned adjusted-profitable—a notable signal of the scale of demand for frontier AI."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Azure Site Recovery adds support for Arc-managed Windows servers",
+        "url": "https://azure.microsoft.com/updates?id=576214",
+        "tag": "ga",
+        "summary": "Azure Site Recovery is generally available for disaster recovery of Azure Arc-enabled Windows VMware VMs and on-premises physical servers, while retaining Arc governance and inventory.",
+        "why": "You can consider ASR for hybrid Windows recovery without giving up Arc management; check your machine configurations against the supported scope before updating DR plans."
+      },
+      {
+        "title": "Azure Cloud HSM makes hardware audit logging generally available",
+        "url": "https://azure.microsoft.com/updates?id=576377",
+        "tag": "security",
+        "summary": "Azure Cloud HSM now provides hardware-generated audit records for supported HSM management operations, supporting security monitoring, compliance reporting and investigations.",
+        "why": "If Cloud HSM is in your design, assess whether these records can meet audit requirements and add them to your monitoring and retention plan."
+      },
+      {
+        "title": "Azure Content Understanding guidance uses confidence to route review",
+        "url": "https://devblogs.microsoft.com/foundry/content-understanding-confidence-grounding-hitl/",
+        "tag": "news",
+        "summary": "Microsoft describes using grounding, field-level confidence and calibration in Azure Content Understanding to prioritize human review in document workflows.",
+        "why": "For document extraction systems, use confidence to send uncertain fields to people rather than letting low-confidence results silently drive downstream actions."
+      }
+    ],
+    "also": []
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Eight U.S. states sue OpenAI over ChatGPT safety and child harm",
+        "url": "https://siliconangle.com/2026/10/14/multiple-states-sue-openai-accusing-it-of-harming-children-and-deceiving-parents/",
+        "tag": "news",
+        "summary": "Iowa, Kansas, Nebraska, West Virginia, Arkansas, Arizona, Idaho and Montana filed separate lawsuits alleging ChatGPT harmed children and that OpenAI misled families about product safety.",
+        "why": "Treat safety controls, age-related safeguards and auditability as material deployment risks for customer-facing AI, not just model-quality concerns."
+      },
+      {
+        "title": "Anthropic reportedly reaches $16.8 billion in Q3 revenue",
+        "url": "https://siliconangle.com/2026/10/14/ahead-of-ipo-anthropic-reveals-its-revenue-grow-45-sequentially-to-16-8b-in-q3/",
+        "tag": "news",
+        "summary": "The Financial Times reports Anthropic generated $16.8 billion in Q3 revenue, up 45% sequentially, and was adjusted-profitable for the first time.",
+        "why": "The reported growth is a signal of strong frontier-model demand; keep provider concentration and the durability of model-supply options in view when planning capacity."
+      },
+      {
+        "title": "Anthropic warns small models could enable self-replicating IoT malware",
+        "url": "https://arstechnica.com/security/2026/10/anthropic-warns-small-ai-models-could-self-replicate-through-iot-devices/",
+        "tag": "security",
+        "summary": "Anthropic warns that small models could help create self-replicating malware that spreads through vulnerable internet-connected devices.",
+        "why": "For self-hosted or edge-model designs, include device isolation, restricted network access and update controls in the threat model."
+      }
+    ],
+    "also": [
+      {
+        "title": "Microsoft researchers report a machine-learning approach to longer-range weather forecasts",
+        "url": "https://www.theverge.com/science/1011127/ai-weather-forecast-microsoft",
+        "summary": "Microsoft says its approach can improve forecasts two to six weeks ahead, beyond the range where many physics-based and AI forecasts become less reliable."
+      },
+      {
+        "title": "Open hardware specifications could shorten AI data-center integration",
+        "url": "https://siliconangle.com/2026/10/14/hardware-interoperability-open-specs-speed-ai-data-center-builds-aidatapipelineforum/",
+        "summary": "The report argues that open specifications for accelerators, memory and storage could reduce AI data-center hardware integration from a year to months."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [],
+    "also": []
+  }
+}
