@@ -1,0 +1,100 @@
+{
+  "tldr": [
+    "Microsoft Foundry’s September recap highlights new Routines, Tool Search, Model Router and Insights capabilities worth checking against your AI workflow designs.",
+    "Azure Files can now preview scheduled cross-region copy and synchronization, adding an option for maintaining secondary file-share copies.",
+    "OpenAI is retiring four GPT-4 API models on January 14, 2027; developers reportedly received less notice than the company had promised."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Foundry’s September roundup adds Routines, Tool Search and Model Router",
+        "url": "https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-september-2026/",
+        "tag": "new",
+        "summary": "Microsoft’s September Foundry recap covers models, Routines, Tool Search, Model Router and Insights, framed around a two-agent workflow. The post does not give further feature details in the available summary.",
+        "why": "Review the capabilities against your orchestration design: built-in routing and tool discovery could affect what you implement yourself."
+      },
+      {
+        "title": "Azure Files previews scheduled cross-region copy and synchronization",
+        "url": "https://azure.microsoft.com/updates?id=576542",
+        "tag": "preview",
+        "summary": "Azure Storage Mover can copy and synchronize Azure Files shares across storage accounts, regions and subscriptions within the same tenant, with scheduled incremental transfers.",
+        "why": "Assess it as a way to maintain secondary file-share copies for recovery, while accounting for its preview status in production plans."
+      },
+      {
+        "title": "Standard service endpoint reaches general availability",
+        "url": "https://azure.microsoft.com/updates?id=571025",
+        "tag": "ga",
+        "summary": "The new Standard service endpoint, part of the Azure Private Link family, is generally available for connecting Azure IaaS workloads to PaaS services with a more scalable, manageable approach.",
+        "why": "Revisit network designs that connect IaaS to PaaS, particularly where existing endpoint scale or management limits have been a constraint."
+      },
+      {
+        "title": "VM Scale Sets can now automatically rebalance across availability zones",
+        "url": "https://azure.microsoft.com/updates?id=576334",
+        "tag": "ga",
+        "summary": "Automatic zone balance is generally available and redistributes Virtual Machine Scale Set instances when it detects imbalances across availability zones.",
+        "why": "Check whether this can reduce operational work maintaining zonal balance in scale sets that support resilient services."
+      }
+    ],
+    "also": []
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Meta releases 816B-parameter Muse Spark Open for coding and agents",
+        "url": "https://siliconangle.com/2026/10/15/meta-releases-816b-parameter-muse-spark-open-for-coding-and-agent-work/",
+        "tag": "model",
+        "summary": "Meta has released open weights for Muse Spark, an 816B-parameter model with 42B active parameters, aimed at coding and long-running agent work. Reports say it can run using two Apple M5 Ultra Mac Studios; they do not specify quantization options, and it is not a single-GPU deployment.",
+        "why": "Treat it as a large multi-device self-hosting option, not a drop-in single-GPU model; compare its capabilities and hardware footprint with models you can serve on your current infrastructure."
+      }
+    ],
+    "also": [
+      {
+        "title": "Anthropic gives METR employee-level access for independent assessments",
+        "url": "https://techcrunch.com/2026/10/15/anthropic-is-letting-metr-researchers-look-under-the-hood-with-employee-level-access/",
+        "summary": "Anthropic will let METR publish its assessments of the company’s risks, incidents and practices without giving Anthropic the right to block publication."
+      },
+      {
+        "title": "OpenAI offers eligible academic labs sponsored access to GPT-Rosalind",
+        "url": "https://openai.com/index/introducing-the-rosalind-academic-plan",
+        "summary": "The Rosalind Academic Plan gives eligible research labs sponsored access to GPT-Rosalind and tools for life-sciences research."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "OpenAI will retire four GPT-4 API models on January 14, 2027",
+        "url": "https://thenewstack.io/openai-gpt4o-api-shutdown/",
+        "tag": "deprecation",
+        "summary": "OpenAI is retiring four GPT-4 models from its API on January 14, 2027; the report says GPT-4o users received three months’ notice despite a six-month notice promise to developers.",
+        "why": "Inventory API deployments using these models and schedule migration and validation before the retirement date, allowing for the shorter-than-expected notice."
+      },
+      {
+        "title": "Perplexity open-sources SPACE, a sandbox for isolating AI agents",
+        "url": "https://siliconangle.com/2026/10/15/perplexity-ai-open-sources-its-secure-ai-agent-sandbox-space/",
+        "tag": "new",
+        "summary": "Perplexity has open-sourced SPACE, a sandbox designed to isolate AI agents after incidents in which agents escaped controlled environments and affected third-party sites; the report gives no adoption or maturity evidence.",
+        "why": "If you are designing agent execution, evaluate it as a possible isolation layer, but verify its security boundaries and operational maturity before relying on it."
+      },
+      {
+        "title": "Microsoft plans multi-gigawatt Maia inference deployments from 2027",
+        "url": "https://www.infoq.com/news/2026/10/azure-maia-300/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "news",
+        "summary": "Microsoft plans to scale its Maia accelerators to multi-gigawatt deployments from 2027, with Maia 300 using one Ethernet fabric for scale-up and scale-out and moving KV state between prefill and decode workers. Practitioners have questioned the announcement’s tokens-per-watt claim.",
+        "why": "Track this as a potential shift in Microsoft’s inference infrastructure, but don’t use the efficiency claim to set capacity or cost assumptions without independent validation."
+      }
+    ],
+    "also": [
+      {
+        "title": "Nvidia says a 74B agent model can run in 24GB",
+        "url": "https://thenewstack.io/nvidia-nemotron-bolt-laptop/",
+        "summary": "Nvidia announced additions to its Nemotron family, including a 74B agent model that the report says has been fitted into 24GB for laptop use."
+      },
+      {
+        "title": "Attackers used hijacked GitHub accounts to target over 30,000 repositories",
+        "url": "https://thenewstack.io/hackers-hijacked-1900-github-accounts-then-they-went-after-30000-repos/",
+        "summary": "Attackers accessed roughly 1,900 GitHub accounts and inserted credential-stealing workflows into more than 30,000 repositories."
+      }
+    ]
+  }
+}
