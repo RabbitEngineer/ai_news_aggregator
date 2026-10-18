@@ -1,0 +1,38 @@
+{
+  "tldr": [
+    "Websites are increasingly blocking AI agents, making dependable access to real-world services a design constraint for agent workflows.",
+    "Replit says OpenAI will replace Anthropic as its default model provider, though Claude remains available to customers."
+  ],
+  "azure": {
+    "top": [],
+    "also": []
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Websites are increasingly blocking AI agents",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1013195/ai-agents-blocked-web",
+        "tag": "news",
+        "summary": "As companies promote agents that browse and act online, more websites are restricting agent access. That creates friction for agents expected to handle tasks such as shopping, bookings, and email.",
+        "why": "When designing agents that depend on the public web, plan for blocked or unreliable access and provide supported API integrations or a human fallback."
+      }
+    ],
+    "also": [
+      {
+        "title": "Replit makes OpenAI its default model provider, while keeping Claude available",
+        "url": "https://techcrunch.com/2026/10/17/replit-is-no-longer-working-with-anthropic-ceo-says/",
+        "summary": "Replit CEO Amjad Masad said OpenAI will replace Anthropic as the platform’s default model provider, while Claude will remain available to customers."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [],
+    "also": [
+      {
+        "title": "InBox Wall sanitizes email before AI agents process it",
+        "url": "https://github.com/Annora998/inboxwall",
+        "summary": "This open-source, local-first MCP server sanitizes email HTML to guard agents against hidden CSS and Unicode prompt injections before the content reaches an LLM."
+      }
+    ]
+  }
+}
