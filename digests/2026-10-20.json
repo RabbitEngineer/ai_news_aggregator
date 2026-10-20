@@ -1,0 +1,73 @@
+{
+  "tldr": [
+    "Azure Monitor’s metrics-usage insights are now generally available, giving you a way to find unused metrics and investigate workspace consumption.",
+    "MiniMax says its new M3.1 Flash model cuts agent costs by 70%; validate that claim against your own multi-call workloads before updating forecasts.",
+    "OpenCode users should check for exposed API keys and unexpected usage after attackers accessed part of its online platform."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Azure Monitor metrics-usage insights reach general availability",
+        "url": "https://azure.microsoft.com/updates?id=577165",
+        "tag": "ga",
+        "summary": "Metrics usage insights are generally available for Azure Monitor workspaces, showing utilization, unused metrics, usage trends, and changes driving consumption.",
+        "why": "Use it to identify metrics you can stop collecting and to investigate what is driving workspace usage before changing monitoring budgets."
+      },
+      {
+        "title": "Azure DNS can link record sets directly to Traffic Manager",
+        "url": "https://azure.microsoft.com/updates?id=573917",
+        "tag": "ga",
+        "summary": "Azure DNS now supports DNS-based load balancing through direct links between DNS record sets and Traffic Manager profiles, removing the need for a CNAME pointing to the profile.",
+        "why": "Revisit DNS designs that use Traffic Manager: the direct association may simplify record management, but check how it fits your existing failover and routing setup."
+      }
+    ],
+    "also": []
+  },
+  "general": {
+    "top": [
+      {
+        "title": "MiniMax says M3.1 Flash cuts AI-agent costs by 70%",
+        "url": "https://siliconangle.com/2026/10/19/minimax-launches-m3-1-flash-model-says-it-cuts-ai-agent-costs-by-70/",
+        "tag": "model",
+        "summary": "MiniMax released M3.1 Flash, a faster, cheaper update to its M3 model, and says it reduces the cost of running AI agents by 70%. The report does not provide independent validation of that figure.",
+        "why": "Benchmark it on your own agent workflows before revising forecasts, since repeated model calls can make per-task cost differ from headline claims."
+      },
+      {
+        "title": "Microsoft adds controls for agents that may act like insider threats",
+        "url": "https://siliconangle.com/2026/10/19/microsoft-targets-the-agentic-insider-with-new-controls-for-rogue-ai-agents/",
+        "tag": "security",
+        "summary": "Microsoft introduced security controls that restrict what an AI agent can do as its assessed risk rises, addressing the danger of agents having excessive access to enterprise systems.",
+        "why": "When designing agent access, plan for permissions that can be limited as risk changes rather than giving an agent broad, persistent access."
+      }
+    ],
+    "also": [
+      {
+        "title": "US orders DeepSeek removed from federal civilian agencies",
+        "url": "https://siliconangle.com/2026/10/19/trump-administration-orders-ban-on-deepseek-in-federal-agencies/",
+        "summary": "The Department of Homeland Security ordered DeepSeek technology removed from federal civilian agencies, citing security risks and potential access to government infrastructure."
+      },
+      {
+        "title": "Samsung is expanding semiconductor capacity to meet memory demand",
+        "url": "https://www.technologyreview.com/2026/10/20/1145916/dispatch-visit-to-samsung-massive-new-semiconductor-hub/",
+        "summary": "Samsung’s Pyeongtaek complex has three fabs operating and a fourth coming online as demand grows for the specialized memory used alongside AI GPUs."
+      },
+      {
+        "title": "AI agents reportedly helped a hacker break into more than 100 websites",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1013643/ai-agents-hack-john-deere-shark-ninja-cummins",
+        "summary": "A security firm says a hacker used mostly autonomous AI agents to breach over 100 websites, with Reuters reporting John Deere, SharkNinja, and Cummins among the victims."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Attackers stole API keys from AI coding tool OpenCode",
+        "url": "https://techcrunch.com/2026/10/19/hackers-hit-ai-coding-tool-opencode-running-up-charges-on-users-ai-accounts/",
+        "tag": "security",
+        "summary": "Attackers accessed part of OpenCode’s online platform and stole some users’ API keys, then used AI services in ways that ran up charges.",
+        "why": "If your team uses OpenCode, check for exposed keys, rotate them, and review provider billing for unexpected usage."
+      }
+    ],
+    "also": []
+  }
+}
