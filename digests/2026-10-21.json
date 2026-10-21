@@ -1,0 +1,92 @@
+{
+  "tldr": [
+    "Azure Application Gateway now supports TLS private keys that remain inside Managed HSM, removing a key-exposure trade-off for sensitive workloads.",
+    "A new Azure preview lets route tables suppress default routes between peered VNets, giving network designs more control over traffic paths.",
+    "Google’s TorchTPU aims to make PyTorch workloads easier to move off Nvidia GPUs; DeepSeek has also open-sourced the inference framework behind its production service."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Application Gateway adds keyless TLS with Managed HSM",
+        "url": "https://azure.microsoft.com/updates?id=577130",
+        "tag": "security",
+        "summary": "Application Gateway now supports TLS termination with certificates whose private keys stay in Azure Key Vault Managed HSM. The HSM performs the signature for each TLS handshake, so the key is never exported to the gateway.",
+        "why": "For workloads with strict key-protection requirements, assess whether this lets you use Application Gateway without placing private keys on the gateway."
+      },
+      {
+        "title": "Azure previews route-table control over VNet peering routes",
+        "url": "https://azure.microsoft.com/updates?id=576242",
+        "tag": "preview",
+        "summary": "The new Disable VNet Peering Route capability suppresses system-generated peering routes on subnets associated with a route table, giving you more control over traffic between peered VNets.",
+        "why": "If your network design needs to constrain or redirect traffic between peered VNets, test this preview as a possible alternative to more complex routing workarounds."
+      },
+      {
+        "title": "Front Door Premium WAF adds service-tag match conditions",
+        "url": "https://azure.microsoft.com/updates?id=577156",
+        "tag": "ga",
+        "summary": "Azure Front Door Premium WAF custom rules can now match Azure service tags, which represent groups of service IP prefixes that Microsoft updates.",
+        "why": "Review rules that currently depend on manually maintained Azure service IP ranges; service-tag matching may reduce that maintenance."
+      }
+    ],
+    "also": [
+      {
+        "title": "Azure Monitor advanced platform metrics reach general availability",
+        "url": "https://azure.microsoft.com/updates?id=575329",
+        "summary": "Advanced platform metrics are generally available, providing finer-grained signals to help identify changes and trends in Azure resources."
+      }
+    ]
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Google introduces TorchTPU to help PyTorch workloads move beyond Nvidia",
+        "url": "https://siliconangle.com/2026/10/20/google-unveils-torchtpu-in-a-push-to-break-nvidias-stranglehold-on-ai-compute/",
+        "tag": "new",
+        "summary": "Google has launched TorchTPU, a specialized version of the open-source PyTorch framework intended to make it easier for developers to run PyTorch applications on Google’s TPUs.",
+        "why": "If you are weighing accelerator options for AI workloads, watch for compatibility and performance evidence before treating a move away from Nvidia as operationally straightforward."
+      }
+    ],
+    "also": [
+      {
+        "title": "Researchers found more than 6,800 publicly accessible Meta Muse chat links",
+        "url": "https://arstechnica.com/security/2026/10/meta-muse-exposes-users-personal-and-business-secrets-when-they-share-conversations/",
+        "summary": "Meta suspended Muse’s conversation-sharing feature while investigating reports that shared chat links exposed personal and business conversations."
+      },
+      {
+        "title": "Report says Anthropic is struggling to secure enough cloud compute",
+        "url": "https://techcrunch.com/2026/10/20/anthropics-cloud-partnerships-are-getting-messy/",
+        "summary": "Anthropic is reportedly facing difficulty securing cloud capacity as its infrastructure spending grows and cloud providers increasingly compete with it."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "DeepSeek open-sources the inference framework behind its production service",
+        "url": "https://siliconangle.com/2026/10/20/deepseek-open-sources-deepinfer-the-inference-framework-behind-its-production-services/",
+        "tag": "new",
+        "summary": "DeepSeek has open-sourced DeepInfer, the inference framework it says underpins its production services and helps serve large models at scale. The release is production-used, but the announcement alone does not establish how easily it can be adopted elsewhere.",
+        "why": "If inference cost or serving throughput is a constraint, evaluate it against your current runtime using your own models and traffic patterns rather than assuming it is a drop-in replacement."
+      },
+      {
+        "title": "Respan launches a Rust-based alternative to the LiteLLM gateway",
+        "url": "https://thenewstack.io/respan-rust-ai-gateway/",
+        "tag": "new",
+        "summary": "Respan has released an open-source AI gateway written in Rust after rebuilding its product following an upgrade to LiteLLM; the project is newly launched, with no adoption evidence in the report.",
+        "why": "If LiteLLM is central to your model-routing design, compare migration and compatibility risks before considering a new gateway—this launch is a reason to evaluate, not evidence to switch."
+      }
+    ],
+    "also": [
+      {
+        "title": "TornadoVM 7 brings GPU acceleration to Java applications",
+        "url": "https://www.infoq.com/news/2026/10/tornadovm-7-gpu/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "TornadoVM 7 can accelerate Java programs across multicore CPUs and GPUs and supports several mainstream JDK distributions."
+      },
+      {
+        "title": "Datadog is testing agent-based approaches to software testing",
+        "url": "https://thenewstack.io/datadog-propolis-agentic-testing/",
+        "summary": "Datadog is betting that agents can help keep tests effective as teams use AI to generate more code."
+      }
+    ]
+  }
+}
