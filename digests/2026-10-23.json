@@ -1,0 +1,91 @@
+{
+  "tldr": [
+    "Azure Data Lake Storage’s vectored reads are now generally available, potentially reducing request overhead for selective analytics reads.",
+    "OpenAI launched a Decisions API for fast, low-cost application decisions; Microsoft also reported strong diagnostic results, with most gains attributed to the underlying models.",
+    "Google open-sourced TorchTPU, giving PyTorch teams another route to train and run workloads beyond Nvidia GPUs."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Azure Data Lake Storage vectored reads are generally available",
+        "url": "https://azure.microsoft.com/updates?id=577618",
+        "tag": "ga",
+        "summary": "ABFS Vectored Read combines nearby file ranges into fewer storage requests and runs reads asynchronously, reducing network round trips for compatible analytics engines making selective reads.",
+        "why": "For analytics workloads on ADLS, check engine compatibility and benchmark selective-read performance before changing storage or compute sizing assumptions."
+      },
+      {
+        "title": "Microsoft outlines network designs beyond Azure hub-and-spoke",
+        "url": "https://techcommunity.microsoft.com/t5/azure-infrastructure-blog/beyond-hub-and-spoke-routable-and-non-advertised-azure-networks/ba-p/4553044",
+        "tag": "news",
+        "summary": "A Microsoft Azure Infrastructure Blog post discusses routable and non-advertised network patterns as conventional hub-and-spoke designs become harder to sustain across expanding, multi-region environments.",
+        "why": "If your Azure network is growing across regions, review whether your address allocation and route-propagation model will scale before adding more spokes."
+      }
+    ],
+    "also": []
+  },
+  "general": {
+    "top": [
+      {
+        "title": "OpenAI makes its Decisions API broadly available",
+        "url": "https://openai.com/index/decisions-api",
+        "tag": "new",
+        "summary": "OpenAI introduced the Decisions API for fast, focused, low-cost decisions in applications, as competition grows around models designed for decision tasks.",
+        "why": "Consider it for latency- or cost-sensitive decision steps, and compare its quality and per-request economics with using a general-purpose model."
+      },
+      {
+        "title": "Microsoft reports strong AI diagnostic results, largely from its models",
+        "url": "https://techcrunch.com/2026/10/22/microsofts-mustafa-suleyman-says-its-ai-outperforms-doctors-on-hard-cases-as-he-chases-medical-superintelligence/",
+        "tag": "performance",
+        "summary": "A study in Science reportedly found Microsoft’s diagnostic system outperformed generalist doctors on difficult cases, but most of the improvement appeared to come from the models underneath rather than Microsoft’s system itself.",
+        "why": "Treat the result as evidence to evaluate model capability separately from orchestration; it does not establish that the same system-level gains transfer to other workloads."
+      }
+    ],
+    "also": [
+      {
+        "title": "Canva launches its first image-generation model",
+        "url": "https://techcrunch.com/2026/10/22/canva-releases-its-first-image-generation-model/",
+        "summary": "Canva made its image model available to users, touting more customizable output and lower costs."
+      },
+      {
+        "title": "Google Cloud introduces a service for hosting AI agents",
+        "url": "https://siliconangle.com/2026/10/22/google-cloud-introduces-agent-compute-engine-to-host-ai-agents/",
+        "summary": "Google Cloud’s Agent Compute Engine provides sandboxed environments for agents, including their applications, data, instructions, and security guardrails."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "OpenAI donates its common LLM API specification to an open-source foundation",
+        "url": "https://thenewstack.io/openai-donates-open-responses/",
+        "tag": "new",
+        "summary": "OpenAI donated the Open Responses API specification, intended to provide a common interface for LLMs, to the Agentic AI Foundation.",
+        "why": "Track whether providers and serving frameworks adopt the spec before building around it; broad support could reduce the integration work of switching models."
+      },
+      {
+        "title": "Google open-sources TorchTPU for PyTorch workloads",
+        "url": "https://thenewstack.io/pytorch-tpu-trainium-migration/",
+        "tag": "release",
+        "summary": "Google open-sourced TorchTPU, a native PyTorch stack for Google TPUs, in a wider push to give PyTorch users alternatives to Nvidia hardware.",
+        "why": "If accelerator supply or cost is constraining a project, evaluate the stack’s workload compatibility and maturity before assuming PyTorch requires Nvidia GPUs."
+      }
+    ],
+    "also": [
+      {
+        "title": "Anthropic offers opt-in AI security scans for open-source projects",
+        "url": "https://www.infoq.com/news/2026/10/anthropic-oss-security-scanner/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "Anthropic’s free OSS Scanner sends enrolled maintainers periodic vulnerability reports generated by its models, including Claude Mythos, without human review."
+      },
+      {
+        "title": "Five agent harnesses produced sharply different results on a memory test",
+        "url": "https://thenewstack.io/letta-frontiermemory-agent-harness-benchmark/",
+        "summary": "A comparison tested five agent harnesses on memory tasks and found that their ability to retain information did not translate equally into successful use of it."
+      },
+      {
+        "title": "Ramp built its own agent harness after testing managed and open-source options",
+        "url": "https://thenewstack.io/ramp-laminar-agent-harness/",
+        "summary": "Ramp spent months evaluating managed agent APIs, open-source frameworks, and third-party platforms before building an agent harness of its own in six weeks."
+      }
+    ]
+  }
+}
