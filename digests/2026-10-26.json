@@ -1,0 +1,41 @@
+{
+  "tldr": [
+    "Cloudflare’s public-beta Auto Router trades some benchmark performance for a claimed two-thirds cost reduction by choosing a model for each request.",
+    "Google and Meta open-sourced TorchTPU, giving PyTorch users a new path to run workloads on Google TPUs."
+  ],
+  "azure": {
+    "top": [],
+    "also": []
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Apollo analysis says most companies have yet to see financial returns from AI",
+        "url": "https://techcrunch.com/2026/10/25/ai-delivers-zero-financial-payoff-to-most-companies-according-to-apollo-economist/",
+        "tag": "news",
+        "summary": "An Apollo economist says that, despite widespread investment, companies outside the biggest technology firms have seen no financial payoff from AI. The report frames this as a broad finding, but the excerpt provides no underlying figures.",
+        "why": "Use workload-level evidence—not industry hype—to set ROI expectations and decide whether a proposed AI hosting investment is justified."
+      }
+    ],
+    "also": []
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Cloudflare’s Auto Router picks a model for each request in public beta",
+        "url": "https://www.infoq.com/news/2026/10/cloudflare-auto-router/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "preview",
+        "summary": "Cloudflare’s AI Gateway beta scores request complexity, ambiguity, stakes and context dependence to select a model. Cloudflare says its router scores 10 points below Claude Opus 5.5 on success rate at one-third the cost; practitioners question how well it tracks stakes across long agent sessions.",
+        "why": "Evaluate request routing as a way to lower inference costs, but test quality on your own workloads—especially multi-step sessions—before relying on it."
+      },
+      {
+        "title": "Google and Meta open-source TorchTPU for native PyTorch on TPUs",
+        "url": "https://www.infoq.com/news/2026/10/google-meta-torchtpu/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "new",
+        "summary": "Google and Meta released TorchTPU, a native PyTorch backend for Google TPUs; Meta says it plans to move larger LLM workloads onto the hardware. The announcement has renewed questions about TPU availability and vendor lock-in.",
+        "why": "If you are weighing accelerator options, assess whether PyTorch support makes TPU capacity a viable alternative—and how much your design would depend on Google’s hardware."
+      }
+    ],
+    "also": []
+  }
+}
