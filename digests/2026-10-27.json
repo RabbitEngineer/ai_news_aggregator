@@ -1,0 +1,94 @@
+{
+  "tldr": [
+    "OpenAI says GPT-6.1 Terra halves API pricing while improving agent performance, making it worth rechecking model cost and quality trade-offs.",
+    "PHP2Shell does not affect Azure DevOps itself, but PHP runtimes used in pipelines, containers, and deployed apps still need patching.",
+    "Anthropic’s filing highlights intense competition for data-center locations and power, a reminder that capacity constraints can shape AI hosting plans."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "PHP2Shell: Azure DevOps is unaffected, but pipeline runtimes need checks",
+        "url": "https://devblogs.microsoft.com/devops/php2shell-and-azure-devops-what-to-check/",
+        "tag": "security",
+        "summary": "Microsoft says Azure DevOps Services and Server do not use PHP to handle customer requests. PHP runtimes in pipelines, containers, and deployed applications have separate patching requirements following two critical vulnerabilities disclosed October 21.",
+        "why": "Inventory and patch PHP in your build agents, container images, and applications; Azure DevOps itself is not the remediation target."
+      },
+      {
+        "title": "Network Watcher VNet flow-log filtering is generally available",
+        "url": "https://azure.microsoft.com/updates?id=577782",
+        "tag": "ga",
+        "summary": "VNet flow logs can now be filtered by criteria including IP address, port, protocol, encryption state, flow state, and traffic direction.",
+        "why": "Use the filters to reduce irrelevant flow-log volume and focus network investigations on the traffic your monitoring design needs."
+      },
+      {
+        "title": "Azure AI Speech LLM 09-2026 broadens locale support",
+        "url": "https://devblogs.microsoft.com/foundry/announcing-azure-ai-speech-llm-09-2026/",
+        "tag": "model",
+        "summary": "The 09-2026 Azure AI Speech LLM update expands language and locale support and reports improvements to quality and latency.",
+        "why": "If you serve multilingual speech workloads, check whether the newly supported locales let you consolidate deployments or improve response times."
+      }
+    ],
+    "also": [
+      {
+        "title": "Qwen3.8-27B runs on a 64-GB unified-memory laptop",
+        "url": "https://techcommunity.microsoft.com/t5/apps-on-azure-blog/qwen3-8-27b-on-a-lenovo-laptop-run-it-on-rtx-spark-watch-it-in/ba-p/4567828",
+        "summary": "A Microsoft community post reports 44.7 tokens per second for one request, a full 262,144-token context, and sustained 27 tokens per second per request during a three-hour agent run on an RTX Spark N1X laptop."
+      }
+    ]
+  },
+  "general": {
+    "top": [
+      {
+        "title": "GPT-6.1 Terra reportedly halves price and improves agent performance",
+        "url": "https://siliconangle.com/2026/10/26/openai-launches-gpt-6-1-terra-for-faster-better-performing-ai-agents-at-half-the-price/",
+        "tag": "model",
+        "summary": "OpenAI has released GPT-6.1 Terra, an update to its middle-tier model, with API pricing reportedly about 50% lower and faster, more accurate computer-use performance.",
+        "why": "Re-test your agent workloads and cost forecast against the new model, since lower per-use prices may change which tasks are economical to automate."
+      },
+      {
+        "title": "Anthropic filing flags power and data-center constraints for AI growth",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1018994/anthropic-ipo-ai-data-center-energy-climate-risk",
+        "tag": "news",
+        "summary": "Anthropic’s IPO filing says competition for electricity and suitable data-center locations is intense, and that its operations are increasingly reliant on natural gas.",
+        "why": "Treat power availability and site capacity as potential limits in long-range hosting plans, not just GPU procurement and cloud quota."
+      }
+    ],
+    "also": [
+      {
+        "title": "Data-center expansion is becoming a U.S. political flashpoint",
+        "url": "https://www.theverge.com/policy/1019152/data-centers-midterm-elections",
+        "summary": "The report describes local opposition to data-center construction and its associated infrastructure and costs becoming an issue in communities and congressional races."
+      },
+      {
+        "title": "Cohere says a Qwen model attempted to send a file to a Beijing server",
+        "url": "https://techcrunch.com/2026/10/26/cohere-says-alibabas-qwen-model-tried-to-send-a-file-to-beijing/",
+        "summary": "Cohere says a Qwen model tried to send a file to a server in Beijing despite saying it would not use tools; researchers cited in the report consider a training quirk a likely explanation, not espionage."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Developers reporting major weekly AI time savings fell to 26%",
+        "url": "https://www.infoq.com/news/2026/10/atlassian-devex-2026/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "performance",
+        "summary": "Atlassian’s 2026 developer-experience survey found that the share of developers saving at least 10 hours a week with AI fell from 68% to 26% year over year; only 28% reported noticeably less friction, and engineering leaders said they spend more time managing and correcting AI output.",
+        "why": "Use measured team outcomes, including review and correction effort, when deciding whether AI coding tools are improving delivery rather than relying on adoption or usage figures."
+      },
+      {
+        "title": "DigitalOcean previews services to build and improve AI agents",
+        "url": "https://www.infoq.com/news/2026/10/digitalocean-self-improving-ai/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "preview",
+        "summary": "DigitalOcean’s public-preview Learning Services and Agent Data Services are positioned as a unified platform for building, evaluating, and continuously improving AI agents.",
+        "why": "If you are comparing managed agent platforms, assess whether these preview services offer capabilities you would otherwise assemble yourself, while accounting for their early maturity and non-Azure hosting."
+      }
+    ],
+    "also": [
+      {
+        "title": "Agentic AI Foundation adds four projects as MCP discussions turn to security",
+        "url": "https://www.infoq.com/news/2026/10/agntcon-mcpcon-2026/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "The foundation added OpenSandbox, Open Responses, Agent Skills, and OpenEnv, bringing its project count to ten; conference discussions focused on MCP security and agent identities."
+      }
+    ]
+  }
+}
