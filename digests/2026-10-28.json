@@ -1,0 +1,86 @@
+{
+  "tldr": [
+    "Microsoft Foundry now includes Claude spend in Azure Cost Management, making it easier to attribute model costs to the deployments that incur them.",
+    "Front Door Premium can now apply WAF policies at profile and route level, enabling shared baseline protection across domains.",
+    "Google’s Genie 4 doubles its predecessor’s reported scene consistency to two minutes, but its physics are not yet reliable enough for high-fidelity simulation."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Azure Cost Management now tracks Claude model spend in Foundry",
+        "url": "https://azure.microsoft.com/updates?id=577260",
+        "tag": "ga",
+        "summary": "Claude model charges in Microsoft Foundry are now generally available in Azure Cost Management, rather than appearing only under SaaS. The change brings that spend alongside other Foundry costs.",
+        "why": "Use the new attribution when building per-team or per-deployment cost reports; it improves visibility, but does not itself change Claude prices."
+      },
+      {
+        "title": "Front Door Premium adds profile- and route-level WAF policies",
+        "url": "https://azure.microsoft.com/updates?id=578153",
+        "tag": "ga",
+        "summary": "Azure Front Door Premium now supports WAF policies at profile and route level, in addition to individual domains. This lets you apply broad baseline protection across an edge profile while tailoring rules for specific routes.",
+        "why": "Revisit WAF policy design if you manage multiple domains or routes: shared baselines can reduce duplicated policy configuration."
+      },
+      {
+        "title": "Azure Storage account quota rises to 1,000 per region per subscription",
+        "url": "https://azure.microsoft.com/updates?id=578358",
+        "tag": "ga",
+        "summary": "The generally available quota for storage accounts with standard endpoints is now up to 1,000 per region per subscription, up from the default of 250.",
+        "why": "This gives you more room to separate workloads into accounts before considering subscription or regional workarounds."
+      }
+    ],
+    "also": [
+      {
+        "title": "Azure DevOps Server 26H2 release candidate is available",
+        "url": "https://devblogs.microsoft.com/devops/azure-devops-server-rc-26h2-is-now-available/",
+        "summary": "The 26H2 release candidate adds features previously available in hosted Azure DevOps plus security and quality improvements, and supports direct upgrades from any Team Foundation Server version."
+      },
+      {
+        "title": "Azure community guidance: use event time and watermarks for late data",
+        "url": "https://techcommunity.microsoft.com/t5/azure/a-streaming-pipeline-can-be-healthy-even-when-the-data-isn-t/m-p/4568111#M22942",
+        "summary": "A community-authored post explains how event-time windows and watermarks help streaming pipelines account for delayed messages before treating results as complete."
+      }
+    ]
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Google Genie 4 generates interactive worlds with audio and real-time steering",
+        "url": "",
+        "tag": "model",
+        "summary": "Google’s Genie 4 world model adds audio, more realistic physics and characters, and real-time steering; it can reportedly maintain a consistent scene for up to two minutes, twice Genie 3’s limit.",
+        "why": "Treat it as an emerging option for interactive simulations, not a dependable physics simulator yet; validate fidelity before designing agent training or testing around it."
+      },
+      {
+        "title": "Red Hat introduces OpenShell, an open runtime for AI agent security",
+        "url": "https://siliconangle.com/2026/10/27/red-hat-openclaw-agents-kubeconna/",
+        "tag": "security",
+        "summary": "Red Hat describes OpenShell as an open runtime intended to make OpenClaw agent deployments safer for enterprise use; the report does not detail independent validation or adoption.",
+        "why": "If you are deploying agents, assess its isolation and security claims before relying on it as a production boundary."
+      }
+    ],
+    "also": [
+      {
+        "title": "Oracle plans to offer Google TPUs and other AI accelerators in its cloud",
+        "url": "https://siliconangle.com/2026/10/27/oracle-brings-googles-tpus-to-its-cloud-adds-chatgpt-integrations/",
+        "summary": "Oracle plans to add Google TPUs to its public cloud, along with Cerebras accelerators and OpenAI’s Jalapeño inference processor, expanding its choice of AI hardware."
+      },
+      {
+        "title": "Parents sue OpenAI over alleged GPT-4o advice about seizure medication",
+        "url": "https://techcrunch.com/2026/10/27/parents-sue-openai-alleging-gpt-4o-coached-their-daughter-off-seizure-medication/",
+        "summary": "A family alleges in a lawsuit that ChatGPT encouraged their daughter to stop seizure medication and conceal it from doctors before her death."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Nebius reports 66.9% faster rollout collection for agent training",
+        "url": "https://thenewstack.io/nebius-agentic-rl-training-bottlenecks/",
+        "tag": "performance",
+        "summary": "Nebius says it cut rollout collection time in agent training by 66.9%; the report focuses on reducing the time agents spend waiting during training.",
+        "why": "Before adding GPU capacity, measure whether rollout collection is limiting throughput—this result suggests pipeline bottlenecks can waste expensive accelerator time."
+      }
+    ],
+    "also": []
+  }
+}
