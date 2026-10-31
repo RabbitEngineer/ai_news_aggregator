@@ -1,0 +1,97 @@
+{
+  "tldr": [
+    "Azure API Management v2 can have different outbound-IP behavior from classic tiers; review backend allowlists and use a NAT Gateway if you need predictable egress.",
+    "Azure SQL Database preview adds database-level managed identity, including federated identity credentials, for access to Blob Storage and Data Lake Storage.",
+    "DoorDash reports cutting grocery reorder latency from 16 seconds to 2 by combining batch inference with deterministic checks—a useful pattern for keeping user-facing AI flows responsive."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "APIM v2 outbound IPs differ from classic tiers; NAT Gateway restores predictability",
+        "url": "https://techcommunity.microsoft.com/t5/azure-integration-services-blog/azure-api-management-v2-restoring-predictable-outbound-ip/ba-p/4566574",
+        "tag": "new",
+        "summary": "The guidance explains that Standard v2 and Premium v2 outbound networking differs from classic API Management tiers, where backends may rely on dedicated outbound IPs for allowlisting. A NAT Gateway can provide predictable outbound IP addresses for v2 deployments.",
+        "why": "Check backend firewall allowlists before migrating or deploying APIM v2, and include a NAT Gateway in the design if those backends require stable source IPs."
+      },
+      {
+        "title": "Azure SQL preview adds database-level managed identity for external data access",
+        "url": "https://azure.microsoft.com/updates?id=577491",
+        "tag": "preview",
+        "summary": "Azure SQL Database can now use a user-assigned managed identity at the individual database level, including a federated identity credential, to access Blob Storage and Data Lake Storage Gen2 through external tables and OPENROWSET.",
+        "why": "This gives you a way to separate data-access identities by database instead of sharing credentials broadly; assess it for designs that query files from Azure SQL."
+      },
+      {
+        "title": "Azure MCP Server 3.0 is generally available with Terraform support",
+        "url": "https://azure.microsoft.com/updates?id=578662",
+        "tag": "ga",
+        "summary": "Azure MCP Server 3.0 is generally available, expanding how AI agents and developer tools interact with Azure through the Model Context Protocol and adding Azure Terraform infrastructure-as-code capabilities.",
+        "why": "If you are giving agents Azure management tools, evaluate the GA server against your deployment and access controls before allowing it to act on infrastructure."
+      },
+      {
+        "title": "Front Door Premium WAF's HTTP DDoS ruleset reaches general availability",
+        "url": "https://azure.microsoft.com/updates?id=578681",
+        "tag": "security",
+        "summary": "The HTTP-layer DDoS ruleset is now generally available for Azure Front Door Premium Web Application Firewall, adding protection beyond static controls such as IP filters and fixed rate limits.",
+        "why": "Review the ruleset for internet-facing Front Door workloads where application-layer traffic spikes could otherwise cause downtime."
+      },
+      {
+        "title": "Large OS Disk Encryption is GA for Confidential VM migrations",
+        "url": "https://azure.microsoft.com/updates?id=578850",
+        "tag": "ga",
+        "summary": "Large OS Disk Encryption is generally available for Azure Confidential VM migration scenarios, enabling larger production workloads to move with their OS disks fully protected.",
+        "why": "Revisit confidential-computing migration plans that were blocked by OS disk size or encryption requirements."
+      }
+    ],
+    "also": [
+      {
+        "title": "Azure Cloud HSM adds hardware-originated audit logging",
+        "url": "https://azure.microsoft.com/en-us/blog/azure-cloud-hsm-hardware-audit-logging-verifiable-audit-trails-for-security-and-compliance/",
+        "summary": "Azure Cloud HSM hardware audit logs provide security and operations teams with verifiable evidence for monitoring, compliance reporting, and forensic investigations."
+      }
+    ]
+  },
+  "general": {
+    "top": [
+      {
+        "title": "OpenAI, Google, Microsoft and Anthropic back a shared AI-crawling opt-out signal",
+        "url": "https://openai.com/index/helping-websites-express-ai-training-preferences",
+        "tag": "news",
+        "summary": "OpenAI says it will honor a shared robots.txt signal so website operators can express AI-training preferences to participating providers, with Google, Microsoft, and Anthropic also reported as supporters.",
+        "why": "For products that collect or use web content, track how the standard is implemented and make crawler behavior and training-data policies consistent across providers."
+      }
+    ],
+    "also": [
+      {
+        "title": "Google reports its first AI response from a satellite running Gemma 4",
+        "url": "https://www.theverge.com/tech/1023528/google-project-suncatcher-ai-satellite-transmission",
+        "summary": "Google says a satellite equipped with a Tensor Processing Unit ran Gemma 4 and transmitted a response to Earth, an early demonstration rather than a production service."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Google's PageBreak AI security agent found more than 500 XSS bugs",
+        "url": "https://www.infoq.com/news/2026/10/google-pagebreak-security-agent/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "security",
+        "summary": "Google says PageBreak, an agent using Gemini models, uncovered more than 500 cross-site scripting vulnerabilities across its web applications since entering full operation in January. It reports findings only after deterministic validators reproduce the exploit against a running application.",
+        "why": "When assessing AI-assisted security tools, look for the same validation step: agent-generated findings need reproducible evidence before they enter a remediation queue."
+      },
+      {
+        "title": "Netflix treats GPU reliability as a distributed-systems problem",
+        "url": "https://www.infoq.com/news/2026/10/netflix-gpu-distributed-systems/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "news",
+        "summary": "Netflix describes a reliability platform for large-scale GPU training and inference that combines layered health checks, automated remediation, and fault-tolerant training to keep work running through hardware failures.",
+        "why": "Design GPU services around detecting and recovering from hardware faults, rather than assuming a healthy Kubernetes cluster means the model workload is healthy."
+      },
+      {
+        "title": "DoorDash cut grocery reorder latency from 16 seconds to 2 with AI agents",
+        "url": "https://www.infoq.com/news/2026/10/doordash-ai-grocery-reorder/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "performance",
+        "summary": "DoorDash says it reduced grocery reorder latency from 16 seconds to 2 by precomputing recurring needs with batch LLM inference, validating selections deterministically, and resolving current catalog items separately; shopping-list views doubled and order rate rose about 34%.",
+        "why": "For latency-sensitive AI features, consider moving repeatable work to batch inference and using deterministic validation so each live request needs fewer model calls."
+      }
+    ],
+    "also": []
+  }
+}
