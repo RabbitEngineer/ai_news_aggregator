@@ -1,0 +1,32 @@
+{
+  "tldr": [
+    "A head-to-head test reports GPT-6.1 Terra was cheaper and faster than Claude Opus 5.5 in three tests, but the excerpt gives no figures to validate the size of the difference.",
+    "A judge allowed the NAACP’s Clean Air Act lawsuit over xAI data center pollution to proceed, keeping environmental compliance risks in focus for large AI infrastructure projects."
+  ],
+  "azure": {
+    "top": [],
+    "also": []
+  },
+  "general": {
+    "top": [
+      {
+        "title": "GPT-6.1 Terra reportedly beats Claude Opus 5.5 on cost and speed",
+        "url": "https://thenewstack.io/gpt-6-1-terra-vs-claude-opus-5-5/",
+        "tag": "performance",
+        "summary": "A comparison of GPT-6.1 Terra and Claude Opus 5.5 reports that GPT-6.1 was cheaper and faster across three tests at maximum effort; the excerpt provides no specific measurements.",
+        "why": "Treat this as a prompt to benchmark both models on your own workloads before choosing a deployment, since the reported advantage may not transfer to your traffic or quality requirements."
+      }
+    ],
+    "also": [
+      {
+        "title": "NAACP Clean Air Act lawsuit over xAI data center pollution can proceed",
+        "url": "https://techcrunch.com/2026/10/31/judge-allows-naacp-lawsuit-over-xai-data-center-pollution-to-move-forward/",
+        "summary": "A judge allowed the NAACP’s lawsuit accusing xAI of violating the Clean Air Act over data center pollution to move forward."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [],
+    "also": []
+  }
+}
