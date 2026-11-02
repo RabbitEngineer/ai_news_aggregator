@@ -1,0 +1,23 @@
+{
+  "tldr": [
+    "India is proposing a more locally controlled AI approach, with models moving to data rather than sending data to models."
+  ],
+  "azure": {
+    "top": [],
+    "also": []
+  },
+  "general": {
+    "top": [],
+    "also": [
+      {
+        "title": "India proposes bringing AI models to data instead of exporting data",
+        "url": "https://www.theregister.com/public-sector/2026/11/02/india-floats-ai-plan-under-which-the-model-travels-to-the-data-rather-than-the-data-travelling-to-the-model/5306872",
+        "summary": "India is considering an AI plan to expand local AI while limiting Big Tech's access to data."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [],
+    "also": []
+  }
+}
