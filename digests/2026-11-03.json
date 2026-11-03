@@ -1,0 +1,103 @@
+{
+  "tldr": [
+    "Azure Service Bus Premium can now combine partitioned throughput with cross-region geo-replication, improving resilience for high-throughput messaging.",
+    "Azure Fluid Relay retires on February 2, 2027; identify dependent workloads and plan a migration.",
+    "AI agent tasks can consume 10–50 times the tokens of a basic chat prompt, so per-task costs deserve explicit limits and monitoring."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Service Bus geo-replication reaches GA for partitioned namespaces",
+        "url": "https://azure.microsoft.com/updates?id=579021",
+        "tag": "ga",
+        "summary": "Azure Service Bus Premium now supports geo-replication on partitioned namespaces, replicating messages and metadata to a secondary region while retaining partitioning's throughput benefits.",
+        "why": "Revisit your messaging resilience design: you can now pair higher-throughput partitioned namespaces with regional replication."
+      },
+      {
+        "title": "Azure Fluid Relay retires on February 2, 2027",
+        "url": "https://azure.microsoft.com/updates?id=570498",
+        "tag": "deprecation",
+        "summary": "Azure Fluid Relay will reach end of availability on February 2, 2027; the Fluid Framework will remain available as open source.",
+        "why": "Inventory Fluid Relay dependencies now and plan a replacement or self-hosting approach before the service shuts down."
+      },
+      {
+        "title": "PostgreSQL Flexible Server can switch to private endpoint networking",
+        "url": "https://azure.microsoft.com/updates?id=574541",
+        "tag": "ga",
+        "summary": "Existing Azure Database for PostgreSQL Flexible Server instances using VNet integration can now move to a private endpoint-capable network configuration.",
+        "why": "If delegated-subnet networking constrains your design, assess this migration path before building new connectivity around the existing setup."
+      },
+      {
+        "title": "AKS flex nodes preview lets clusters use external and edge compute",
+        "url": "https://techcommunity.microsoft.com/t5/apps-on-azure-blog/announcing-flex-nodes-for-aks-preview-in-azure-portal/ba-p/4569460",
+        "tag": "preview",
+        "summary": "AKS flex nodes can connect user-managed VMs or on-premises servers—including compute in other regions or at the edge—to an existing cluster without adding another Kubernetes control plane; portal support is now in preview.",
+        "why": "For hybrid or edge workloads, evaluate whether one cluster can simplify operations, but treat the preview as an early design option rather than a production default."
+      }
+    ],
+    "also": [
+      {
+        "title": "Azure Migrate previews NAS discovery for Dell PowerScale and NetApp ONTAP",
+        "url": "https://azure.microsoft.com/updates?id=577975",
+        "summary": "Azure Migrate can discover and assess Dell PowerScale and NetApp ONTAP network-attached storage to help plan migrations to Azure."
+      },
+      {
+        "title": "Azure Site Recovery for Azure Local is generally available",
+        "url": "https://azure.microsoft.com/updates?id=579111",
+        "summary": "Azure Site Recovery can now protect supported Windows and Linux VMs running on Azure Local by replicating them for disaster recovery."
+      },
+      {
+        "title": "Azure Storage Actions adds task updates, controls, and case-sensitive matching",
+        "url": "https://azure.microsoft.com/updates?id=578628",
+        "summary": "Storage Actions now propagates task-definition changes automatically, offers more execution controls, and supports case-sensitive matching."
+      },
+      {
+        "title": "Databricks serverless jobs preview supports environment variables",
+        "url": "https://techcommunity.microsoft.com/t5/azure/environment-variables-for-serverless-jobs-on-azure-databricks/m-p/4569905#M22950",
+        "summary": "An Azure Community post describes the Lakeflow Jobs beta feature for using environment variables in serverless jobs instead of manually switching notebook settings or embedding tokens in code."
+      },
+      {
+        "title": "Microsoft plans to retire Defender for IoT OT security in October 2029",
+        "url": "https://azure.microsoft.com/updates?id=576255",
+        "summary": "Microsoft has announced a three-year transition period before deprecating the operational technology security component of Defender for IoT in October 2029."
+      }
+    ]
+  },
+  "general": {
+    "top": [
+      {
+        "title": "AI agent coding tasks may use 10–50 times more tokens than chat",
+        "url": "https://www.technologyreview.com/2026/11/02/1147702/stop-counting-tokens-start-counting-what-ships/",
+        "tag": "news",
+        "summary": "A coding agent can plan, generate code, run tests, and retry; one task may consume 10 to 50 times the tokens of a basic chat prompt.",
+        "why": "Model agent workloads as task-level costs, not just chat-sized requests, and set budgets and monitoring around completed work."
+      },
+      {
+        "title": "OpenAI program will offer up to 1,000 MW of data-center power relief",
+        "url": "https://openai.com/index/grid-protectors-program",
+        "tag": "news",
+        "summary": "OpenAI says its Grid Protectors Program will work with utilities to support grid reliability and protect consumer electricity costs; its first planned pilot in Georgia could free up to 1,000 megawatts during emergencies.",
+        "why": "When assessing AI capacity plans, account for grid constraints and demand-response commitments alongside available power and compute."
+      }
+    ],
+    "also": []
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Uber built an MCP gateway to govern access to 5,000-plus agent tools",
+        "url": "https://www.infoq.com/news/2026/11/uber-mcp-gateway-ai-agents/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "news",
+        "summary": "Uber's MCP Gateway standardizes agent access across more than 800 MCP servers and 5,000 tools, with access controls, sensitive-data redaction, response filtering, and separate registration and execution paths.",
+        "why": "If agent tool access is spreading across teams, evaluate a governed gateway pattern before each agent connects to services independently."
+      }
+    ],
+    "also": [
+      {
+        "title": "Devin adds hierarchical budgets that can stop an agent mid-task",
+        "url": "https://thenewstack.io/22842541cognition-devin-hierarchical-budgets/",
+        "summary": "Cognition has added hierarchical spending limits to Devin, allowing teams to budget agent work and cut it off when a limit is reached."
+      }
+    ]
+  }
+}
