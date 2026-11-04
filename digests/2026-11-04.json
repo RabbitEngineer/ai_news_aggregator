@@ -1,0 +1,107 @@
+{
+  "tldr": [
+    "Application Gateway for Containers is previewing MCP routing, JWT validation and private frontends—new options for securing and publishing AI services on Azure.",
+    "Azure SQL can now keep point-in-time recovery backups immutable for the configured retention period, beyond the previous seven-day default.",
+    "Data-center power delays are pushing some builders toward repurposed jet engines, a reminder that grid access can constrain AI capacity as much as GPUs."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Application Gateway for Containers adds MCP server routing",
+        "url": "https://azure.microsoft.com/updates?id=576388",
+        "tag": "preview",
+        "summary": "A new MCPRoute custom resource lets teams publish MCP servers behind a stable hostname and path, with centralized TLS, JWT validation and Web Application Firewall controls.",
+        "why": "Evaluate it if you need to expose MCP servers: it could centralize ingress and security policy instead of leaving each server to handle those controls."
+      },
+      {
+        "title": "Application Gateway for Containers previews centralized JWT validation",
+        "url": "https://azure.microsoft.com/updates?id=576382",
+        "tag": "security",
+        "summary": "The AuthPolicy resource can validate JWT signatures, issuer, lifetime and configured audience using signing keys retrieved from a trusted source.",
+        "why": "For services behind this gateway, assess whether you can move token checks out of individual workloads and manage them consistently at ingress."
+      },
+      {
+        "title": "Application Gateway for Containers previews private frontends",
+        "url": "https://azure.microsoft.com/updates?id=576393",
+        "tag": "preview",
+        "summary": "Private frontends can be reached only through approved Azure Private Link private endpoints, keeping internal applications and cross-cluster traffic off public ingress.",
+        "why": "Check this option when designing internal AI or shared services that must remain private, as it may simplify how you expose them across networks."
+      },
+      {
+        "title": "Site Recovery improves disaster recovery for VMSS Flex",
+        "url": "https://azure.microsoft.com/updates?id=578926",
+        "tag": "ga",
+        "summary": "Azure Site Recovery is generally available with improved target configuration and end-to-end recovery workflows, including failover and reprotection, for VMs in flexible-orchestration scale sets.",
+        "why": "Revisit recovery plans for VMSS Flex workloads: the improved workflow may make this configuration practical to protect with Site Recovery."
+      },
+      {
+        "title": "Azure SQL can keep PITR backups immutable for the full retention period",
+        "url": "https://azure.microsoft.com/updates?id=579305",
+        "tag": "security",
+        "summary": "A preview lets you lock point-in-time recovery backup retention against changes for the configured retention period, beyond the existing seven days of immutable backups; the update cites 35-day retention as a typical financial-sector need.",
+        "why": "If your recovery or compliance policy requires tamper-resistant backups beyond a week, check whether this preview can meet that requirement."
+      }
+    ],
+    "also": [
+      {
+        "title": "Azure Files previews expanded data protection and recovery",
+        "url": "https://techcommunity.microsoft.com/t5/azure-storage-blog/enhanced-data-protection-for-azure-files/ba-p/4563333",
+        "summary": "The preview adds business-continuity capabilities for recovering Azure Files data after accidental changes, regional disruption or ransomware, within or across regions."
+      },
+      {
+        "title": "Azure Storage Discovery previews richer capacity insights",
+        "url": "https://azure.microsoft.com/updates?id=578655",
+        "summary": "The preview adds storage-usage views including access patterns, data age, storage tiers, object-size distribution and retention."
+      },
+      {
+        "title": "Azure Databricks article examines overlapping workspace CIDRs",
+        "url": "https://techcommunity.microsoft.com/t5/azure-networking-blog/what-if-your-azure-databricks-workspaces-have-overlapping-cidrs/ba-p/4569360",
+        "summary": "The networking post considers whether three workspaces using the same VNet address range require renumbering, or whether user access patterns offer another way to address the conflict."
+      }
+    ]
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Grid delays push data centers toward repurposed jet engines",
+        "url": "https://techcrunch.com/2026/11/03/data-centers-are-turning-to-old-jet-engines-as-the-wait-for-power-grows/",
+        "tag": "news",
+        "summary": "With grid connections and new turbines taking years, some data-center builders are turning to discarded jet engines for power, despite their lower efficiency and greater environmental impact.",
+        "why": "Include grid connection and interim power availability in capacity plans; GPU procurement alone will not determine when a site can serve workloads."
+      },
+      {
+        "title": "AMD reports nearly doubled data-center sales as AI demand grows",
+        "url": "https://siliconangle.com/2026/11/03/amd-beats-expectations-as-agentic-ai-sparks-its-data-center-revenue-growth-engines/",
+        "tag": "news",
+        "summary": "AMD said its third-quarter data-center sales almost doubled year over year, helping it beat expectations as demand for AI infrastructure grew.",
+        "why": "Keep accelerator sourcing assumptions under review and compare viable hardware options rather than basing capacity plans on a single vendor."
+      },
+      {
+        "title": "CrowdStrike to acquire two AI security startups",
+        "url": "https://siliconangle.com/2026/11/03/crowdstrike-to-acquire-cybersecurity-startups-fiddler-ai-dreadnode-for-reported-495m/",
+        "tag": "news",
+        "summary": "CrowdStrike disclosed plans to acquire AI security companies Fiddler AI and Dreadnode; the Wall Street Journal reported a combined price of $495 million.",
+        "why": "Track how security vendors fold agent and AI protections into existing platforms before deciding whether to build or buy those controls."
+      }
+    ],
+    "also": [
+      {
+        "title": "Report says Anthropic's compute margins are worsening",
+        "url": "https://techcrunch.com/2026/11/03/anthropic-is-still-grappling-with-the-economics-of-compute/",
+        "summary": "The report says Anthropic's compute margins are getting worse even though they might be expected to improve, highlighting the continuing cost pressure of running its models."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Developer says Postman installed plugins in coding agents without consent",
+        "url": "https://thenewstack.io/postman-plugin-coding-agents/",
+        "tag": "security",
+        "summary": "A developer alleges Postman's desktop app installed plugins into Claude Code and OpenAI Codex without permission, changing the agents' environments.",
+        "why": "Review desktop-app permissions and agent plugin policies in managed developer environments; treat integrations that can modify coding agents as part of your software supply chain."
+      }
+    ],
+    "also": []
+  }
+}
