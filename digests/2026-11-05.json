@@ -1,0 +1,88 @@
+{
+  "tldr": [
+    "Microsoft Foundry’s October roundup includes GA browser automation and more resilient hosted agents—review these before building equivalent infrastructure yourself.",
+    "Voter support for restrictions on data centers raises the risk of local opposition and permitting delays for new AI capacity.",
+    "Render now offers AI sandboxes that can run indefinitely, a useful option to evaluate for agents with long-running workloads."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Foundry adds GA browser automation and hosted-agent resilience",
+        "url": "https://devblogs.microsoft.com/foundry/whats-new-in-microsoft-foundry-october-2026/",
+        "tag": "new",
+        "summary": "Microsoft’s October Foundry roundup includes generally available browser automation and hosted-agent resilience, plus a preview Copilot harness, a Decisions API, and SDK updates.",
+        "why": "Check whether the GA browser and hosted-agent capabilities can replace components you would otherwise build and operate yourself; treat the harness as preview-only."
+      },
+      {
+        "title": "Route maps for Azure Route Server are now generally available",
+        "url": "https://azure.microsoft.com/updates?id=578966",
+        "tag": "ga",
+        "summary": "Route maps give you finer control over inbound and outbound routes across hybrid connections through Azure Route Server.",
+        "why": "Revisit hybrid-routing designs that rely on custom route control, and test how route maps affect the routes advertised to and from Azure."
+      },
+      {
+        "title": "Azure Firewall previews IPv6 application rules",
+        "url": "https://azure.microsoft.com/updates?id=579507",
+        "tag": "preview",
+        "summary": "Azure Firewall’s public preview adds application-level filtering for IPv6 HTTP and HTTPS traffic, extending those controls to dual-stack deployments.",
+        "why": "If you are designing dual-stack networks, assess whether this closes an IPv6 policy gap, but keep production plans mindful that it is still in preview."
+      },
+      {
+        "title": "Multi-disk crash-consistent restore points preview for SCSI VMs",
+        "url": "https://azure.microsoft.com/updates?id=579162",
+        "tag": "preview",
+        "summary": "Azure previews agentless, multi-disk crash-consistent VM restore points for Premium SSD v2 and Ultra data disks on VMs using SCSI disk controllers.",
+        "why": "Check whether this improves your VM recovery plan, while accounting for the fact that crash-consistent restore points do not guarantee application-level consistency."
+      }
+    ],
+    "also": [
+      {
+        "title": "PostgreSQL Flexible Server REST API 2026-10-01 is generally available",
+        "url": "https://azure.microsoft.com/updates?id=579300",
+        "summary": "The stable API adds maintenance management, immutable backups, and multi-tenant encryption capabilities."
+      }
+    ]
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Data-center opposition could make new AI capacity harder to build",
+        "url": "https://www.theverge.com/policy/1026365/data-centers-midterms-results",
+        "tag": "news",
+        "summary": "Election results favored candidates and measures that could add obstacles to data-center development; an NBC News Election Day poll found 76% of voters supported some restrictions.",
+        "why": "Factor local opposition and permitting risk into capacity plans—available power and hardware may not be the only constraints on where new infrastructure can be built."
+      }
+    ],
+    "also": [
+      {
+        "title": "OpenAI proposes a community compact for AI infrastructure",
+        "url": "https://openai.com/index/setting-new-standard-responsible-ai-infrastructure",
+        "summary": "OpenAI introduced a National Community Compact and Compute Campus Policy Blueprint focused on protecting local resources, creating jobs, and guiding infrastructure development."
+      },
+      {
+        "title": "Meta acquires Conductor, a tool for running coding agents in parallel",
+        "url": "https://siliconangle.com/2026/11/04/meta-acquires-ai-coding-startup-conductor-whose-app-runs-several-coding-agents-at-once/",
+        "summary": "Meta acquired Conductor, whose app runs multiple coding agents in isolated copies of a codebase; the terms were not disclosed."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Render removes its time limit for AI sandboxes",
+        "url": "https://thenewstack.io/render-vercel-ai-sandboxes/",
+        "tag": "release",
+        "summary": "Render is offering AI sandboxes that can run indefinitely, positioning them against Vercel’s 24-hour cap and adding tools for managing long-running agents.",
+        "why": "Evaluate Render if your agents need persistent or long-running execution, and compare its sandbox controls with the limits of your current hosting choice."
+      },
+      {
+        "title": "Anthropic automates employee access to approved Claude plugins",
+        "url": "https://thenewstack.io/claude-plugin-identity-issuer/",
+        "tag": "new",
+        "summary": "Anthropic lets businesses connect employees to approved Claude plugins automatically, avoiding the need for staff to sign in to each one individually.",
+        "why": "Review whether this changes your plugin access-provisioning workflow, and confirm it fits your identity and access-control requirements before adopting it."
+      }
+    ],
+    "also": []
+  }
+}
