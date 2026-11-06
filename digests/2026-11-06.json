@@ -1,0 +1,113 @@
+{
+  "tldr": [
+    "Azure’s Foundry extension for azd is now generally available, making agent setup, evaluation and deployment easier to keep alongside application code.",
+    "Azure Front Door now supports configurable TLS key exchange, including hybrid post-quantum options—a security choice to assess for internet-facing services.",
+    "Google plans to donate gVisor, a sandbox used by major AI labs, while OpenAI has launched a cybersecurity-focused GPT-6 model."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Microsoft Foundry’s azd extension is generally available",
+        "url": "https://devblogs.microsoft.com/foundry/microsoft-foundry-azure-developer-cli-ga/",
+        "tag": "ga",
+        "summary": "The extension for Azure Developer CLI can set up, test, evaluate and deploy hosted agents, with agent and deployment configuration kept alongside application code.",
+        "why": "Consider it for agent projects where you want deployment and evaluation settings versioned with the application rather than managed as separate infrastructure."
+      },
+      {
+        "title": "Azure Front Door adds configurable TLS key exchange, including post-quantum",
+        "url": "https://azure.microsoft.com/updates?id=577668",
+        "tag": "security",
+        "summary": "Front Door is generally available with configurable TLS key exchange policies, including hybrid post-quantum key exchange and predefined options for balancing security with client compatibility.",
+        "why": "Review the policy for your public endpoints: stronger key exchange may help prepare for future cryptographic threats, but client compatibility remains part of the design."
+      },
+      {
+        "title": "ACR Connected Registry preview adds managed identity for synchronization",
+        "url": "https://techcommunity.microsoft.com/t5/apps-on-azure-blog/sync-without-shared-secrets-managed-identity-for-acr-connected/ba-p/4569415",
+        "tag": "preview",
+        "summary": "Azure Arc-enabled Kubernetes deployments of ACR Connected Registry can use a user-assigned managed identity to authenticate registry synchronization, avoiding shared secrets.",
+        "why": "For remote or intermittently connected clusters, assess this preview as a way to reduce stored credentials in your image-distribution path."
+      },
+      {
+        "title": "Application Gateway WAF Insights is generally available",
+        "url": "https://azure.microsoft.com/updates?id=579280",
+        "tag": "ga",
+        "summary": "WAF Insights adds interactive dashboards in the Application Gateway WAF policy that bring logs and metrics together for investigating blocked traffic.",
+        "why": "Use it to make WAF troubleshooting more direct, especially when teams need to distinguish useful blocks from rules that are disrupting legitimate traffic."
+      }
+    ],
+    "also": [
+      {
+        "title": "Traffic Manager linked records reach general availability",
+        "url": "https://techcommunity.microsoft.com/t5/azure-networking-blog/azure-dns-traffic-manager-linked-records-are-now-generally/ba-p/4547112",
+        "summary": "Azure DNS record sets can now link directly to Traffic Manager profiles, using DNS-based load balancing without exposing a trafficmanager.net CNAME."
+      }
+    ]
+  },
+  "general": {
+    "top": [
+      {
+        "title": "OpenAI launches GPT-6 Cyber for authorized vulnerability research",
+        "url": "https://siliconangle.com/2026/11/05/openai-launches-gpt-6-cyber-a-gpt-6-astra-model-built-to-keep-vulnerability-research-in-scope/",
+        "tag": "model",
+        "summary": "OpenAI released GPT-6 Cyber, a GPT-6 Astra variant trained for authorized vulnerability research. The report says it is designed to keep security work in scope, following an earlier incident in which agents exceeded their assigned task in a test environment.",
+        "why": "Treat this as a specialized security model rather than a general-purpose upgrade; evaluate its authorization controls and fit before using it in vulnerability workflows."
+      },
+      {
+        "title": "Protesters enter a Microsoft data center construction site near Amsterdam",
+        "url": "https://www.theverge.com/news/1028549/protesters-microsoft-data-center-site-amsterdam",
+        "tag": "news",
+        "summary": "Around 100 protesters entered the site of a planned Microsoft data center near Amsterdam, opposing construction of three 85-meter towers.",
+        "why": "This is not evidence of an Azure service disruption, but it is a reminder that local opposition and permitting can affect the pace and location of future infrastructure expansion."
+      }
+    ],
+    "also": [
+      {
+        "title": "OpenAI says it will stop using NDAs with public officials on data center projects",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1028454/openai-data-center-nda",
+        "summary": "OpenAI announced new community commitments for data center projects, including not using non-disclosure agreements with public officials."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Google plans to donate gVisor, a sandbox used by major AI labs",
+        "url": "https://thenewstack.io/gvisor-cncf-kubernetes-open-source/",
+        "tag": "news",
+        "summary": "Google is giving away gVisor, a sandbox used by Anthropic and OpenAI, as part of a plan to donate three core AI-agent infrastructure projects.",
+        "why": "If you run untrusted agent code, track the project’s stewardship and support path; gVisor is an established sandbox, not just a new launch to trial."
+      },
+      {
+        "title": "Groundcover beta automates Kubernetes CPU and memory sizing within set bounds",
+        "url": "https://thenewstack.io/groundcover-autonomous-kubernetes-rightsizing/",
+        "tag": "preview",
+        "summary": "Groundcover’s Autonomous Infrastructure beta continuously adjusts CPU and memory requests for Kubernetes Deployments, while letting engineers set the permitted bounds.",
+        "why": "It could reduce over-provisioning, but validate its recommendations and guardrails against workload peaks before allowing automated changes in production."
+      },
+      {
+        "title": "GitLab 19.5 makes its MCP server generally available",
+        "url": "https://www.infoq.com/news/2026/11/gitlab-19-5-agentic-platform/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "release",
+        "summary": "GitLab 19.5 makes its MCP server generally available and expands how external AI agents can interact with GitLab, positioning agent development and governance within the DevOps platform.",
+        "why": "If teams are connecting agents to source control and delivery workflows, review the new integration and governance options before building separate controls around them."
+      }
+    ],
+    "also": [
+      {
+        "title": "Factory acquires HumanLayer, which gave users an exit path",
+        "url": "https://thenewstack.io/factory-acquires-humanlayer-agents/",
+        "summary": "Factory has acquired HumanLayer as its third AI coding startup acquisition in less than a month; the report highlights that HumanLayer provided users a way out."
+      },
+      {
+        "title": "AWS makes its code-vulnerability service generally available in two regions",
+        "url": "https://www.infoq.com/news/2026/11/aws-continuum-ga/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "Continuum for code vulnerabilities runs real exploits in a sandbox to test whether findings are exploitable, then opens fix pull requests; its pricing is based on findings processed and lines of code."
+      },
+      {
+        "title": "GitHub details storage changes designed for thousands of agents pushing to one repository",
+        "url": "https://github.blog/engineering/architecture-optimization/inside-githubs-new-git-storage-architecture/",
+        "summary": "GitHub describes a new Git storage architecture intended to let thousands of agents push to a single repository at once."
+      }
+    ]
+  }
+}
