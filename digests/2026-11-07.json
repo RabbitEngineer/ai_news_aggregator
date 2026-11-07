@@ -1,0 +1,78 @@
+{
+  "tldr": [
+    "A Microsoft Tech Community practitioner’s Azure Local deployment guide focuses on planning decisions that can derail projects before deployment begins.",
+    "Data-center development faces mounting siting and approval risk: a report says most of 41 data-center ballot measures voted on this week favored more restrictions.",
+    "An alpha PostgreSQL extension offers a different vector-search index designed to use less memory and build faster than pgvector’s HNSW index."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Azure Local practitioner outlines deployment mistakes to avoid",
+        "url": "https://techcommunity.microsoft.com/t5/azure-infrastructure-blog/azure-local-10-mistakes-that-can-derail-your-deployment-before/ba-p/4569922",
+        "tag": "news",
+        "summary": "A practitioner writing on Microsoft’s Azure Infrastructure Tech Community blog says Azure Local projects often run into trouble because key decisions are made too early, too late, or without the right people involved. The post draws on deployment reviews, workshops, and escalations.",
+        "why": "Use it as a pre-deployment review prompt: check that the right stakeholders are involved and major design decisions are validated before committing to a rollout."
+      }
+    ],
+    "also": [
+      {
+        "title": "Logic Apps Standard custom code now supports .NET 10",
+        "url": "https://techcommunity.microsoft.com/t5/azure-integration-services-blog/logic-apps-standard-custom-code-now-supports-net-10/ba-p/4570808",
+        "summary": "The Logic Apps Standard VS Code extension now supports .NET 10 local-function projects and migration of existing .NET 8 projects."
+      }
+    ]
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Google buys Crusoe’s troubled Wyoming data-center project",
+        "url": "https://techcrunch.com/2026/11/06/crusoe-sells-troubled-wyoming-data-center-project-to-google/",
+        "tag": "news",
+        "summary": "Crusoe has sold its troubled Wyoming data-center project to Google, highlighting the challenges of developing large AI data centers.",
+        "why": "Treat announced capacity and construction plans as execution risks, not guaranteed supply, when planning where and when to host workloads."
+      },
+      {
+        "title": "Most data-center ballot measures reportedly favored new restrictions",
+        "url": "https://techcrunch.com/podcast/how-a-blue-wave-midterm-might-reshape-the-ai-industry/",
+        "tag": "news",
+        "summary": "The report says voters considered 41 data-center-related ballot measures and that a majority backed more restrictions in all but one.",
+        "why": "Factor local approval and community opposition into capacity and region planning; power availability alone may not ensure a project can proceed."
+      }
+    ],
+    "also": [
+      {
+        "title": "Researchers find hundreds of exposed Artex AI hacking-tool servers",
+        "url": "https://techcrunch.com/2026/11/06/hundreds-of-artex-ai-hacking-tools-found-publicly-exposed-to-the-web/",
+        "summary": "Security researchers found hundreds of internet-accessible servers hosting Artex, exposing a penetration-testing tool to anyone online."
+      },
+      {
+        "title": "Ramp data suggests AI spending has stalled despite rising usage",
+        "url": "https://techcrunch.com/2026/11/06/ramp-data-shows-ai-spending-stalling-just-as-anthropic-nears-its-ipo/",
+        "summary": "Ramp’s data indicates AI usage is still climbing while spending has levelled off, with price cuts and cost controls among major spenders cited as factors."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Alpha PostgreSQL extension aims to make vector search more scalable",
+        "url": "https://www.infoq.com/news/2026/11/postgresql-vector-search/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "new",
+        "summary": "Tiger Data released pg_vectorsearch, an open-source PostgreSQL extension in alpha. Its PRISM index uses partitioning and compression rather than the graph-based HNSW index used by pgvector, aiming to reduce memory use and index build times.",
+        "why": "If you are evaluating PostgreSQL for vector workloads, benchmark this against pgvector on your own data—but treat it as experimental while it remains in alpha."
+      }
+    ],
+    "also": [
+      {
+        "title": "Cursor adds fully managed deployment for apps built with its coding agent",
+        "url": "https://thenewstack.io/cursor-ai-app-deployment/",
+        "summary": "Cursor is adding managed app deployment, positioning itself against tools such as Lovable and Replit that take generated applications beyond localhost."
+      },
+      {
+        "title": "Stripe describes how AI agents can move money",
+        "url": "https://stripe.dev/blog/your-ai-agent-can-move-money-in-stripe",
+        "summary": "Stripe says AI agents can now initiate money movement through its platform."
+      }
+    ]
+  }
+}
