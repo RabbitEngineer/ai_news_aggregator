@@ -1,0 +1,32 @@
+{
+  "tldr": [
+    "METR reports that AI models are improving roughly twice as quickly as a year ago as AI helps automate AI development.",
+    "A report questions whether firms approved to handle Nvidia H200 chips in China are being adequately vetted."
+  ],
+  "azure": {
+    "top": [],
+    "also": []
+  },
+  "general": {
+    "top": [
+      {
+        "title": "METR says AI models are improving twice as quickly as a year ago",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1029126/anthropic-metr-report-accelerating-ai-development",
+        "tag": "performance",
+        "summary": "After an 11-week investigation, AI safety research organization METR reported that Anthropic is using AI to develop more capable AI, and that models are improving roughly twice as quickly as a year ago, with little sign of a slowdown.",
+        "why": "Revisit assumptions about how quickly model capabilities may change in your service roadmap, while treating this as a research finding rather than a near-term deployment forecast."
+      }
+    ],
+    "also": [
+      {
+        "title": "Report questions vetting of firms approved to handle Nvidia H200 chips in China",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1029483/nvidia-ai-chips-china-blacklist-government",
+        "summary": "The New York Times reports that New Matrix, an approved firm, has an apparently empty office, prompting questions about whether the Commerce Department and Nvidia adequately vet recipients of H200 AI chips."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [],
+    "also": []
+  }
+}
