@@ -1,0 +1,42 @@
+{
+  "tldr": [
+    "Google added two specialized chips to its eighth-generation TPU family, broadening its options for AI training and inference.",
+    "AWS launched TorchNeuron to run existing PyTorch code on Trainium with virtually no code changes.",
+    "Pinterest says replacing a clustering pipeline with a fine-tuned 4B Qwen3 model improved email click-through by 1.1% and push opens by 1.3%."
+  ],
+  "azure": {
+    "top": [],
+    "also": []
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Google adds 8tx and 8i Max chips to its TPU family",
+        "url": "https://siliconangle.com/2026/11/09/google-advances-agentic-ai-custom-silicon-expanding-tpu-family-with-8tx-and-8i-max/",
+        "tag": "new",
+        "summary": "Google introduced two specialized chips in its eighth-generation TPU family: 8tx for higher compute density and 8i Max for secure inference. They extend the 8t training and 8i real-time reasoning chips announced earlier.",
+        "why": "If you are weighing multi-cloud AI capacity, compare these specialized options against Azure GPU offerings while accounting for the portability trade-offs of cloud-specific hardware."
+      }
+    ],
+    "also": []
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "AWS TorchNeuron runs PyTorch models on Trainium with few code changes",
+        "url": "https://www.infoq.com/news/2026/11/aws-torchneuron-trainium-pytorch/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "new",
+        "summary": "AWS introduced TorchNeuron, a native PyTorch backend that lets existing PyTorch code run on Trainium with virtually no modifications.",
+        "why": "This lowers the effort to test AWS’s custom chips against GPU hosting; include the migration and portability costs in any comparison with Azure."
+      },
+      {
+        "title": "Pinterest reports engagement gains after switching to a 4B Qwen3 model",
+        "url": "https://www.infoq.com/news/2026/11/pinterest-journey/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "performance",
+        "summary": "Pinterest replaced a multi-stage user-journey clustering pipeline with a fine-tuned 4-billion-parameter Qwen3 model, reporting 1.1% higher email click-through and 1.3% more push opens.",
+        "why": "When deciding whether to replace a specialized pipeline with a small language model, treat these results as a useful example but validate quality, latency, and serving cost on your own workload."
+      }
+    ],
+    "also": []
+  }
+}
