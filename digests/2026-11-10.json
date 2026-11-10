@@ -1,0 +1,90 @@
+{
+  "tldr": [
+    "Support for .NET 8 and .NET 9 on Static Web Apps ends today; managed Functions APIs need to move to .NET 10 to keep receiving security updates.",
+    "Azure’s Durable Task extension for Microsoft Agent Framework is now generally available, adding recovery for agents interrupted mid-work.",
+    "A Walmart Global Tech case study reports cutting monthly inference costs from over $100,000 to $10,000 by moving batch workloads from provisioned throughput to pay-as-you-go."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": ".NET 8 and 9 support on Static Web Apps ends today",
+        "url": "https://azure.microsoft.com/updates?id=575106",
+        "tag": "deprecation",
+        "summary": "Support for .NET 8 and .NET 9 on Static Web Apps ends November 10, 2026. Managed Functions APIs will continue to run, but will no longer receive security updates or support.",
+        "why": "Check your Static Web Apps managed Functions APIs now and plan their move to .NET 10 to avoid running unsupported code."
+      },
+      {
+        "title": "Durable Task extension for Microsoft Agent Framework reaches GA",
+        "url": "https://techcommunity.microsoft.com/t5/apps-on-azure-blog/durable-task-extension-for-microsoft-agent-framework-is-now/ba-p/4571100",
+        "tag": "ga",
+        "summary": "The generally available extension brings Durable Task’s reliable execution model to Microsoft Agent Framework, so agent workflows can recover from failures and interruptions without losing progress.",
+        "why": "For agents that perform long-running work, this gives you a way to design for recovery rather than treating a restart as a lost job."
+      },
+      {
+        "title": "Azure Content Understanding adds an agentic mode for hard documents",
+        "url": "https://devblogs.microsoft.com/foundry/when-one-pass-isnt-enough-agentic-mode-in-azure-content-understanding/",
+        "tag": "new",
+        "summary": "Azure Content Understanding’s agentic mode uses a document-focused process for analysis tasks that are too difficult for a single pass; Microsoft explains when to choose it over standard mode.",
+        "why": "Consider it for complex documents where a single pass falls short, while keeping simpler workloads on standard mode."
+      }
+    ],
+    "also": [
+      {
+        "title": "Azure File Sync preview adds guided modernization for Arc-enabled Windows Servers",
+        "url": "https://azure.microsoft.com/updates?id=579854",
+        "summary": "A new portal experience in preview guides users through modernizing Arc-enabled Windows Servers with Azure File Sync while preserving the familiar local file-server experience."
+      }
+    ]
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Anthropic launches Claude Fable 5.2 and Mythos 5.2",
+        "url": "https://siliconangle.com/2026/11/09/anthropic-launches-fable-5-2-and-mythos-5-2-with-science-coding-upgrades/",
+        "tag": "model",
+        "summary": "Anthropic introduced Fable 5.2 and Mythos 5.2, its latest models, with upgrades aimed at science and coding. The models share core capabilities, but Fable blocks some biology and cybersecurity uses that Mythos permits.",
+        "why": "If you evaluate these models, check which variant’s use restrictions fit your workload rather than treating them as interchangeable."
+      },
+      {
+        "title": "Claude Code settings files are exposing secrets on GitHub",
+        "url": "https://arstechnica.com/ai/2026/11/claude-code-settings-files-expose-thousands-of-secrets-on-github/",
+        "tag": "security",
+        "summary": "A Claude Code setting that suppresses repeated prompts has led users to share settings files containing passwords, API keys, and other secrets on GitHub.",
+        "why": "Review developer guidance and secret-scanning controls for AI coding tools, and ensure credentials are not stored in files developers may commit."
+      }
+    ],
+    "also": [
+      {
+        "title": "Meta introduces Muse Ember, a cost-focused model for AI agents",
+        "url": "https://siliconangle.com/2026/11/09/meta-introduces-muse-ember-to-power-cost-efficient-ai-agents/",
+        "summary": "Meta introduced Muse Ember as a lower-cost, entry-level model for AI agents, but did not provide pricing details in the announcement."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Walmart cut monthly batch-inference costs from $100K+ to $10K",
+        "url": "https://www.infoq.com/presentations/scaling-multi-agent-llm-batch/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "performance",
+        "summary": "Walmart Global Tech described running multi-agent inventory-forecasting workflows across 4,700 stores and reducing monthly cloud inference costs from over $100,000 to $10,000 by moving from provisioned throughput to pay-as-you-go.",
+        "why": "For batch workloads with variable demand, compare pay-as-you-go against reserved or provisioned capacity before committing to a throughput purchase."
+      },
+      {
+        "title": "Teleport Beams is generally available for running production AI agents",
+        "url": "https://siliconangle.com/2026/11/10/teleport-makes-beams-generally-available-to-bring-ai-agents-into-production/",
+        "tag": "ga",
+        "summary": "Teleport made Beams, a runtime for AI agents operating on production infrastructure, generally available; the company positions it as a way to address the risks that have kept enterprises from connecting agents to those systems.",
+        "why": "If you are considering agents with infrastructure access, evaluate how Beams fits your identity and runtime controls before granting them production permissions."
+      },
+      {
+        "title": "Tests find voting and self-correction can withhold errors, not fix them",
+        "url": "https://www.infoq.com/articles/llm-reliability-layers-limits-accuracy/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "performance",
+        "summary": "A benchmark of six LLM reliability layers found that voting and self-correction did not recover accuracy; they mainly withheld uncertain records. The authors recommend deterministic lookups where possible and tracking usable output yield, not just accuracy.",
+        "why": "When designing a production pipeline, measure how much output is usable and replace model generation with deterministic retrieval for facts you can look up reliably."
+      }
+    ],
+    "also": []
+  }
+}
