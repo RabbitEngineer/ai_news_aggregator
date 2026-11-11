@@ -1,0 +1,104 @@
+{
+  "tldr": [
+    "AKS’s preview distributed accelerator caches storage reads on node-local NVMe, which could change how you serve storage-heavy AI workloads.",
+    "Azure Front Door is previewing native gRPC support, potentially removing a reason to put a separate gRPC-aware proxy in front of services.",
+    "A report says 35,000 Grok Build apps were accessible to anyone who found them—a reminder to treat agent-built applications as production software with deliberate access controls."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "AKS previews a distributed NVMe cache for cloud storage",
+        "url": "https://azure.microsoft.com/updates?id=578454",
+        "tag": "preview",
+        "summary": "Distributed accelerator for cloud storage (DACS) is in public preview for AI workloads on AKS. It provides a distributed read-through cache using local NVMe disks across cluster nodes.",
+        "why": "For workloads that repeatedly read large datasets or model files, test whether caching reduces storage latency and load before changing your storage or node design."
+      },
+      {
+        "title": "Azure Front Door previews native gRPC support",
+        "url": "https://azure.microsoft.com/updates?id=579383",
+        "tag": "preview",
+        "summary": "Front Door Standard and Premium can now route gRPC traffic in public preview, including calls directed to specific services and methods.",
+        "why": "If you expose gRPC services through a separate proxy today, evaluate whether Front Door can simplify that path; it is still a preview, so keep production dependencies cautious."
+      },
+      {
+        "title": "Azure Front Door edge actions are generally available",
+        "url": "https://azure.microsoft.com/updates?id=579310",
+        "tag": "ga",
+        "summary": "Edge actions are now generally available, letting lightweight JavaScript run during Front Door request and response processing.",
+        "why": "Consider them for small decisions that can happen at the edge, such as request handling, but compare their limits and operational model with logic running in your origin."
+      }
+    ],
+    "also": [
+      {
+        "title": "App Service plan start and stop enters preview for Pv4 plans",
+        "url": "https://techcommunity.microsoft.com/t5/apps-on-azure-blog/run-on-your-schedule-app-service-plan-start-stop-now-in-public/ba-p/4566184",
+        "summary": "The preview lets operators start or stop apps and deployment slots together at the App Service plan level for Premium v4 and Premium memory-optimized v4 plans."
+      },
+      {
+        "title": "Azure Route Server previews IPv4 and IPv6 dual-stack support",
+        "url": "https://azure.microsoft.com/updates?id=579746",
+        "summary": "Route Server can exchange IPv4 and IPv6 routes across supported hybrid networking connections, while existing IPv4 connections remain unchanged."
+      },
+      {
+        "title": "Azure Functions adds generally available .NET 11 support",
+        "url": "https://azure.microsoft.com/updates?id=578773",
+        "summary": "Functions apps can target .NET 11 using the isolated worker model; .NET 11 projects also require the Azure.Functions.Sdk."
+      }
+    ]
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Google rolls out Gemini 4 Carbon to the public",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1030787/google-gemini-4-carbon-public-rollout",
+        "tag": "model",
+        "summary": "Google has begun making Gemini 4 Carbon publicly available after an earlier limited release to cybersecurity defenders. Google calls it its strongest model yet, but the report provides no comparative benchmark results.",
+        "why": "Treat the capability claims as a prompt to run your own task-specific evaluation, rather than changing model choices based on the launch announcement alone."
+      },
+      {
+        "title": "Report finds 35,000 Grok Build apps exposed to public access",
+        "url": "",
+        "tag": "security",
+        "summary": "A researcher found 35,000 Grok Build apps accessible to anyone who looked for them, with some confidential information reportedly exposed.",
+        "why": "Set access controls, secret handling, and security review requirements for agent-generated apps just as you would for software written by a team."
+      },
+      {
+        "title": "AMD announces Epyc 6 server CPUs for AI agent workloads",
+        "url": "https://siliconangle.com/2026/11/10/amd-introduces-epyc-6-processors-for-ai-agent-workloads/",
+        "tag": "new",
+        "summary": "AMD announced 10 Epyc 6 server CPUs, split between models with many lower-frequency cores and models with fewer higher-frequency cores.",
+        "why": "When assessing future CPU hosts for agent services, match the core and frequency profile to your workload and wait for independent performance data before committing."
+      }
+    ],
+    "also": [
+      {
+        "title": "New York AI safety law brings reporting and disclosure duties",
+        "url": "https://techcrunch.com/2026/11/10/openai-anthropic-face-new-oversight-as-new-yorks-ai-safety-law-takes-effect/",
+        "summary": "The law requires major AI developers to register, disclose safety practices, and report critical incidents, with fines for noncompliance."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Anthropic expands Claude’s access to enterprise applications",
+        "url": "https://thenewstack.io/claude-enterprise-apps-connectors/",
+        "tag": "release",
+        "summary": "Anthropic is expanding Claude’s ability to work inside enterprise applications: it can open full software interfaces and retrieve information from connected apps.",
+        "why": "If you are designing agent integrations, assess how this changes the need for custom connectors and how you will constrain and audit access to each application."
+      }
+    ],
+    "also": [
+      {
+        "title": "Cloudflare makes its Iceberg-based Basin analytics platform GA",
+        "url": "https://www.infoq.com/news/2026/11/cloudflare-basin-analytics/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "Basin is generally available as a serverless analytics service built on Apache Iceberg and R2, with integrations for DuckDB, Snowflake, and Spark and no data egress fees."
+      },
+      {
+        "title": "Git releases fixes for six security vulnerabilities",
+        "url": "https://github.blog/open-source/git/git-security-vulnerabilities-announced-7/",
+        "summary": "Git updates address six vulnerabilities involving recursive clones, reference handling, merges, binary patches, and imports."
+      }
+    ]
+  }
+}
