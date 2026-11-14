@@ -1,0 +1,125 @@
+{
+  "tldr": [
+    "Azure Content Understanding now supports GPT-5.6, GPT-6 and GPT-6.1, expanding model choices for document, speech and video workloads.",
+    "Azure Front Door Premium has generally available mutual TLS, while JWT validation at the edge is in preview.",
+    "A major Microsoft network glitch disrupted Exchange Online in more than 70 countries; the reported impact is on Exchange Online, not Azure compute."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Azure Content Understanding adds GPT-5.6, GPT-6 and GPT-6.1",
+        "url": "https://devblogs.microsoft.com/foundry/content-understanding-adds-gpt-5-6-gpt-6-and-gpt-6-1-choose-the-right-model-for-your-workload/",
+        "tag": "model",
+        "summary": "Azure Content Understanding now supports GPT-5.6, GPT-6 and GPT-6.1 for document, text, speech and video workflows. Microsoft is also updating its recommendations for choosing among the available models.",
+        "why": "Re-evaluate model selection for Content Understanding workloads; the expanded choices may change the quality, latency and cost trade-offs in your design."
+      },
+      {
+        "title": "Azure Front Door Premium mutual TLS is generally available",
+        "url": "https://azure.microsoft.com/updates?id=577678",
+        "tag": "ga",
+        "summary": "Azure Front Door Premium now generally supports mutual TLS, using X.509 client certificates to authenticate clients before they reach protected applications or APIs.",
+        "why": "You can use Front Door as the client-certificate authentication point for partner or device traffic, rather than building that check into every backend."
+      },
+      {
+        "title": "Azure Front Door Premium previews JWT validation at the edge",
+        "url": "https://azure.microsoft.com/updates?id=577673",
+        "tag": "preview",
+        "summary": "A public preview adds JWT validation through Azure Front Door Auth Policy, allowing bearer tokens issued by Microsoft Entra ID to be checked before requests reach an API or web app.",
+        "why": "Consider testing whether edge validation can reject unauthenticated traffic earlier and simplify authentication work in your applications."
+      },
+      {
+        "title": "Azure Monitor workspaces preview automatic ingestion-limit scaling",
+        "url": "https://azure.microsoft.com/updates?id=578207",
+        "tag": "preview",
+        "summary": "Azure Monitor workspaces can now automatically adjust ingestion limits based on observed usage patterns, helping keep ingestion within a healthy quota ceiling.",
+        "why": "Evaluate this for workloads with uneven telemetry spikes, while checking how the changing limit affects your quota planning and alerting."
+      }
+    ],
+    "also": [
+      {
+        "title": "Azure Data Share retirement is scheduled for November 12, 2029",
+        "url": "https://azure.microsoft.com/updates?id=578818",
+        "summary": "Microsoft says Azure Data Share will retire on November 12, 2029, and recommends moving workloads to Microsoft Fabric sharing options or an appropriate source-specific service."
+      },
+      {
+        "title": "Azure Migrate can assess applications for Azure Container Apps",
+        "url": "https://techcommunity.microsoft.com/t5/apps-on-azure-blog/introducing-azure-container-apps-as-a-target-workload-in-azure/ba-p/4571669",
+        "summary": "Azure Migrate assessments now include Azure Container Apps as a target, with application readiness, migration requirements, sizing recommendations and estimated hosting costs."
+      },
+      {
+        "title": "Azure SQL Managed Instance previews Microsoft-managed performance monitoring",
+        "url": "https://azure.microsoft.com/updates?id=574158",
+        "summary": "A public preview adds Microsoft-managed performance monitoring for Azure SQL Managed Instance, as an alternative to relying on custom scripts and disconnected monitoring tools."
+      },
+      {
+        "title": "Front Door Premium WAF previews grouped rate limits",
+        "url": "https://azure.microsoft.com/updates?id=580155",
+        "summary": "A public preview lets Front Door Premium WAF rate-limit requests in groups, addressing attacks that evade per-client-IP limits by spreading traffic across addresses."
+      }
+    ]
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Microsoft network glitch disrupts Exchange Online in over 70 countries",
+        "url": "https://siliconangle.com/2026/11/13/massive-microsoft-outage-disrupts-businesses-government-agencies-worldwide/",
+        "tag": "news",
+        "summary": "A Microsoft network glitch disrupted Exchange Online for businesses and government agencies in more than 70 countries. The report says the outage began Thursday and Microsoft had not yet provided a full account.",
+        "why": "Treat this as an Exchange Online reliability incident, not evidence of an Azure compute outage; check whether your AI service runbooks depend on affected Microsoft services and plan for degraded dependencies."
+      },
+      {
+        "title": "ChatGPT Wallet lets agents make purchases with user approval",
+        "url": "https://openai.com/index/introducing-chatgpt-wallet",
+        "tag": "new",
+        "summary": "OpenAI introduced ChatGPT Wallet, allowing agents in ChatGPT Work, Codex and dots to complete purchases with user approval and existing card protections.",
+        "why": "As agents gain the ability to trigger real transactions, include explicit authorization, approval and audit controls when designing agent workflows."
+      },
+      {
+        "title": "Google rolls out Gemini 4 Hydrogen for more complex questions",
+        "url": "https://arstechnica.com/google/2026/11/google-rolls-out-gemini-4-hydrogen-finally-replacing-3-8-flash/",
+        "tag": "model",
+        "summary": "Google has begun rolling out Gemini 4 Hydrogen, replacing Gemini 3.8 Flash; Google says it handles more complex questions, with a faster release than its Carbon and Argon models.",
+        "why": "If you compare model providers for workloads beyond Azure, add Hydrogen to evaluation tests rather than assuming the launch claim translates to better results for your tasks."
+      }
+    ],
+    "also": [
+      {
+        "title": "FAA expands AI advice for managing congestion across US airspace",
+        "url": "https://arstechnica.com/features/2026/11/faa-expands-ai-advice-to-manage-air-traffic-congestion-across-entire-us-airspace/",
+        "summary": "The FAA is expanding an AI tool that advises on air-traffic congestion nationwide; airlines praised the system, while the air traffic controllers’ union was not involved."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Google open-sources AQuA to diagnose production agent failures",
+        "url": "https://www.infoq.com/news/2026/11/google-ambient-agent-prod/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "new",
+        "summary": "Google released AQuA, a reference implementation that analyzes agent sessions, checks recurring failure patterns and investigates causes against deployed source snapshots. In a 32-session replay, developers reduced seat-selection bypasses from 15 sessions to two and dietary-preference omissions from seven to zero after prompt changes.",
+        "why": "It is worth evaluating as a way to turn production agent traces into repeatable failure investigations, but the reported results are from a small replay rather than proof of broad adoption."
+      },
+      {
+        "title": "llama.cpp reaches v1.0.0",
+        "url": "https://huggingface.co/blog/ggml-org/llama-cpp-v1",
+        "tag": "release",
+        "summary": "The llama.cpp project has released v1.0.0, presenting the milestone as a stronger foundation for the local AI ecosystem; the candidate provides no detail on specific changes.",
+        "why": "If you rely on llama.cpp for local or self-hosted inference, review the v1.0 release notes before choosing versions for a production deployment."
+      },
+      {
+        "title": "Anthropic offers a self-hosted version of Claude Managed Agents",
+        "url": "https://thenewstack.io/self-hosted-claude-managed-agents/",
+        "tag": "new",
+        "summary": "Anthropic has introduced a self-hosted option for its agent-building and runtime platform; the report says customers have eight hours to act if Anthropic flags a software safety risk.",
+        "why": "Compare the new deployment control against the operational obligations: self-hosting changes where the agent runs, but does not remove Anthropic’s safety requirements."
+      }
+    ],
+    "also": [
+      {
+        "title": "Open-source DocumentDB 1.0 reaches general availability",
+        "url": "https://www.infoq.com/news/2026/11/mongodb-compatible-documentdb/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "The MIT-licensed document database is built on PostgreSQL and supports the MongoDB wire protocol, so most MongoDB drivers, tools and queries can work without changes."
+      }
+    ]
+  }
+}
