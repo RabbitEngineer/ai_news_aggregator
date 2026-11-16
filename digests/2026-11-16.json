@@ -1,0 +1,40 @@
+{
+  "tldr": [
+    "A new cloud security report says many organizations lack visibility into what AI agents are doing—a warning to treat agent activity as an audit and security concern.",
+    "Uber’s agent security framework evaluates actions against user intent, agent purpose, permissions, and context, offering a practical pattern beyond ordinary identity and API controls."
+  ],
+  "azure": {
+    "top": [],
+    "also": []
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Report warns organizations struggle to track and secure cloud AI agents",
+        "url": "https://siliconangle.com/2026/11/16/palo-alto-networks-report-finds-organizations-struggle-to-track-and-secure-ai-agents-in-the-cloud/",
+        "tag": "security",
+        "summary": "Palo Alto Networks’ 2026 State of Cloud Security report says AI agents are increasingly used in software development, but many organizations cannot adequately track or secure their cloud activity. The excerpt provides no specific figures.",
+        "why": "Include agent actions in your cloud security and audit design; existing controls may not make their activity visible enough."
+      }
+    ],
+    "also": []
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Uber framework checks AI agent actions against intent and context",
+        "url": "https://www.infoq.com/news/2026/11/uber-secure-ai-framework/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "security",
+        "summary": "Uber describes a framework for judging whether an autonomous agent’s action fits the user’s request, the agent’s purpose, its permissions, and the interaction context. The company argues traditional identity and API controls do not cover this reasoning-driven behavior.",
+        "why": "When designing agent permissions, consider adding an action-level policy check that evaluates intent and context, rather than relying on identity and API authorization alone."
+      }
+    ],
+    "also": [
+      {
+        "title": "AWS open-sources local emulator covering more than 200 services",
+        "url": "https://www.infoq.com/news/2026/11/aws-emulator-agents/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "The generally available emulator lets developers and coding agents test against over 200 AWS services without an account, with published fidelity scores and documented limits for IAM, regions, and in-memory state."
+      }
+    ]
+  }
+}
