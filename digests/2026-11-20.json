@@ -1,0 +1,143 @@
+{
+  "tldr": [
+    "Microsoft’s Agent Framework Python package was published in two malicious versions; check dependency histories and rotate credentials if either version ran in your environment.",
+    "Foundry Agent Service is adding production controls including egress restrictions and deployment to your own AKS clusters, affecting how you design agent network boundaries.",
+    "Azure’s new VM zone-resilience preview could simplify recovery of eligible zonal VMs without rebuilding their resources and configuration."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Foundry hosted agents add egress controls and customer AKS deployment",
+        "url": "https://devblogs.microsoft.com/foundry/hosted-agents-foundry-agent-service-ignite-2026/",
+        "tag": "preview",
+        "summary": "Foundry Agent Service is adding shared subnet IPs, private CA trust, network egress controls, resilient execution and memory snapshots; agents can also be deployed to customer AKS clusters.",
+        "why": "Reassess whether hosted agents now meet your network-isolation requirements or whether you need to run them in your own AKS boundary."
+      },
+      {
+        "title": "Azure previews recovery of zonal VMs in another availability zone",
+        "url": "https://azure.microsoft.com/updates?id=581254",
+        "tag": "preview",
+        "summary": "The preview lets you recover eligible zonal VMs in another zone in the same region while retaining the VM resource and configuration; it uses zone-replicated managed disks.",
+        "why": "Evaluate this as a potential recovery path for zonal workloads, but confirm eligibility and preview limitations before changing your resilience design."
+      },
+      {
+        "title": "Azure previews AMD Venice DHasv8 and EHasv8 VM families",
+        "url": "https://techcommunity.microsoft.com/t5/azure-compute-blog/announcing-preview-of-new-azure-dh-ehasv8-vms-based-on-6th-gen/ba-p/4573295",
+        "tag": "preview",
+        "summary": "New DHasv8, DHalsv8 and EHasv8 VMs based on 6th-generation AMD EPYC processors are in preview, with expanded compute and memory configurations and improved storage and networking performance.",
+        "why": "Benchmark these against your current CPU-hosted workloads before choosing VM sizes; the announcement gives no pricing or performance figures yet."
+      },
+      {
+        "title": "Guest RDMA on Azure Boost enters public preview",
+        "url": "https://techcommunity.microsoft.com/t5/azure-compute-blog/announcing-public-preview-of-guest-rdma-for-azure-boost/ba-p/4573027",
+        "tag": "preview",
+        "summary": "Available in all regions, Guest RDMA exposes RDMA directly to guest VMs through the front-end NIC, bypassing the guest networking stack on RDMA data paths to reduce host CPU use and latency.",
+        "why": "Consider testing it for distributed AI or other low-latency workloads where network overhead is a bottleneck, while checking supported VM and application requirements."
+      },
+      {
+        "title": "Azure Compute Gallery soft delete is generally available",
+        "url": "https://azure.microsoft.com/updates?id=581907",
+        "tag": "ga",
+        "summary": "Deleted Azure Compute Gallery image versions can now be recovered during a configurable retention period of 7 to 365 days, and remain deployable while soft-deleted.",
+        "why": "Set a retention period that balances accidental-deletion recovery against keeping obsolete images available for deployment."
+      }
+    ],
+    "also": [
+      {
+        "title": "Azure DDoS Protection previews telemetry for normal traffic",
+        "url": "https://techcommunity.microsoft.com/t5/azure-networking-blog/announcing-public-preview-of-azure-ddos-protection-peacetime/ba-p/4574781",
+        "summary": "The preview adds DDoS traffic metrics during normal operation, so teams can establish baselines, set alerts and test monitoring before an attack."
+      },
+      {
+        "title": "Azure Backup adds cross-subscription protection for VMs",
+        "url": "https://azure.microsoft.com/updates?id=581048",
+        "summary": "Azure Backup now lets you protect VMs with a Recovery Services vault in another subscription in the same tenant."
+      },
+      {
+        "title": "Functions Flex Consumption previews OS dependencies in Linux containers",
+        "url": "https://techcommunity.microsoft.com/t5/apps-on-azure-blog/public-preview-os-level-dependency-support-via-containers-for/ba-p/4572085",
+        "summary": "The preview lets Flex Consumption functions package Linux OS-level dependencies, such as Chromium or GnuPG, in a container."
+      },
+      {
+        "title": "Azure Front Door Premium previews an AI bot ruleset for WAF",
+        "url": "https://azure.microsoft.com/updates?id=581604",
+        "summary": "The preview adds a Web Application Firewall ruleset for controlling AI crawlers and agents, beyond the limited controls provided by robots.txt."
+      },
+      {
+        "title": "Azure SRE Agent previews native AWS and Google Cloud support",
+        "url": "https://techcommunity.microsoft.com/t5/apps-on-azure-blog/azure-sre-agent-now-natively-supports-aws-and-google-cloud/ba-p/4569556",
+        "summary": "The agent can investigate incidents across Azure, AWS and Google Cloud, following diagnostic clues such as an Azure app’s dependency on DynamoDB."
+      },
+      {
+        "title": "PostgreSQL 19 enters preview on Azure in East Asia",
+        "url": "https://azure.microsoft.com/updates?id=574587",
+        "summary": "Azure Database for PostgreSQL Flexible Server now supports provisioning PostgreSQL 19 preview servers in the East Asia region."
+      }
+    ]
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Malicious versions of Microsoft Agent Framework package stole credentials",
+        "url": "https://siliconangle.com/2026/11/19/wiz-ties-microsoft-agent-framework-package-compromise-to-release-pipeline-certificate/",
+        "tag": "security",
+        "summary": "Attackers published malicious versions 1.26.1 and 1.26.2 of Microsoft’s Agent Framework Python package to PyPI, using Microsoft’s publisher account; the versions were designed to steal cloud and developer credentials.",
+        "why": "Check dependency lockfiles, build logs and developer environments for those versions, and rotate exposed credentials if they were installed or executed."
+      },
+      {
+        "title": "Power, cooling and network capacity are constraining AI deployments",
+        "url": "https://siliconangle.com/2026/11/20/edge-inference-hits-power-cooling-limits-gpu-supply-sc26/",
+        "tag": "news",
+        "summary": "Reports from SC26 say enterprises are finding that power, cooling and network throughput—not just GPU availability—can determine whether AI data-center and edge-inference deployments can run effectively.",
+        "why": "Include facility power, thermal capacity and network throughput in AI capacity planning rather than treating GPU supply as the sole deployment constraint."
+      }
+    ],
+    "also": [
+      {
+        "title": "Gemini’s Mac app can now operate across local apps and files",
+        "url": "https://www.theverge.com/tech/1037902/google-gemini-macos-ai-computer-use",
+        "summary": "Google added computer-use capabilities to its macOS Gemini app for multi-step tasks across desktop apps, local files and the web."
+      },
+      {
+        "title": "Signal blocks mobile OS AI agents from reading its screen",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1038390/signal-blocking-ai-agent-screenshots-mobile-app",
+        "summary": "Signal is restricting screenshots on Android and iOS to prevent built-in AI agents from reading messages and other on-screen data."
+      },
+      {
+        "title": "Resolve AI launches SRE-1 for production incident diagnosis",
+        "url": "https://siliconangle.com/2026/11/19/resolve-ais-sre-1-model-finds-root-causes-of-production-alerts-as-ai-agents-go-on-call/",
+        "summary": "Resolve AI introduced SRE-1, a model intended to find root causes of production alerts, alongside a service that puts its agents on call."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Google donates Agent Substrate and gVisor to the CNCF",
+        "url": "https://www.infoq.com/news/2026/11/google-substrate-gvisor-cncf/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "news",
+        "summary": "Google is placing Agent Substrate and gVisor, components of its AI agent infrastructure, under Cloud Native Computing Foundation open-source governance.",
+        "why": "Track whether the projects gain broad adoption: vendor-neutral governance could make them candidates for agent isolation and runtime designs beyond Google’s own stack."
+      },
+      {
+        "title": "AWS releases a free local emulator for more than 200 services",
+        "url": "https://www.infoq.com/news/2026/11/aws-emulator-local-testing/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "release",
+        "summary": "AWS Emulator is a free, CC0-licensed local stand-in for more than 200 AWS services, generated and maintained by agents; it publishes fidelity scores but does not evaluate IAM.",
+        "why": "It may help test agent-written code locally, but do not treat it as a security or IAM test environment, and account for its unreviewed, agent-generated implementation."
+      }
+    ],
+    "also": [
+      {
+        "title": "Apache Iceberg V4 proposes more scalable table metadata",
+        "url": "https://www.infoq.com/news/2026/11/iceberg-v4-metadata/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "The proposed V4 table-format specification redesigns metadata to improve scalability and support more frequent writes, with additional data-management and schema-evolution features."
+      },
+      {
+        "title": "Vercel launches a shared message board for coding agents",
+        "url": "https://thenewstack.io/vercel-board-agent-swarms/",
+        "summary": "Vercel’s new board gives agents such as Claude Code and Codex a shared place to communicate and divide work."
+      }
+    ]
+  }
+}
