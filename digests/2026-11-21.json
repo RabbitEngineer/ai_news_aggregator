@@ -1,0 +1,111 @@
+{
+  "tldr": [
+    "Foundry Managed Compute is now generally available for serving open models on dedicated GPUs, making managed hosting a new option to compare with operating your own GPU fleet.",
+    "The Azure Functions OpenAI Extension reaches end of support on April 20, 2027; plan a migration to the appropriate direct SDK.",
+    "A test using two million trackable canaries found that sensitive data can leak through the AI supply chain, reinforcing the need to audit prompts and connected services."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Foundry Managed Compute is GA for serving open models on dedicated GPUs",
+        "url": "https://devblogs.microsoft.com/foundry/managed-compute-ga/",
+        "tag": "ga",
+        "summary": "Foundry Managed Compute is generally available for running open models on dedicated GPUs, with Global and US or EU Data Zone deployments.",
+        "why": "Compare it with self-managed GPU hosting when choosing how to serve open models, especially if deployment location is part of your data-residency design."
+      },
+      {
+        "title": "Azure Functions OpenAI Extension support ends April 20, 2027",
+        "url": "https://azure.microsoft.com/updates?id=579952",
+        "tag": "deprecation",
+        "summary": "Support for the Azure Functions OpenAI Extension ends on April 20, 2027; Microsoft directs users to migrate to the OpenAI, Foundry, or Azure AI Search SDKs as appropriate.",
+        "why": "Inventory Functions apps using the extension and schedule migration before the deadline to avoid relying on an unsupported integration."
+      },
+      {
+        "title": "Foundry previews custom post-training loops for open-weight models",
+        "url": "https://azure.microsoft.com/updates?id=581713",
+        "tag": "preview",
+        "summary": "Programmed Training is a public preview API for building custom post-training loops over open-weight models, with access available by request.",
+        "why": "If your model work needs more control than managed training jobs provide, assess this preview before building a separate training orchestration stack."
+      },
+      {
+        "title": "Foundry previews evaluation of full multi-turn agent conversations",
+        "url": "https://azure.microsoft.com/updates?id=581746",
+        "tag": "preview",
+        "summary": "Multi-turn evaluation lets you assess complete agent conversations against quality standards rather than scoring responses one at a time.",
+        "why": "Use conversation-level tests to catch failures that only emerge across turns before deciding an agent is ready for production."
+      },
+      {
+        "title": "Azure Firewall for Containers enters public preview",
+        "url": "https://azure.microsoft.com/updates?id=581963",
+        "tag": "preview",
+        "summary": "Azure Firewall for Containers extends Azure Firewall protection to containerized workloads and provides centralized network-traffic controls.",
+        "why": "Evaluate it if you need a centralized firewall approach for container workloads, but treat it as a preview rather than a production-ready dependency."
+      }
+    ],
+    "also": [
+      {
+        "title": "Foundry adds governance policy guidance in Canvas and VS Code",
+        "url": "https://azure.microsoft.com/updates?id=581463",
+        "summary": "Foundry Canvas and its VS Code toolkit now surface relevant policies and warnings for agent types, models, toolboxes, and guardrails."
+      },
+      {
+        "title": "Hybrid Logic Apps can now use SQL as a storage provider",
+        "url": "https://techcommunity.microsoft.com/t5/azure-integration-services-blog/announcing-general-availability-of-sql-as-a-storage-provider-for/ba-p/4574517",
+        "summary": "SQL storage for workflow runtime state is generally available for Hybrid Logic Apps running on customer-managed infrastructure, but not for Azure-hosted Logic Apps Standard."
+      },
+      {
+        "title": "Hybrid Logic Apps can use cached Integration Account artifacts offline",
+        "url": "https://techcommunity.microsoft.com/t5/azure-integration-services-blog/announcing-semi-connected-integration-account-support-for-hybrid/ba-p/4573784",
+        "summary": "Hybrid Logic Apps can cache supported Integration Account artifacts in local SQL storage and continue using them during temporary loss of Azure connectivity."
+      }
+    ]
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Two million AI supply-chain canaries expose sensitive-data leaks",
+        "url": "https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate/",
+        "tag": "security",
+        "summary": "A test using two million prompts containing unique, trackable secrets found that sensitive data does not reliably stay private as it passes through the AI supply chain.",
+        "why": "Review what prompt data is sent to models and third-party services, and test whether logs, integrations, or downstream tools expose information your users expect to remain private."
+      },
+      {
+        "title": "METR update finds AI task horizons still favor coding over judgment",
+        "url": "https://www.technologyreview.com/2026/11/20/1149399/the-most-misunderstood-graph-in-ai-just-got-a-major-update/",
+        "tag": "performance",
+        "summary": "A new report from evaluation nonprofit METR updates its time-horizon analysis: some AI capabilities continue to improve exponentially, but models perform less well on tasks requiring judgment than on coding.",
+        "why": "Avoid using coding progress alone to justify broader agent autonomy; evaluate the judgment-heavy tasks in your own workload separately."
+      }
+    ],
+    "also": [
+      {
+        "title": "Trump proposes a tax on US companies building data centers abroad",
+        "url": "https://www.theverge.com/policy/1038892/trump-foreign-data-centers-tax",
+        "summary": "Trump said he plans to impose a “tremendous tax” on US companies that build data centers outside the country, but the report provides no policy details."
+      },
+      {
+        "title": "Meta is reconsidering its 2030 net-zero goal as AI data-center emissions rise",
+        "url": "",
+        "summary": "Meta is re-evaluating its 2030 sustainability goals amid record emissions associated with its AI data centers."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Meta introduces Triton extensions for lower-level GPU hardware control",
+        "url": "https://www.infoq.com/news/2026/11/meta-triton-tlx-gpu-compiler/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "new",
+        "summary": "Meta developed Triton Low-Level Extensions (TLX) to give GPU programmers lower-level execution control and access to advanced hardware capabilities than high-level GPU abstractions provide; the report does not establish its adoption or maturity.",
+        "why": "If you build or tune custom GPU kernels, track whether TLX becomes a practical way to reach hardware features that standard Triton abstractions do not expose."
+      }
+    ],
+    "also": [
+      {
+        "title": "OpenSearch warns that agent failures can look successful in telemetry",
+        "url": "https://thenewstack.io/opensearch-ai-agent-observability/",
+        "summary": "An agent can call the wrong API and still receive a valid response, so ordinary success-status monitoring may miss the failure."
+      }
+    ]
+  }
+}
