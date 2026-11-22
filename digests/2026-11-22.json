@@ -1,0 +1,74 @@
+{
+  "tldr": [
+    "Claude Code’s “Don’t Ask Again” settings have been linked to thousands of exposed secrets, making repository and secret-scanning checks important for teams adopting coding agents.",
+    "Azure’s guidance on rotating API Management credentials gives a safe order for changing secrets without interrupting APIs.",
+    "AWS now supports GPU inference through Lambda, but the instance-based billing, 9.75% fee, and lack of response streaming affect whether it fits a workload."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Microsoft outlines a safe credential-rotation sequence for API Management",
+        "url": "https://techcommunity.microsoft.com/t5/azure-integration-services-blog/rotating-credentials-in-azure-api-management/ba-p/4575478",
+        "tag": "security",
+        "summary": "Microsoft’s guidance covers APIM subscription keys, secrets, backend credentials, certificates, connection strings and credentials embedded in policies. When possible, create the replacement secret, update APIM, test the APIs, and only then revoke the old secret.",
+        "why": "Use this sequence to plan rotations that avoid API outages, and check policies and named values as well as the obvious backend credentials."
+      },
+      {
+        "title": "Five checks for hosted agents running in a private Azure virtual network",
+        "url": "https://devblogs.microsoft.com/foundry/hosted-agents-private-network-setup/",
+        "tag": "news",
+        "summary": "The Foundry post addresses common private-network troubleshooting issues for hosted agents, including subnet selection, agent-list timeouts, TLS inspection, peered-network DNS and subnets that remain in use after account deletion.",
+        "why": "If you deploy hosted agents in a virtual network, use these checks to diagnose connectivity and cleanup problems before changing the network design."
+      }
+    ],
+    "also": [
+      {
+        "title": "A community post describes an agent-assisted Databricks serverless migration",
+        "url": "https://techcommunity.microsoft.com/t5/azure/azure-databricks-genie-migrate-for-serverless-an-agent-that/m-p/4575438#M22992",
+        "summary": "An Azure Community post describes Genie Migrate proposing changes for classic-to-serverless Databricks migrations, where libraries, Spark settings and access modes can cause job failures."
+      }
+    ]
+  },
+  "general": {
+    "top": [],
+    "also": [
+      {
+        "title": "Report says inference now accounts for two-thirds of AI workloads",
+        "url": "https://siliconangle.com/2026/11/21/inference-two-thirds-ai-workloads-chip-deployment-positron-sc26/",
+        "summary": "The report claims inference drives two-thirds of AI workloads and says power, cooling and memory constraints are shifting deployments toward smaller, quickly built sites."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Claude Code settings and chat transcripts exposed thousands of secrets",
+        "url": "https://www.infoq.com/news/2026/11/claude-code-leaking-secrets/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "security",
+        "summary": "Security firm Apiiro found 1,122 secrets in Claude Code’s local settings files and another 1,160 in Git history, shared settings files and agent chat transcripts stored in repositories. The exposure was linked to how the tool implements its “Don’t Ask Again” feature.",
+        "why": "Treat agent settings and transcripts as potential secret-bearing files: add them to repository checks and rotate any credentials already committed."
+      },
+      {
+        "title": "AWS Lambda adds GPU inference with up to 48 invocations sharing a model",
+        "url": "https://www.infoq.com/news/2026/11/aws-lambda-gpu-managed-instances/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "new",
+        "summary": "Lambda can now run GPU inference on EC2 G-series instances, with up to 48 concurrent invocations sharing one model per GPU, vLLM and SGLang base images, and asynchronous timeouts up to 90 minutes. Billing is the instance price plus a 9.75% fee; early tests report no response streaming.",
+        "why": "Compare instance-level billing and concurrency against your own serving stack, and rule it out for workloads that require streaming responses."
+      },
+      {
+        "title": "Google introduces an isolated microVM service for running AI agents",
+        "url": "https://www.infoq.com/news/2026/11/google-agent-compute-engine/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "new",
+        "summary": "Google’s Agent Compute Engine runs agents in isolated microVMs that can be checkpointed and resumed. An external gateway handles authentication and injects credentials, keeping keys and refresh tokens outside the agent sandbox.",
+        "why": "Evaluate this separation of agent execution from credential handling when choosing whether to build your own sandbox and secrets gateway or use a managed service."
+      }
+    ],
+    "also": [
+      {
+        "title": "PostgreSQL 19 adds online table repacking and query-planning controls",
+        "url": "https://www.infoq.com/news/2026/11/postgresql-19-released/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "PostgreSQL 19 adds tools to reorganize tables without downtime, controls for query plans, and changes to replication and application development."
+      }
+    ]
+  }
+}
