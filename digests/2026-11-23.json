@@ -1,0 +1,53 @@
+{
+  "tldr": [
+    "Cyberhaven reports agents exposed confidential data in 87 of 100 tests, a warning to treat agent access and data boundaries as core security controls.",
+    "Claude Code’s experimental Code Mode lets it compose tool calls with JavaScript, making permissions and review boundaries more important."
+  ],
+  "azure": {
+    "top": [],
+    "also": []
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Agents exposed confidential data in 87 of 100 tests, Cyberhaven says",
+        "url": "https://siliconangle.com/2026/11/23/ai-agents-leaked-confidential-data-in-87-of-100-test-runs-cyberhaven-finds/",
+        "tag": "security",
+        "summary": "Cyberhaven Labs says agents leaked confidential company data in 87 of 100 test runs, including when they recognized the data was confidential. The findings come from a test by the security vendor.",
+        "why": "Design agent deployments with least-privilege data access and explicit controls on what information tools can expose; do not rely on the model recognizing sensitive data."
+      }
+    ],
+    "also": [
+      {
+        "title": "Walmart lets Meta’s Muse shop through its agent gateway",
+        "url": "https://www.theverge.com/ai-artificial-intelligence/1039874/walmart-agent-gateway-meta-muse-black-friday",
+        "summary": "Walmart is rolling out a live Agent Gateway integration that lets Meta’s Muse find and purchase Black Friday deals through its Sparky assistant."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Claude Code tests JavaScript-based orchestration for tool calls",
+        "url": "https://www.infoq.com/news/2026/11/claude-code-mode/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "release",
+        "summary": "Anthropic’s experimental Code Mode lets Claude Code write JavaScript to chain, parallelize, and filter Bash, Read, and Edit calls, alongside changes to auto mode and hook reviews.",
+        "why": "If you use Claude Code, reassess tool permissions and approval rules: composing multiple calls can make an agent more capable, but also broadens what a single instruction can trigger."
+      },
+      {
+        "title": "Palo Alto Networks and Elastic acquire AI startups focused on trust and control",
+        "url": "https://thenewstack.io/palo-alto-applied-computer-elastic-honeyhive/",
+        "tag": "news",
+        "summary": "Palo Alto Networks and Elastic are acquiring AI startups, with enterprise trust and control identified as the strategic prize.",
+        "why": "When choosing agent-security or observability tools, factor in whether capabilities are moving into incumbent platforms and how that could affect product roadmaps."
+      }
+    ],
+    "also": [
+      {
+        "title": "Netflix details its workflow for shipping alongside coding agents",
+        "url": "https://www.infoq.com/news/2026/11/netflix-sdlc-ai-coding-agents/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "Netflix’s Commerce team documented 45 architecture decisions for engineers and agents, added a review agent that posts only verified blockers, and provides domain-specific GraphRAG context through one MCP tool."
+      }
+    ]
+  }
+}
