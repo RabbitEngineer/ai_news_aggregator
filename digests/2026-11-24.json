@@ -1,0 +1,130 @@
+{
+  "tldr": [
+    "AKS can now host Foundry models and agents on clusters you already operate, keeping GPU capacity and platform controls in your hands.",
+    "Foundry's model router can be called without a separate deployment, while new agent insights add GA trace analysis for troubleshooting.",
+    "For AI infrastructure decisions, Vercel's push to verify providers' zero-data-retention claims and new research on VM isolation are worth watching."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "AKS can run Foundry models and agents on your own clusters",
+        "url": "https://techcommunity.microsoft.com/t5/apps-on-azure-blog/run-models-and-agents-on-your-own-kubernetes-clusters-aks-at/ba-p/4573912",
+        "tag": "new",
+        "summary": "AKS AI Manager for Foundry lets teams deploy open-weight models and Foundry-hosted agents on existing AKS clusters. The announcement also cites updates to agent sandboxing, GPU operations, confidential computing, and multi-cluster management.",
+        "why": "Assess whether this lets you host workloads on existing GPU capacity while retaining control of networking, identity, and policy, rather than using a fully managed serving path."
+      },
+      {
+        "title": "Foundry model router can be called without a separate deployment",
+        "url": "https://azure.microsoft.com/updates?id=581378",
+        "tag": "preview",
+        "summary": "In supported regions, a Responses or Chat Completions request can set the model to auto and use the router without deploying it first. Auto uses Balanced routing by default.",
+        "why": "Test whether this simplifies deployment management for workloads that can let Foundry select a model, and check regional support before designing around it."
+      },
+      {
+        "title": "Foundry makes required agent guardrails visible in project setup",
+        "url": "https://azure.microsoft.com/updates?id=581338",
+        "tag": "preview",
+        "summary": "The updated Guardrails experience surfaces administrator-required controls for projects, including classifiers, deterministic rules, and LLM-based judges.",
+        "why": "Review how centrally required safety controls fit your agent deployment workflow, especially where teams need to prove policy compliance."
+      },
+      {
+        "title": "Foundry IQ adds an ontology-guided enterprise knowledge graph",
+        "url": "https://azure.microsoft.com/updates?id=581333",
+        "tag": "preview",
+        "summary": "The preview extracts entities and relationships from unstructured content using an ontology you provide, then makes those relationships available as a Foundry IQ knowledge source.",
+        "why": "Evaluate it for questions that depend on relationships across documents, rather than assuming ordinary document retrieval will capture those links."
+      },
+      {
+        "title": "Agent insights for Microsoft Foundry are generally available",
+        "url": "https://azure.microsoft.com/updates?id=581363",
+        "tag": "ga",
+        "summary": "Agent insights groups traces into recurring patterns so teams can investigate common failures; agent optimizer can then test potential fixes.",
+        "why": "Consider this in your production observability plan: it may help teams prioritize repeated agent failures instead of inspecting traces one by one."
+      }
+    ],
+    "also": [
+      {
+        "title": "Foundry IQ's iterative retriever can search again for complex questions",
+        "url": "https://azure.microsoft.com/updates?id=581343",
+        "summary": "IQ Retriever Zero can break a question into focused searches, review results, and search again within a configured budget before passing evidence to the answering model."
+      },
+      {
+        "title": "Foundry IQ can index uploaded files without a separate storage account",
+        "url": "https://azure.microsoft.com/updates?id=581368",
+        "summary": "The generally available Files knowledge source processes and indexes uploaded files for retrieval without requiring you to provision a storage account or scheduled indexer."
+      },
+      {
+        "title": "Foundry previews human annotation for agent evaluations",
+        "url": "https://azure.microsoft.com/updates?id=581358",
+        "summary": "Reviewers can add ratings, tags, comments, and expected outputs to agent traces, then use the annotated conversations to build evaluations."
+      },
+      {
+        "title": "Logic Apps Standard adds a built-in MSMQ connector",
+        "url": "https://techcommunity.microsoft.com/t5/azure-integration-services-blog/announcing-the-msmq-built-in-connector-for-azure-logic-apps/ba-p/4574215",
+        "summary": "The connector lets Logic Apps Standard workflows interact with existing MSMQ queues, providing a migration bridge for systems that cannot yet replace that messaging technology."
+      },
+      {
+        "title": "Azure DevOps previews agentic autofix for Advanced Security alerts",
+        "url": "https://devblogs.microsoft.com/devops/agentic-autofix-for-advanced-security-for-azure-devops-public-preview/",
+        "summary": "The preview uses agents to help fix GitHub Advanced Security alerts in Azure DevOps, with expanded alert coverage and improved failure handling."
+      }
+    ]
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Amazon is acquiring Decart's AI technology and team in a reported $7.5B deal",
+        "url": "",
+        "tag": "news",
+        "summary": "Amazon plans to acquire AI startup Decart's core technology and hire its technical team; the companies did not disclose terms, but sources cited by Bloomberg put the deal at about $7.5 billion. The acquisition comes as Amazon prepares to sell Trainium chips.",
+        "why": "Track whether Amazon turns the acquired optimization technology into a meaningful Trainium advantage before making long-term assumptions about accelerator choice or cloud portability."
+      },
+      {
+        "title": "Swahili speech recognition struggles with code-switching and local slang",
+        "url": "https://spectrum.ieee.org/swahili-speech-recognition",
+        "tag": "performance",
+        "summary": "A March 2026 preprint reported a 3.24% word error rate on prepared Swahili readings from Mozilla Common Voice, but everyday Kenyan speech mixes Swahili and English with local Sheng slang, a harder test for recognition systems.",
+        "why": "Use representative, code-switched audio in speech-service evaluations; strong benchmark results on prepared speech may not predict performance for your users."
+      }
+    ],
+    "also": [
+      {
+        "title": "OpenAI and Cisco introduce an open-source Linux runtime for patch protection",
+        "url": "https://openai.com/index/introducing-shirudo",
+        "summary": "Shirudo is an open-source runtime designed to help teams protect running Linux systems while they roll out patches."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Anthropic's Claude Ship agents can review, fix, and approve pull requests",
+        "url": "https://techcrunch.com/2026/11/23/anthropic-launches-claude-ship-letting-ai-agents-review-fix-and-approve-code-changes/",
+        "tag": "new",
+        "summary": "Claude Ship introduces agents that handle routine code-review work, make fixes, and approve pull requests. The aim is to reduce the review bottleneck as AI-generated code increases.",
+        "why": "If you pilot it, decide which repositories and changes can be approved automatically and keep human review for changes with production or security impact."
+      },
+      {
+        "title": "Vercel says AI providers will need to prove they honor zero data retention",
+        "url": "https://thenewstack.io/vercel-audited-zdr-inference/",
+        "tag": "news",
+        "summary": "Vercel says it will verify providers' zero-data-retention claims for AI Gateway, where developers have been able to request provider-level ZDR since April.",
+        "why": "For sensitive workloads, treat provider data-retention terms as a routing and procurement requirement, and check what evidence supports the claim before sending prompts."
+      },
+      {
+        "title": "CNCF research finds VMs still host 53% of production applications",
+        "url": "https://www.infoq.com/news/2026/11/cncf-vm-ai-workloads/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "news",
+        "summary": "CNCF and Linux Foundation Research report that virtual machines host an average of 53% of production applications; they also find AI and agent workloads increasing demand for virtualization where stronger execution isolation is needed.",
+        "why": "Keep VM-based isolation in the design options for agents that need tighter boundaries; the research does not support assuming every AI workload belongs in a container."
+      }
+    ],
+    "also": [
+      {
+        "title": "Google describes identity and containment patterns for production AI agents",
+        "url": "https://www.infoq.com/news/2026/11/qcon-ai-agent-security/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "summary": "At QCon, Google's Amanda Walker described treating agents as insider-risk workloads and outlined identity, credential, and containment patterns for production use."
+      }
+    ]
+  }
+}
