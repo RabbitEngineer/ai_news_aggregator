@@ -1,0 +1,147 @@
+{
+  "tldr": [
+    "Foundry previews now let teams cap model and agent spending and centrally govern hosted-agent outbound destinations—useful controls to test before putting agents into production.",
+    "Azure AI Search and Foundry IQ can now honor Azure Storage permissions, enabling search results to reflect each user's access instead of relying on a separate access-control layer.",
+    "Anthropic has added Skills and long-running task support to Claude's MCP capabilities, while DoorDash reports 10× dispatch throughput and over 99.99% peak availability after a distributed redesign."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Foundry previews spending limits for models and agents",
+        "url": "https://azure.microsoft.com/updates?id=581323",
+        "tag": "preview",
+        "summary": "Foundry cost controls let teams set a spending or token budget for a resource or project, then send an Event Grid alert or block new requests when usage reaches the configured threshold.",
+        "why": "Test these controls against your usage patterns to decide whether project-level budgets can prevent unexpected model and agent spend."
+      },
+      {
+        "title": "Azure AI Search can enforce Azure Storage permissions",
+        "url": "https://azure.microsoft.com/updates?id=581303",
+        "tag": "ga",
+        "summary": "Azure AI Search and Foundry IQ can now use supported Azure Storage permissions so search results are filtered according to each user's access.",
+        "why": "Revisit your retrieval design: this can reduce the need to build and maintain a separate permissions-filtering layer for search results."
+      },
+      {
+        "title": "Foundry previews policy controls for hosted-agent outbound traffic",
+        "url": "https://azure.microsoft.com/updates?id=581328",
+        "tag": "preview",
+        "summary": "Administrators can use Azure Policy to govern the outbound destinations of hosted agents; agent authors attach a compliant egress policy before creating an agent version.",
+        "why": "Evaluate this for production agents that need controlled network access, rather than relying only on each author to restrict destinations."
+      },
+      {
+        "title": "Azure VMs can restrict which processes request managed identity tokens",
+        "url": "https://techcommunity.microsoft.com/t5/azure-compute-blog/strengthen-your-azure-security-baseline-with-metadata-security/ba-p/4576391",
+        "tag": "security",
+        "summary": "The generally available Metadata Security Protocol adds authentication and authorization for IMDS and Azure WireServer, addressing which processes inside a VM can request managed-identity tokens.",
+        "why": "Review VM identity exposure and assess whether to enable the protocol so a compromised process has fewer paths to obtain an application's Azure credentials."
+      },
+      {
+        "title": "Site Recovery adds zonal DR for Ultra disks",
+        "url": "https://azure.microsoft.com/updates?id=582171",
+        "tag": "ga",
+        "summary": "Azure Site Recovery now supports Zone-to-Zone disaster recovery for Ultra disks, allowing performance-intensive VMs to be replicated and recovered in another availability zone.",
+        "why": "Reassess zonal recovery plans for critical Ultra-disk workloads that previously lacked this Site Recovery option."
+      }
+    ],
+    "also": [
+      {
+        "title": "Foundry previews routing MCP tool traffic through your gateway",
+        "url": "https://azure.microsoft.com/updates?id=581498",
+        "summary": "Foundry Agent Service can route MCP tool traffic through an organization's existing AI Gateway or Azure API Management endpoints."
+      },
+      {
+        "title": "Foundry previews native A2A passthrough for hosted agents",
+        "url": "https://azure.microsoft.com/updates?id=581313",
+        "summary": "Hosted agents can now forward native Agent2Agent requests directly, avoiding the previous conversion to the Responses protocol."
+      },
+      {
+        "title": "Windows Remote Recovery for Azure VMs enters public preview",
+        "url": "https://techcommunity.microsoft.com/t5/azure-compute-blog/announcing-public-preview-for-windows-remote-recovery-on-azure/ba-p/4576401",
+        "summary": "The preview adds Windows Recovery Environment access for VMs that cannot start, with Quick Machine Recovery and customer-authored remediations."
+      },
+      {
+        "title": "VMSS Uniform periodic update assessment enters preview",
+        "url": "https://techcommunity.microsoft.com/t5/azure-compute-blog/introducing-periodic-assessment-for-vmss-uniform-in-azure-update/ba-p/4573685",
+        "summary": "Azure Update Manager can assess Uniform VM scale sets every 24 hours and publish compliance results to Azure Resource Graph."
+      }
+    ]
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Benchmark finds leading AI agents still struggle with everyday tasks",
+        "url": "https://techcrunch.com/2026/11/24/even-the-best-ai-agents-struggle-with-everyday-life/",
+        "tag": "performance",
+        "summary": "A new benchmark finds that even advanced models struggle to complete everyday tasks reliably and safely, sometimes creating new problems while attempting them.",
+        "why": "Keep human confirmation and bounded permissions in workflows where an agent can take consequential actions; strong model performance alone is not evidence of dependable execution."
+      },
+      {
+        "title": "Walmart lets Meta's Muse agent shop Black Friday deals",
+        "url": "https://techcrunch.com/2026/11/24/walmart-teams-up-with-meta-to-bring-black-friday-deals-to-ai-agent-muse/",
+        "tag": "news",
+        "summary": "Walmart is making Black Friday deals available to customers shopping through Muse, Meta's AI agent.",
+        "why": "Treat agent-led shopping as a live commerce channel and account for how product discovery and purchasing may move outside a retailer's own app."
+      },
+      {
+        "title": "Reports describe internal debate over releasing advanced AI models",
+        "url": "",
+        "tag": "news",
+        "summary": "A report citing more than two dozen sources says employees at Anthropic and OpenAI have raised concerns internally about the risks of releasing advanced reasoning models.",
+        "why": "Factor possible safety reviews or release restrictions into plans that depend on getting a particular frontier model or version."
+      }
+    ],
+    "also": [
+      {
+        "title": "Amazon and Meta reportedly discuss allowing Muse to shop on Amazon",
+        "url": "https://techcrunch.com/2026/11/25/amazon-and-meta-reportedly-in-talks-to-lift-blockade-on-ai-agent-muse/",
+        "summary": "The companies are reportedly discussing ending Amazon's two-month blockade of Muse, with negotiations involving product recommendations and Amazon's advertising revenue."
+      },
+      {
+        "title": "Anthropic says Claude can create desktop apps from a prompt",
+        "url": "",
+        "summary": "Anthropic added a capability for Claude to create functional Windows and Mac desktop applications from a single prompt."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Claude adds Skills over MCP and support for long-running tasks",
+        "url": "https://thenewstack.io/mcp-skills-tasks-claude/",
+        "tag": "release",
+        "summary": "Anthropic's MCP update adds support for Skills and long-running tasks in Claude, extending how it can use external capabilities and handle work that does not finish in a single interaction.",
+        "why": "Review your MCP integrations and agent workflows to see whether these capabilities can simplify task handling or reduce custom orchestration."
+      },
+      {
+        "title": "DoorDash redesign delivers 10× dispatch throughput",
+        "url": "",
+        "tag": "performance",
+        "summary": "DoorDash replaced a monolithic dispatch optimizer with a distributed design that separates coordination from computation, reporting 10× higher throughput and more than 99.99% peak availability.",
+        "why": "Use the case study when evaluating whether a high-volume inference or optimization service should separate coordination from compute to scale and fail more independently."
+      },
+      {
+        "title": "Claude Ship targets the pull-request bottleneck from AI coding",
+        "url": "https://thenewstack.io/claude-ship-automated-approvals/",
+        "tag": "new",
+        "summary": "Anthropic's Claude Ship is aimed at automating approvals and addressing the pull-request bottleneck created as AI coding agents produce more code.",
+        "why": "If coding agents are increasing review queues, evaluate whether this addresses your specific approval bottleneck before adding another step to your delivery process."
+      }
+    ],
+    "also": [
+      {
+        "title": "Confluent discarded its AI-assisted Kafka client rewrite after three months",
+        "url": "https://thenewstack.io/confluent-kafka-rust-agents/",
+        "summary": "Confluent spent nearly three months using AI agents to translate Kafka's Java client into Rust, then discarded the work and started over."
+      },
+      {
+        "title": "Teleport argues agents should use delegated identity, not SSH keys",
+        "url": "https://thenewstack.io/teleport-agent-delegated-identity/",
+        "summary": "The article describes giving an AI agent scoped, delegated access to operational resources such as Kubernetes logs instead of handing it a developer's SSH keys."
+      },
+      {
+        "title": "OpenAI uses Codex agents for difficult Spark upgrade work",
+        "url": "",
+        "summary": "At QCon, an OpenAI engineering manager described using agents for open-ended operational tasks such as upgrading Spark, rather than trying to automate the entire data platform."
+      }
+    ]
+  }
+}
