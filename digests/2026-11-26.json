@@ -1,0 +1,81 @@
+{
+  "tldr": [
+    "Azure VNet ECMP is in preview, allowing one route to distribute traffic across 2–16 network appliances.",
+    "Java 8, 11 and 17 support in Azure Functions ends September 1, 2027; plan runtime upgrades before security updates stop.",
+    "A Dell RAG case study shows how fine-tuning embeddings can address retrieval failures on company-specific terminology."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Azure VNet ECMP preview distributes traffic across multiple appliances",
+        "url": "https://azure.microsoft.com/updates?id=582326",
+        "tag": "preview",
+        "summary": "Equal-Cost Multi-Path routing for Azure Virtual Network is in public preview. It lets one user-defined route distribute traffic across 2 to 16 next hops.",
+        "why": "Evaluate it for network designs that currently need multiple routes or custom load distribution across appliances; it could simplify how you scale network inspection or routing tiers."
+      },
+      {
+        "title": "Azure Functions Java 8, 11 and 17 support ends September 1, 2027",
+        "url": "https://azure.microsoft.com/updates?id=568586",
+        "tag": "deprecation",
+        "summary": "Azure Functions will end support for Java 8, 11 and 17 on September 1, 2027; affected apps will continue running, but will no longer receive security updates or customer support.",
+        "why": "Inventory Java Functions apps and schedule migration to a supported runtime before the deadline, especially where continued security updates are a compliance requirement."
+      }
+    ],
+    "also": []
+  },
+  "general": {
+    "top": [
+      {
+        "title": "42 state attorneys general challenge Character.AI’s proposed sale of user chats",
+        "url": "https://www.theverge.com/policy/1042620/character-ai-sale-state-ags-block-selling-users-chats",
+        "tag": "news",
+        "summary": "A coalition of 42 state attorneys general is trying to prevent Character.AI from selling user chat histories in its bankruptcy proceedings; the proposed sale concerns data from more than 21 million U.S. accounts.",
+        "why": "Treat retention and transfer of conversation data as a core design and governance decision, not just a vendor contract detail—especially when services may be sold or reorganized."
+      },
+      {
+        "title": "AI data-center delays and debt costs are squeezing neocloud providers",
+        "url": "https://techcrunch.com/podcast/ai-data-centers-are-becoming-harder-to-build-and-neoclouds-are-feeling-it/",
+        "tag": "news",
+        "summary": "The report says construction delays and more expensive debt are pressuring neoclouds, while Nvidia is reportedly unwilling to backstop a data center until it is close to operating.",
+        "why": "Factor power, site readiness and provider financing into capacity plans; a provider’s announced GPU plans are not the same as dependable near-term capacity."
+      }
+    ],
+    "also": [
+      {
+        "title": "FCC authorizes SpaceX to deploy up to 1 million AI data-center satellites",
+        "url": "https://www.theverge.com/science/1042278/spacex-fcc-starmind-ai-space-data-centers",
+        "summary": "The FCC approved SpaceX’s plan for up to 1 million chip-equipped satellites for its Starmind initiative, an early regulatory step for orbital data centers."
+      },
+      {
+        "title": "OpenAI plans one usage meter across ChatGPT Chat and Work",
+        "url": "https://techcrunch.com/2026/11/25/openai-says-heavy-chatgpt-users-may-hit-limits-sooner-as-it-merges-chat-and-work/",
+        "summary": "OpenAI says heavy ChatGPT users may reach limits sooner as Chat and Work are combined under a single usage meter."
+      }
+    ]
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Ignite recap: Microsoft adds an Azure AI Gateway and expands agent controls",
+        "url": "https://www.infoq.com/news/2026/11/microsoft-ignite-2026-recap/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "new",
+        "summary": "The Ignite recap highlights a standalone Azure AI Gateway and expanded agent identity, governance and cost controls across Azure, Foundry, Entra and Defender.",
+        "why": "Assess whether the gateway and governance controls can consolidate components you currently operate yourself; the decision affects how you route, secure and track agent workloads."
+      },
+      {
+        "title": "Dell fine-tuned open embedding models to improve enterprise RAG search",
+        "url": "https://www.infoq.com/presentations/fine-tune-enterprise-rag-embeddings/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "performance",
+        "summary": "Dell describes fine-tuning open-source embedding models to improve retrieval for internal terminology, using hard negatives, distributed training on H100 GPUs and production evaluation with an LLM judge.",
+        "why": "If retrieval misses domain-specific terms, test embedding fine-tuning against your current search baseline before assuming a larger language model will fix the problem."
+      }
+    ],
+    "also": [
+      {
+        "title": "Anthropic tested Claude against more than 1,700 sandbox failure scenarios",
+        "url": "https://thenewstack.io/anthropic-siren-sandbox-escape/",
+        "summary": "Anthropic examined how Claude behaves when coding-agent execution environments fail, using more than 1,700 test scenarios."
+      }
+    ]
+  }
+}
