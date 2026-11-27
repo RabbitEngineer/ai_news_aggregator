@@ -1,0 +1,50 @@
+{
+  "tldr": [
+    "Nvidia has paused server shipments to four Southeast Asian countries amid tighter US controls, a potential supply-planning risk for regional AI capacity.",
+    "PyTorch’s GreenLight brings risk-scored AI approval of low-risk pull requests into its maintainer workflow, a pattern to consider carefully before automating CI approvals.",
+    "Cloudflare now offers websites a one-toggle search endpoint for AI agents, but site owners pay for the queries."
+  ],
+  "azure": {
+    "top": [
+      {
+        "title": "Azure Local: operational choices that can quietly harm cluster health",
+        "url": "https://techcommunity.microsoft.com/t5/azure-infrastructure-blog/azure-local-10-anti-patterns-that-quietly-break-a-running/ba-p/4577143",
+        "tag": "news",
+        "summary": "Microsoft’s Azure Infrastructure Blog outlines recurring design and operations anti-patterns that can erode Azure Local performance, security, or capacity. One example: a storage optimization that looks good on a capacity report may increase application latency at peak load.",
+        "why": "Review cluster storage and operating decisions against peak-load behavior, not just capacity metrics, before they become production reliability problems."
+      }
+    ],
+    "also": []
+  },
+  "general": {
+    "top": [
+      {
+        "title": "Nvidia pauses server shipments to four Southeast Asian countries",
+        "url": "https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia/",
+        "tag": "news",
+        "summary": "Nvidia has told manufacturing partners to pause server shipments to Malaysia, Singapore, Thailand, and Indonesia as the US steps up efforts to keep AI chips from reaching China.",
+        "why": "If you are planning GPU capacity in Southeast Asia, verify supply and delivery assumptions rather than treating announced accelerator availability as assured."
+      }
+    ],
+    "also": []
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "PyTorch’s GreenLight uses AI to approve low-risk pull requests",
+        "url": "https://www.infoq.com/news/2026/11/uber-agent-spend-steady/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "new",
+        "summary": "PyTorch now lets an AI reviewer approve pull requests from its own maintainers. GreenLight is an open-source system inspired by Meta’s RADAR, combining safety checks, a risk score, and an LLM review to auto-land low-risk changes.",
+        "why": "If you evaluate AI review in CI, separate low-risk changes from those requiring human approval and validate the safety checks before granting automation merge rights."
+      },
+      {
+        "title": "Cloudflare adds a one-toggle search endpoint for AI agents",
+        "url": "https://thenewstack.io/cloudflare-agent-search-endpoint/",
+        "tag": "new",
+        "summary": "Cloudflare lets website owners enable search for AI agents with a single toggle, while the site owner pays the resulting query bill.",
+        "why": "Before enabling agent access on a site you operate, decide how to control query volume and assign its cost."
+      }
+    ],
+    "also": []
+  }
+}
