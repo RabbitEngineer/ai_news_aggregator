@@ -1,0 +1,39 @@
+{
+  "tldr": [
+    "Azure AI Gateway is now generally available, with 10,000 monthly requests free but paid billing beginning January 1, 2027; private networking is still in preview.",
+    "Anthropic’s Claude Ship can review pull requests, make fixes, and approve changes within team policy, so agent access and approval controls deserve a closer look."
+  ],
+  "azure": {
+    "top": [],
+    "also": []
+  },
+  "general": {
+    "top": [],
+    "also": []
+  },
+  "tooling": {
+    "top": [
+      {
+        "title": "Azure AI Gateway is generally available as a standalone service",
+        "url": "https://www.infoq.com/news/2026/11/azure-ai-gateway-ga/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "ga",
+        "summary": "Microsoft made Azure AI Gateway generally available for governing access to models and MCP tools across providers. Each gateway includes 10,000 requests per month free; paid billing starts January 1, 2027, while private networking remains in preview.",
+        "why": "Evaluate it for cross-provider governance, but include post-January billing in your cost model and check whether the private-networking preview blocks your deployment design."
+      },
+      {
+        "title": "Anthropic launches Claude Ship to manage pull requests under team policy",
+        "url": "https://www.infoq.com/news/2026/11/anthropic-claude-ship/?utm_campaign=infoq_content&utm_source=infoq&utm_medium=feed&utm_term=AI%2C+ML+%26+Data+Engineering",
+        "tag": "new",
+        "summary": "Claude Ship is a set of agents on Claude Team and Enterprise that can review GitHub pull requests, push fixes, and approve changes allowed by a team's policy.",
+        "why": "If you pilot it, decide which repositories and permissions agents may use, since the tool can both modify code and approve changes."
+      }
+    ],
+    "also": [
+      {
+        "title": "AWS Nitro Sandboxes offer coding agents a place to run generated scripts",
+        "url": "https://thenewstack.io/aws-nitro-sandboxes-agents/",
+        "summary": "AWS Nitro Sandboxes are presented as an environment where coding agents can execute scripts they generate."
+      }
+    ]
+  }
+}
